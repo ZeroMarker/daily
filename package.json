@@ -9,7 +9,7 @@
     "fetch": "python3 scripts/fetch.py",
     "voiceover": "python3 scripts/gen_voiceover.py",
     "validate": "python3 scripts/validate_sync.py",
-    "render": "remotion render NewsDaily out/news-daily.mp4",
+    "render": "bash scripts/render.sh",
     "render:draft": "remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error"
   },
   "dependencies": {

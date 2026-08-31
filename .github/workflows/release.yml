@@ -1,0 +1,118 @@
+name: Render daily release
+
+on:
+  push:
+    tags:
+      - 'news-*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  render-release:
+    name: Render ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Parse and validate date tag
+        id: release
+        env:
+          TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "$TAG" =~ ^news-([0-9]{4}-[0-9]{2}-[0-9]{2})$ ]]; then
+            date="${BASH_REMATCH[1]}"
+          else
+            echo "Invalid tag: $TAG" >&2
+            echo "Expected: news-YYYY-MM-DD, for example news-2026-08-31" >&2
+            exit 1
+          fi
+
+          echo "date=$date" >> "$GITHUB_OUTPUT"
+          echo "asset=news-daily-$date.mp4" >> "$GITHUB_OUTPUT"
+          echo "release_name=AI 新闻日报 $date" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Set up Python for voiceover
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate voiceover
+        run: |
+          python -m pip install --upgrade pip edge-tts
+          npm run voiceover
+
+      - name: Type-check project
+        run: npm run check --if-present
+
+      - name: Render video
+        env:
+          CI: 'true'
+          RELEASE_DATE: ${{ steps.release.outputs.date }}
+        run: npm run render
+
+      - name: Validate rendered MP4
+        env:
+          RELEASE_DATE: ${{ steps.release.outputs.date }}
+          ASSET: ${{ steps.release.outputs.asset }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          video="out/${RELEASE_DATE}/${ASSET}"
+          if [[ ! -f "$video" ]]; then
+            echo "Missing $video" >&2
+            exit 1
+          fi
+          video_streams="$(ffprobe -v error -select_streams v -show_entries stream=index -of csv=p=0 "$video")"
+          if [[ -z "$video_streams" ]]; then
+            echo "No video stream found in $video" >&2
+            exit 1
+          fi
+          audio_streams="$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$video")"
+          if [[ -z "$audio_streams" ]]; then
+            echo "No audio stream found in $video" >&2
+            exit 1
+          fi
+          echo "OK: $video"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.release.outputs.asset }}
+          path: out/${{ steps.release.outputs.date }}/${{ steps.release.outputs.asset }}
+          if-no-files-found: error
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ steps.release.outputs.release_name }}
+          generate_release_notes: true
+          files: out/${{ steps.release.outputs.date }}/${{ steps.release.outputs.asset }}
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
