@@ -74,7 +74,9 @@ jobs:
         env:
           CI: 'true'
           RELEASE_DATE: ${{ steps.release.outputs.date }}
-        run: npm run render
+        run: |
+          rm -rf out
+          npm run render
 
       - name: Validate rendered MP4
         env:
