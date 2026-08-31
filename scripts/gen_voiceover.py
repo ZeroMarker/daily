@@ -1,29 +1,31 @@
 #!/usr/bin/env python3
-"""Generate Chinese narration clips with Edge TTS, measure real durations, concatenate.
+"""Generate Chinese narration clips with Edge TTS, measure durations, concatenate.
 
-按段生成旁白 → ffprobe 实测每段时长 → 合并为 narration.zh.mp3
-→ 写出 segment-durations.json（时长数组，顺序与 narration.zh.txt 段落一一对应）。
+Reads content/<YYYY_MM_DD>/narration.zh.txt and writes the concatenated mp3 and
+segment-durations.json back into that date directory.
 """
 import json
 import os
 import subprocess
 import sys
+from datetime import date
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VO = os.path.join(BASE, "public", "voiceover")
+DATE = os.environ.get("RELEASE_DATE", date.today().strftime("%Y_%m_%d"))
+CONTENT = os.path.join(BASE, "content", DATE)
 VOICE = "zh-CN-XiaoxiaoNeural"
 RATE = os.environ.get("TTS_RATE", "+4%")
 
-os.makedirs(VO, exist_ok=True)
-with open(os.path.join(VO, "narration.zh.txt"), encoding="utf-8") as handle:
+os.makedirs(CONTENT, exist_ok=True)
+with open(os.path.join(CONTENT, "narration.zh.txt"), encoding="utf-8") as handle:
     paragraphs = [p.strip() for p in handle.read().split("\n\n") if p.strip()]
 
 if not paragraphs:
-    raise SystemExit("narration.zh.txt 为空：先运行 npm run news 生成今日文案。")
+    raise SystemExit(f"content/{DATE}/narration.zh.txt 为空：先人工撰写今日旁白。")
 
 durations = []
 for index, paragraph in enumerate(paragraphs, 1):
-    segment = os.path.join(VO, f"seg{index}.mp3")
+    segment = os.path.join(CONTENT, f"seg{index}.mp3")
     subprocess.run(
         [sys.executable, "-m", "edge_tts", "--voice", VOICE, "--rate", RATE,
          "--text", paragraph, "--write-media", segment],
@@ -36,20 +38,20 @@ for index, paragraph in enumerate(paragraphs, 1):
     )
     durations.append(float(probe.stdout.strip()))
 
-concat_path = os.path.join(VO, "concat.txt")
+concat_path = os.path.join(CONTENT, "concat.txt")
 with open(concat_path, "w", encoding="utf-8") as handle:
     for index in range(1, len(paragraphs) + 1):
         handle.write(f"file 'seg{index}.mp3'\n")
 
 subprocess.run(
     ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_path,
-     "-c", "copy", os.path.join(VO, "narration.zh.mp3")],
+     "-c", "copy", os.path.join(CONTENT, "narration.zh.mp3")],
     check=True, capture_output=True,
 )
-with open(os.path.join(VO, "segment-durations.json"), "w", encoding="utf-8") as handle:
+with open(os.path.join(CONTENT, "segment-durations.json"), "w", encoding="utf-8") as handle:
     json.dump(durations, handle, ensure_ascii=False, indent=2)
 
 for index in range(1, len(paragraphs) + 1):
-    os.remove(os.path.join(VO, f"seg{index}.mp3"))
+    os.remove(os.path.join(CONTENT, f"seg{index}.mp3"))
 os.remove(concat_path)
-print(f"Generated {len(paragraphs)} segments, total {sum(durations):.2f}s")
+print(f"Generated {len(paragraphs)} segments for {DATE}, total {sum(durations):.2f}s")

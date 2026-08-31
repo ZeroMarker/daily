@@ -10,12 +10,13 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import date, datetime
 
 import requests
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VO = os.path.join(BASE, "public", "voiceover")
+DATE = os.environ.get("RELEASE_DATE", date.today().strftime("%Y_%m_%d"))
+VO = os.path.join(BASE, "content", DATE)
 os.makedirs(VO, exist_ok=True)
 
 CANDIDATE_LIMIT = int(os.environ.get("CANDIDATES", "40"))

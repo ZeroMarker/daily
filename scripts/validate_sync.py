@@ -4,9 +4,11 @@ import json
 import os
 import subprocess
 import sys
+from datetime import date
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VO = os.path.join(BASE, "public", "voiceover")
+DATE = os.environ.get("RELEASE_DATE", date.today().strftime("%Y_%m_%d"))
+VO = os.path.join(BASE, "content", DATE)
 
 
 def load(name):

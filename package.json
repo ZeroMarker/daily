@@ -4,13 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "remotion studio",
-    "check": "tsc --noEmit",
+    "dev": "bash scripts/sync_content.sh && remotion studio",
+    "check": "bash scripts/sync_content.sh && tsc --noEmit",
     "fetch": "python3 scripts/fetch.py",
     "voiceover": "python3 scripts/gen_voiceover.py",
     "validate": "python3 scripts/validate_sync.py",
     "render": "bash scripts/render.sh",
-    "render:draft": "remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error"
+    "render:draft": "bash scripts/sync_content.sh && remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error"
   },
   "dependencies": {
     "@remotion/cli": "4.0.504",
