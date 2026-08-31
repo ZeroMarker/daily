@@ -137,7 +137,14 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
-# Vite files
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-.vite/
+
+
+
+# AI news daily — generated voiceover audio (regenerate via npm run voiceover)
+public/voiceover/*.mp3
+public/voiceover/concat.txt
+public/voiceover/seg*.mp3
+
+# Python bytecode cache
+__pycache__/
+*.pyc

@@ -1,0 +1,20 @@
+{ "date": "2026-08-31", "items": [
+  {"id": "intro", "kind": "intro", "title": "AI 新闻日报",
+   "text": "今天是八月三十一日，这里是 AI 新闻日报，为你梳理今天的四条热点。",
+   "screenText": "今日 4 条热点"},
+  {"id": "news-1", "kind": "news", "title": "国产大模型开源新版本", "source": "机器之心", "category": "AI",
+   "text": "国内一家头部大模型公司发布了新的开源模型，各项基准成绩大幅提升，开发者可以在本地直接部署。",
+   "screenText": "新模型推理成本下降约 40%"},
+  {"id": "news-2", "kind": "news", "title": "卫星互联网正式商用", "source": "36氪", "category": "商业",
+   "text": "商业航天迎来里程碑，一批低轨互联网卫星正式投入商用，偏远地区开始接入高速网络。",
+   "screenText": "首批覆盖 30 个偏远地区"},
+  {"id": "news-3", "kind": "news", "title": "海外市场涨跌互现", "source": "路透", "category": "国际",
+   "text": "受最新经济数据影响，欧美主要股指涨跌互现，投资者正在等待本周的央行会议。",
+   "screenText": "道指微涨 0.3%"},
+  {"id": "news-4", "kind": "news", "title": "AI 辅助科研再突破", "source": "爱范儿", "category": "科技",
+   "text": "研究人员使用人工智能辅助发现了一种全新的材料结构，相关成果已经发表在顶级期刊上。",
+   "screenText": "成果登上顶级期刊"},
+  {"id": "outro", "kind": "outro", "title": "明天见",
+   "text": "以上就是今天的热点盘点，关注我，每天八点带你读懂天下事，我们明天见。",
+   "screenText": "关注 · 每天与你 AI 读新闻"}
+]}

@@ -1,0 +1,27 @@
+{
+  "name": "ai-news-daily",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "check": "tsc --noEmit",
+    "news": "python3 scripts/news.py",
+    "voiceover": "python3 scripts/gen_voiceover.py",
+    "validate": "python3 scripts/validate_sync.py",
+    "render": "remotion render NewsDaily out/news-daily.mp4",
+    "render:draft": "remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.504",
+    "@remotion/google-fonts": "4.0.504",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remotion": "4.0.504"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3"
+  }
+}
