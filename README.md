@@ -12,7 +12,7 @@
 ## 目录结构
 
 ```text
-content/2026_08_31/        ← 提交：script.json · narration.zh.txt · segment-durations.json
+content/2026_08_31/        ← 提交：script.json · narration.zh.txt（segment-durations.json / mp3 为生成物，忽略）
 public/voiceover/          ← gitignored 活动工作区（引擎静态导入 + staticFile 读 mp3），
                              由 sync_content.sh 从 content/<日期> 同步，勿直接编辑
 src/                       ← Remotion 渲染引擎（1080×1920 · 30fps · 帧驱动）

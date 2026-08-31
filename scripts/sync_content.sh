@@ -6,9 +6,14 @@ set -euo pipefail
 DATE="${RELEASE_DATE:-$(date +%Y_%m_%d)}"
 SRC="content/${DATE}"
 
-if [[ ! -f "$SRC/script.json" || ! -f "$SRC/narration.zh.txt" || ! -f "$SRC/segment-durations.json" ]]; then
-  echo "缺少 content/${DATE} 的内容清单（script.json / narration.zh.txt / segment-durations.json）" >&2
-  echo "请先撰写当日内容，或设置 RELEASE_DATE 指向已有日期目录。" >&2
+if [[ ! -f "$SRC/script.json" || ! -f "$SRC/narration.zh.txt" ]]; then
+  echo "缺少 content/${DATE} 的源内容：script.json / narration.zh.txt" >&2
+  echo "请先人工撰写当日内容，或设置 RELEASE_DATE 指向已有日期目录。" >&2
+  exit 1
+fi
+
+if [[ ! -f "$SRC/segment-durations.json" ]]; then
+  echo "缺少 content/${DATE}/segment-durations.json（生成物）：请先运行 npm run voiceover。" >&2
   exit 1
 fi
 

@@ -137,14 +137,11 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
-
-
-
-
 # AI news daily — active voiceover workspace (synced from content/<date> by render/check)
 public/voiceover/
 
 # AI news daily — per-date generated artifacts
+content/*/segment-durations.json
 content/*/concat.txt
 content/*/seg*.mp3
 content/*/*.mp3

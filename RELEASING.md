@@ -40,8 +40,8 @@ RELEASE_DATE=2026_08_31 VERSION=1.0.0 npm run render
 
 ## 提交约定
 
-- **必须提交**：`content/<日期>/` 下的旁白文本、`script.json`、`segment-durations.json`，以及项目源码。
-- **不提交**（gitignore）：`public/voiceover/`（活动同步工作区）、生成的 MP3、`candidates.json`、`out/`。
+- **必须提交**：`content/<日期>/` 下的旁白文本、`script.json`，以及项目源码。
+- **不提交**（gitignore）：`public/voiceover/`（活动同步工作区）、`segment-durations.json`、生成的 MP3、`candidates.json`、`out/`。
 
 发版前先在 `content/<日期>/` 提交当天内容，再打 `<日期>-<版本>` tag。
 
