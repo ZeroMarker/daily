@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Render today's (or RELEASE_DATE) daily video into a date-named folder: out/<date>/news-daily-<date>.mp4
+# Render today's (or RELEASE_DATE) daily video into a date-named folder: out/<YYYY_MM_DD>/
 set -euo pipefail
 
-DATE="${RELEASE_DATE:-$(date +%F)}"
-mkdir -p "out/${DATE}"
+DATE="${RELEASE_DATE:-$(date +%Y_%m_%d)}"
+FILENAME="news-daily-${DATE}${VERSION:+-${VERSION}}.mp4"
 
-npx remotion render NewsDaily "out/${DATE}/news-daily-${DATE}.mp4" "$@"
-echo "Rendered out/${DATE}/news-daily-${DATE}.mp4"
+mkdir -p "out/${DATE}"
+npx remotion render NewsDaily "out/${DATE}/${FILENAME}" "$@"
+echo "Rendered out/${DATE}/${FILENAME}"
