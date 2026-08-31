@@ -11,6 +11,8 @@ export interface NewsItem {
   text: string;
   /** 画面关键点/数字 */
   screenText: string;
+  /** 画面说明正文（区别于旁白 text，结构化的屏幕说明） */
+  summary?: string;
   /** 新闻来源（news 类型才有） */
   source?: string;
   /** 来源分类（科技/财经/国际…） */

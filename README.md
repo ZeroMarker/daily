@@ -70,14 +70,15 @@ npm run render:draft      # 半分辨率草稿，快速预览
     {"id": "intro", "kind": "intro", "title": "AI 新闻日报",
      "text": "开场旁白…", "screenText": "今日 4 条热点"},
     {"id": "news-1", "kind": "news", "title": "≤12字屏幕大字", "source": "36氪",
-     "category": "科技", "text": "旁白，60-90字…", "screenText": "关键数字…"},
+     "category": "科技", "text": "旁白，60-90字…", "screenText": "关键数字…",
+     "summary": "屏幕说明正文，2-3 句，与旁白不重复…"},
     {"id": "outro", "kind": "outro", "title": "明天见",
      "text": "结语…", "screenText": "关注 · 每天与你 AI 读新闻"}
   ]
 }
 ```
 
-`title` 是屏幕大字，`text` 是旁白，`screenText` 是画面关键点，三者互不重复。
+`title` 是屏幕大字，`text` 是旁白（配音），`screenText` 是画面关键点，`summary` 是屏幕说明正文（区别于旁白，负责结构化补充）。
 
 ## 可调项
 
