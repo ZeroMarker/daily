@@ -140,10 +140,7 @@ dist
 
 
 
-# AI news daily — generated voiceover audio (regenerate via npm run voiceover)
-public/voiceover/*.mp3
-public/voiceover/concat.txt
-public/voiceover/seg*.mp3
+public/voiceover/candidates.json
 
 # Python bytecode cache
 __pycache__/

@@ -237,7 +237,7 @@ export const Outro: React.FC = () => {
           关注 · 每天与你 AI 读新闻
         </div>
         <div style={{...font, opacity: e.opacity, color: C.muted, fontSize: 24, fontWeight: 500}}>
-          本片由 AI 生成 · 内容仅供参考
+          内容人工精选 · AI 配音
         </div>
       </AbsoluteFill>
     </SceneShell>
