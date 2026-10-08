@@ -92,9 +92,9 @@ RELEASE_DATE=2026_08_31 npm run render:draft    # 半分辨率草稿
 
 ## 电子杂志 · GitHub Pages
 
-在线阅读：[AI 新闻日报电子杂志](https://zeromarker.github.io/daily/)。包含杂志首页、每期新闻阅读页、历史归档和视频 Release 入口，支持手机阅读与打印。
+在线阅读：[AI 新闻日报电子杂志](https://zeromarker.github.io/daily/)。按 **杂志 → 日报 → 视频** 组织：杂志首页汇总各日内容，日报页展示当日新闻，视频页提供当天最新成片、下载和历史版本。支持手机阅读与打印。
 
-杂志直接读取已提交的 `content/<日期>/script.json`，按日期倒序展示；画面标题、关键点、摘要与视频共用内容。没有摘要时使用旁白文本。
+日报直接读取已提交的 `content/<日期>/script.json`，按日期倒序展示；画面标题、关键点、摘要与视频共用内容。没有摘要时使用旁白文本。视频按日期匹配 GitHub Releases，按语义版本倒序展示；每个日期的最新 MP4 随站点部署以支持站内播放，历史版本保留下载入口；没有成片的日期显示“当日视频尚未发布”。
 
 ```bash
 npm run build:pages
@@ -103,4 +103,4 @@ python3 -m http.server 8080 --directory dist/pages
 
 打开 `http://localhost:8080` 预览。静态产物在 `dist/pages/`，不提交生成文件。
 
-`.github/workflows/pages.yml` 在 `main` 的内容、站点样式或构建脚本更新时自动构建并发布，也可在 Actions 手动运行。仓库 Pages 的发布来源使用 **GitHub Actions**。新增一期只需提交对应日期的 `script.json`；杂志发布不依赖配音或视频渲染。
+`.github/workflows/pages.yml` 在 `main` 的内容、站点样式或构建脚本更新时自动构建并发布，也可在 Actions 手动运行。仓库 Pages 的发布来源使用 **GitHub Actions**。新增日报只需提交对应日期的 `script.json`；视频渲染发行工作流成功后会自动刷新对应视频页。构建时通过 GitHub API 获取发行列表，Actions 使用内置只读令牌。离线预览可设置 `RELEASES_FILE` 指向发行列表 JSON（无发行时为 `[]`）。

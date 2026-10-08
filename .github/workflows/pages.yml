@@ -9,6 +9,9 @@ on:
       - 'scripts/build_site.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Render daily release]
+    types: [completed]
 
 permissions:
   contents: read
@@ -19,13 +22,18 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build magazine and archive
+      - name: Build magazine, daily reports and videos
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/build_site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
