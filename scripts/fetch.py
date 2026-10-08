@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
-"""Fetch mixed CN/EN news RSS and dump today's candidates for human review.
-
-No LLM. The human selects and rewrites the daily script manually, writing
-public/voiceover/script.json + narration.zh.txt before running the pipeline.
-"""
+"""Fetch dated RSS/Atom candidates for automatic daily selection."""
 import json
 import os
 import re
 import sys
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from html import unescape
+
+from news_config import content_dir
 
 import requests
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATE = os.environ.get("RELEASE_DATE", date.today().strftime("%Y_%m_%d"))
-VO = os.path.join(BASE, "content", DATE)
+VO = str(content_dir())
 os.makedirs(VO, exist_ok=True)
 
 CANDIDATE_LIMIT = int(os.environ.get("CANDIDATES", "40"))
@@ -27,6 +25,9 @@ FEEDS = [
     ("少数派", "数码", "https://sspai.com/feed"),
     ("爱范儿", "科技", "https://www.ifanr.com/feed"),
     ("机器之心", "AI", "https://www.jiqizhixin.com/rss"),
+    ("IT之家", "科技", "https://www.ithome.com/rss/"),
+    ("Solidot", "科技", "https://www.solidot.org/index.rss"),
+    ("量子位", "AI", "https://www.qbitai.com/feed"),
     ("BBC", "国际", "https://feeds.bbci.co.uk/news/world/rss.xml"),
     ("卫报", "国际", "https://www.theguardian.com/world/rss"),
 ]
@@ -40,7 +41,8 @@ def local_name(tag):
 
 
 def strip_html(text):
-    return TAG_RE.sub("", text or "").strip()
+    text = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", "", text or "", flags=re.I | re.S)
+    return " ".join(unescape(TAG_RE.sub(" ", text)).split())
 
 
 def text_of(element, names):
@@ -68,9 +70,15 @@ def parse_published(raw):
     if not raw:
         return 0
     try:
-        return int(datetime.strptime(raw, "%a, %d %b %Y %H:%M:%S %z").timestamp())
-    except ValueError:
-        return 0
+        parsed = parsedate_to_datetime(raw)
+    except (TypeError, ValueError):
+        try:
+            parsed = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+        except ValueError:
+            return 0
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return int(parsed.timestamp())
 
 
 def parse_feed(url, source, category):
@@ -93,7 +101,7 @@ def parse_feed(url, source, category):
         entries.append({
             "title": title,
             "link": link,
-            "summary": summary[:220],
+            "summary": summary[:1000],
             "published": published,
             "source": source,
             "category": category,
@@ -116,18 +124,31 @@ def main():
     candidates, seen = [], set()
     for entries in results:
         for entry in entries:
-            key = re.sub(r"[^a-z0-9]+", "", entry["link"].lower())
+            key = entry["link"].split("#", 1)[0]
             if not key or key in seen:
                 continue
             seen.add(key)
             candidates.append(entry)
+    if not candidates:
+        raise SystemExit("所有新闻源均无可用内容；停止生成，避免发布空日报。")
     candidates.sort(key=lambda item: item["published"], reverse=True)
-    candidates = candidates[:CANDIDATE_LIMIT]
+    # Keep several stories from every source; a busy feed must not crowd out others.
+    groups = {}
+    for item in candidates:
+        groups.setdefault(item['source'], []).append(item)
+    candidates = []
+    while groups and len(candidates) < CANDIDATE_LIMIT:
+        for source in list(groups):
+            candidates.append(groups[source].pop(0))
+            if not groups[source]:
+                del groups[source]
+            if len(candidates) == CANDIDATE_LIMIT:
+                break
     out = os.path.join(VO, "candidates.json")
     with open(out, "w", encoding="utf-8") as handle:
         json.dump(candidates, handle, ensure_ascii=False, indent=2)
     print(f"Fetched {len(candidates)} candidates -> {out}")
-    print("人工挑选后写 script.json 与 narration.zh.txt，然后：npm run voiceover && npm run render")
+    print("下一步：npm run news 生成选题、摘要与旁白。")
 
 
 if __name__ == "__main__":

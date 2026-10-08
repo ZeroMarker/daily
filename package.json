@@ -11,7 +11,11 @@
     "validate": "python3 scripts/validate_sync.py",
     "render": "bash scripts/render.sh",
     "render:draft": "bash scripts/sync_content.sh && remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error",
-    "build:pages": "python3 scripts/build_site.py"
+    "build:pages": "python3 scripts/build_site.py",
+    "news": "python3 scripts/generate_news.py",
+    "daily": "npm run fetch && npm run news && npm run validate:content && npm run voiceover && npm run check && npm run validate && npm run render",
+    "test:news": "python3 -m unittest discover -s tests",
+    "validate:content": "python3 scripts/validate_content.py"
   },
   "dependencies": {
     "@remotion/cli": "4.0.504",

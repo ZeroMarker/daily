@@ -1,106 +1,101 @@
 # AI 新闻日报
 
-把当天新闻做成一条竖版（9:16 · 1080×1920）抖音短视频。**内容（选题+摘要）由人工撰写**，自动管线只负责配音与渲染。**日期即文件路径**：每日内容清单提交在 `content/<YYYY_MM_DD>/`，成片输出到 `out/<YYYY_MM_DD>/`。
+自动采集新闻、选题、生成摘要与旁白，制作中文竖版视频，并发布为 **杂志 → 日报 → 视频**。日常生产无需人工选题、撰稿、配音或打标签。
+
+[在线阅读](https://zeromarker.github.io/daily/)
 
 ```text
-人工：RSS 取材（可选 fetch）→ 挑选 → 写 content/<日期>/script.json + narration.zh.txt
-机器：Edge TTS 逐段 → 实测时长 → Remotion 渲染 → out/<日期>
+每天定时 → RSS 采集 → 时间筛选 / 去重 / 来源分布 → 日报与旁白
+         → 内容校验 → 自动提交与版本标签 → Edge TTS → 音画校验
+         → Remotion 渲染 → GitHub Release → Pages 杂志 / 日报 / 视频
 ```
 
-采用「音频主时钟」同步：最终旁白音频实测时长驱动场景时间轴，杜绝用 `setTimeout`/`Date.now()`/手动 `audio.play()` 造成的漂移。方案与仓库外的 `~/video` 音画同步规范一致。
+## 自动运行
 
-## 目录结构
+`.github/workflows/daily.yml` 每天 UTC 00:30（北京时间 08:30）运行，也可在 Actions 中执行 **Auto publish daily**。GitHub 定时任务可能延迟，不保证准点。
 
-```text
-content/2026_08_31/        ← 提交：script.json · narration.zh.txt（segment-durations.json / mp3 为生成物，忽略）
-public/voiceover/          ← gitignored 活动工作区（引擎静态导入 + staticFile 读 mp3），
-                             由 sync_content.sh 从 content/<日期> 同步，勿直接编辑
-src/                       ← Remotion 渲染引擎（1080×1920 · 30fps · 帧驱动）
-scripts/                   ← fetch / gen_voiceover / sync_content / render / validate
-out/<日期>/                ← gitignored 渲染产物 news-daily-<日期>[-<版本>].mp4
-```
+- 默认选取近 48 小时内的 5 条中文新闻，优先科技与 AI，并兼顾来源分布。
+- 无有效日期、未来新闻、重复链接及相似标题会被排除；不足 3 条则失败，不发布空日报或用过期新闻凑数。
+- 摘要采用 RSS 原文摘取，清理推广尾文；旁白由标题、来源及摘要组成，不依赖 LLM 或额外 API 密钥。
+- `script.json` 与 `narration.zh.txt` 从同一份内容生成，自动校验文本、数量和顺序。
+- 自动提交当日内容到 `main`，创建 `<日期>-<semver>` 标签，复用视频发行工作流。重跑自动递增补丁版本。
+- 视频发行成功后自动刷新 Pages。最新视频支持站内播放，历史版本可下载。
 
-`content/<日期>/script.json` 是唯一内容契约：`items[]` 顺序 = `narration.zh.txt` 的 `\n\n` 分段顺序 = `segment-durations.json` 时长顺序。段落数与场景数不一致时 `timing.ts` 直接抛错，挡住错误渲染。
+第一次启用后即可定时运行。仅需 GitHub Actions 的内置令牌具有工作流声明的 `contents: write` 权限，Pages 发布来源为 GitHub Actions。
 
-## 环境
+## 本地运行
 
-- Node.js 18+，Python 3.10+
-- FFmpeg / ffprobe
-- `pip install edge-tts requests`
-
-## 运行
+需要 Node.js 18+、Python 3.10+、FFmpeg / ffprobe。
 
 ```bash
 npm install
+python3 -m pip install requests edge-tts
 
-# 1.（可选）抓当日候选新闻，供人工挑选取材（写入 content/<日期>/candidates.json）
-RELEASE_DATE=2026_08_31 npm run fetch
+# 一次完成采集、文案、配音、校验和渲染；不执行 Git 推送。
+npm run daily
 
-# 2. 人工撰写内容（无 LLM）
-#    - content/<日期>/script.json：items = intro + news-1..K + outro
-#      title=屏幕大字(≤12字)、text=旁白(60-90字)、screenText=关键点、summary=屏幕说明正文
-#    - content/<日期>/narration.zh.txt：把每条 item.text 用空行 "\n\n" 分隔，段序与 items[] 一致
+# 分步执行
+npm run fetch
+npm run news
+npm run validate:content
+npm run voiceover
+npm run check
+npm run validate
+npm run render
 
-# 3. 生成旁白 + 实测时长到 content/<日期>（每次改文案后必须重跑）
-RELEASE_DATE=2026_08_31 npm run voiceover
+# 内容自动化测试
+npm run test:news
 
-# 4. 同步内容到活动工作区 + 类型检查 + 同步校验
-RELEASE_DATE=2026_08_31 npm run check
-RELEASE_DATE=2026_08_31 npm run validate
+# 预览视频
+npm run dev
 
-# 5. Studio 试听（音画同步）
-RELEASE_DATE=2026_08_31 npm run dev
-
-# 6. 渲染（自动 sync 后渲染到 out/<日期>/）
-RELEASE_DATE=2026_08_31 npm run render          # 成片 out/<日期>/news-daily-<日期>.mp4
-RELEASE_DATE=2026_08_31 npm run render:draft    # 半分辨率草稿
-```
-
-`RELEASE_DATE`（`YYYY_MM_DD`）决定读取/写入哪个日期目录；不传则用今天。`VERSION` 可附加到文件名（`release` 时由 workflow 传入）。
-
-## 内容契约
-
-`content/<日期>/script.json`：
-
-```json
-{
-  "date": "2026-08-31",
-  "items": [
-    {"id": "intro", "kind": "intro", "title": "AI 新闻日报",
-     "text": "开场旁白…", "screenText": "今日 4 条热点"},
-    {"id": "news-1", "kind": "news", "title": "≤12字屏幕大字", "source": "36氪",
-     "category": "科技", "text": "旁白，60-90字…", "screenText": "关键数字…",
-     "summary": "屏幕说明正文，2-3 句，与旁白不重复…"},
-    {"id": "outro", "kind": "outro", "title": "明天见",
-     "text": "结语…", "screenText": "关注 · 每天与你 AI 读新闻"}
-  ]
-}
-```
-
-`title` 是屏幕大字，`text` 是旁白（配音），`screenText` 是画面关键点，`summary` 是屏幕说明正文（区别于旁白，负责结构化补充）。
-
-## 可调项
-
-- `TTS_RATE`：旁白语速（默认 `+4%`，可在 `.env` 覆盖）。
-- `RELEASE_DATE`：目标日期目录（默认今天）。
-- `CANDIDATES`：fetch 输出的候选条数上限（默认 40）。
-- 新闻源在 `scripts/fetch.py` 的 `FEEDS` 列表，按 `（来源, 分类, RSS 地址）` 增删。
-
-## 发版
-
-见 [RELEASING.md](./RELEASING.md)：tag `<YYYY_MM_DD>-<semver>` 触发 GitHub Actions，从 `content/<日期>/` 渲染到 `out/<日期>/` 并上传 Release。
-
-## 电子杂志 · GitHub Pages
-
-在线阅读：[AI 新闻日报电子杂志](https://zeromarker.github.io/daily/)。按 **杂志 → 日报 → 视频** 组织：杂志首页汇总各日内容，日报页展示当日新闻，视频页提供当天最新成片、下载和历史版本。支持手机阅读与打印。
-
-日报直接读取已提交的 `content/<日期>/script.json`，按日期倒序展示；画面标题、关键点、摘要与视频共用内容。没有摘要时使用旁白文本。视频按日期匹配 GitHub Releases，按语义版本倒序展示；每个日期的最新 MP4 随站点部署以支持站内播放，历史版本保留下载入口；没有成片的日期显示“当日视频尚未发布”。
-
-```bash
+# 构建杂志站点
 npm run build:pages
 python3 -m http.server 8080 --directory dist/pages
 ```
 
-打开 `http://localhost:8080` 预览。静态产物在 `dist/pages/`，不提交生成文件。
+默认按北京时间确定日期。可通过环境变量覆盖，例如 `RELEASE_DATE=2026_10_08 npm run daily`。历史日期生成仅从本次 RSS 返回的候选中筛选，不提供历史新闻抓取服务。
 
-`.github/workflows/pages.yml` 在 `main` 的内容、站点样式或构建脚本更新时自动构建并发布，也可在 Actions 手动运行。仓库 Pages 的发布来源使用 **GitHub Actions**。新增日报只需提交对应日期的 `script.json`；视频渲染发行工作流成功后会自动刷新对应视频页。构建时通过 GitHub API 获取发行列表，Actions 使用内置只读令牌。离线预览可设置 `RELEASES_FILE` 指向发行列表 JSON（无发行时为 `[]`）。
+## 内容与目录
+
+```text
+content/<YYYY_MM_DD>/     script.json、narration.zh.txt（自动生成并提交）
+                         candidates.json、MP3、segment-durations.json（忽略）
+public/voiceover/        活动工作区，由 sync_content.sh 同步（忽略）
+src/                    Remotion 视频引擎：1080×1920、30fps、9:16
+scripts/                采集、生成、校验、提交、配音、渲染、杂志构建
+tests/                  内容自动化测试
+site/                   杂志站点样式
+out/<YYYY_MM_DD>/        渲染成片（忽略）
+dist/pages/             静态站点产物（忽略）
+```
+
+`script.json` 是唯一内容契约：`items[]` 顺序 = 旁白空行分段顺序 = 实测音频时长顺序。场景时间轴由音频实际时长驱动。
+
+`items` 包含开场、新闻和结尾。每条新闻的 `title` 是屏幕短标题，`articleTitle` 是完整标题，`text` 是旁白，`screenText` 是画面关键点，`summary` 是摘要，`source` / `sourceUrl` / `publishedAt` 保留出处与时间。文字日报展示原文链接。
+
+## 环境变量
+
+通过 shell 或 Actions 环境变量传入；`.env.example` 为配置参考，不会自动加载。
+
+| 变量 | 默认值 | 用途 |
+| --- | --- | --- |
+| `NEWS_TIMEZONE` | `Asia/Shanghai` | 日期与发布时间时区 |
+| `RELEASE_DATE` | 当天 | `YYYY_MM_DD` 内容目录 |
+| `CANDIDATES` | `40` | RSS 候选上限，兼顾各来源 |
+| `NEWS_COUNT` | `5` | 目标新闻条数 |
+| `NEWS_MIN_COUNT` | `3` | 最低发布条数 |
+| `NEWS_MAX_AGE_HOURS` | `48` | 新闻新鲜度窗口 |
+| `NEWS_LANGUAGE` | `zh` | 默认中文；`all` 可含英文原文 |
+| `TTS_RATE` | `+4%` | 旁白语速 |
+| `VERSION` | 无 | 本地渲染文件版本后缀 |
+| `GH_TOKEN` | 无 | 站点构建读取发行列表；Actions 自动提供 |
+| `RELEASES_FILE` | 无 | 本地发行列表 JSON 快照，可用 `[]` 离线构建无视频站点 |
+
+新闻源在 `scripts/fetch.py` 的 `FEEDS` 中配置。单个源失败不影响其他来源；最终可用新闻不足则停止。
+
+## 发布与站点
+
+见 [RELEASING.md](./RELEASING.md)。自动流程完成后，Pages 将日期目录组织为杂志首页、文字日报、当日视频和历史归档。
+
+`pages.yml` 在站点或内容更新、视频发行流程完成时发布，也可手动运行。构建时匹配 GitHub Releases，将每个日期最新的 MP4 随站点部署。

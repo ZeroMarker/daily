@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-08",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月8日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "大模型原生智能体手机S…",
+      "articleTitle": "大模型原生智能体手机STEPX Neo将于10月13日正式发布",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/501915.html",
+      "publishedAt": "2026-10-08T10:15:37+08:00",
+      "category": "AI",
+      "text": "量子位报道，大模型原生智能体手机STEPX Neo将于10月13日正式发布。",
+      "screenText": "大模型原生智能体手机STEPX Neo将于10月13日…",
+      "summary": "大模型原生智能体手机STEPX Neo将于10月13日正式发布"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "绝不和解：佛罗里达州坚…",
+      "articleTitle": "绝不和解：佛罗里达州坚持起诉 Meta，要求旗下平台加强青少年保护措施",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/010/446.htm",
+      "publishedAt": "2026-10-08T11:59:28+08:00",
+      "category": "科技",
+      "text": "IT之家报道，绝不和解：佛罗里达州坚持起诉 Meta，要求旗下平台加强青少年保护措施。IT之家 10 月 8 日消息，据路透社报道，当地时间 7 日，美国佛罗里达州请求州法院法官下令，要求 Instagram 和 Facebook 调整平台，加强对年轻用户的保护。",
+      "screenText": "绝不和解：佛罗里达州坚持起诉 Meta，要求旗下平台加…",
+      "summary": "IT之家 10 月 8 日消息，据路透社报道，当地时间 7 日，美国佛罗里达州请求州法院法官下令，要求 Instagram 和 Facebook 调整平台，加强对年轻用户的保护。 美国 多数州通过全面和解协议解决了类似指控 ，佛州仍坚持起诉两个平台的母公司 Meta，指控公司损害青少年。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "黄仁勋发布史上最强 S…",
+      "articleTitle": "黄仁勋发布史上最强 Surface！专为「无限智能」设计",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1683127?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-08T11:22:06+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，黄仁勋发布史上最强 Surface！专为「无限智能」设计。这 Windows 啊，你微软怕是把持不住。",
+      "screenText": "黄仁勋发布史上最强 Surface！专为「无限智能」设计",
+      "summary": "这 Windows 啊，你微软怕是把持不住"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "App Store 生…",
+      "articleTitle": "App Store 生态规模五年翻倍，助力中国开发者走向全球",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/115462",
+      "publishedAt": "2026-10-08T09:47:59+08:00",
+      "category": "数码",
+      "text": "少数派报道，App Store 生态规模五年翻倍，助力中国开发者走向全球。10月8日，Apple发布《中国AppStore生态系统——2025年开发者与用户价值研究》。",
+      "screenText": "App Store 生态规模五年翻倍，助力中国开发者走…",
+      "summary": "10月8日，Apple发布《中国AppStore生态系统——2025年开发者与用户价值研究》。这份由Apple提供支持、上海财经大学商学院副教授居恒与安诺析思国际咨询公司经济学家MarkusvonWa"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "2026 年诺贝尔化学…",
+      "articleTitle": "2026 年诺贝尔化学奖授予了日法科学家",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85543",
+      "publishedAt": "2026-10-07T19:22:52+08:00",
+      "category": "科技",
+      "text": "Solidot报道，2026 年诺贝尔化学奖授予了日法科学家。2026 年诺贝尔化学奖授予了法国科学家 Henri Kagan 和日本科学家硖合宪三，以表彰他们“在不对称有机合成中发现非线性效应和自催化现象”上的贡献。",
+      "screenText": "2026 年诺贝尔化学奖授予了日法科学家",
+      "summary": "2026 年诺贝尔化学奖授予了法国科学家 Henri Kagan 和日本科学家硖合宪三，以表彰他们“在不对称有机合成中发现非线性效应和自催化现象”上的贡献。生命中的化学结构被称为“手性”，就像手一样，所有氨基酸都存在两种镜像形式，但在细胞内的蛋白质中只有一种存在，而另一种在自然界中极为罕见。"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}

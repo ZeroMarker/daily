@@ -15,6 +15,9 @@ export interface NewsItem {
   summary?: string;
   /** 新闻来源（news 类型才有） */
   source?: string;
+  sourceUrl?: string;
+  articleTitle?: string;
+  publishedAt?: string;
   /** 来源分类（科技/财经/国际…） */
   category?: string;
 }

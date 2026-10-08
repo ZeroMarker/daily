@@ -4,12 +4,17 @@ on:
   push:
     tags:
       - '*-*.*.*'
+  workflow_call:
+    inputs:
+      tag:
+        required: true
+        type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: render-release-${{ github.ref_name }}
+  group: render-release-${{ inputs.tag || github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -21,11 +26,13 @@ jobs:
     steps:
       - name: Check out tagged source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: Parse and validate date-version tag
         id: release
         env:
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ inputs.tag || github.ref_name }}
         shell: bash
         run: |
           set -euo pipefail
@@ -64,6 +71,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Validate daily content
+        env:
+          RELEASE_DATE: ${{ steps.release.outputs.date }}
+        run: python scripts/validate_content.py
+
       - name: Generate voiceover
         env:
           RELEASE_DATE: ${{ steps.release.outputs.date }}
@@ -75,6 +87,11 @@ jobs:
         env:
           RELEASE_DATE: ${{ steps.release.outputs.date }}
         run: npm run check --if-present
+
+      - name: Validate narration synchronization
+        env:
+          RELEASE_DATE: ${{ steps.release.outputs.date }}
+        run: npm run validate
 
       - name: Render video
         env:
@@ -119,6 +136,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
           name: ${{ steps.release.outputs.release_name }}
           generate_release_notes: true
           files: out/${{ steps.release.outputs.date }}/${{ steps.release.outputs.asset }}

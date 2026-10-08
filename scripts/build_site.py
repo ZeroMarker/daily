@@ -25,7 +25,7 @@ def shell(title, body, prefix='./', folder=''):
 <link rel="stylesheet" href="{prefix}assets/style.css"></head>
 <body><header class="masthead"><a class="brand" href="{prefix}index.html">AI 新闻日报<span>DAILY / 科技 · AI · 世界</span></a>
 <nav aria-label="主导航"><a href="{prefix}index.html">杂志</a><a href="{prefix}issues/{folder}.html">日报</a><a href="{prefix}videos/{folder}.html">视频</a></nav></header>
-<main>{body}</main><footer><span>AI 新闻日报 · 每天读懂值得关注的变化</span><a href="{REPO}">项目源码 ↗</a><p>人工选题与编辑 · AI 配音与视频制作。来源名称见各条新闻。</p></footer></body></html>'''
+<main>{body}</main><footer><span>AI 新闻日报 · 每天读懂值得关注的变化</span><a href="{REPO}">项目源码 ↗</a><p>自动取材与摘要 · AI 配音与视频制作。原文链接见各条新闻。</p></footer></body></html>'''
 
 
 def issue_link(issue, prefix='./'):
@@ -33,11 +33,13 @@ def issue_link(issue, prefix='./'):
 
 
 def card(item, number, href=None):
-    title = esc(item['title'])
+    title = esc(item.get('articleTitle') or item['title'])
     if href:
         title = f'<a href="{esc(href)}">{title}</a>'
+    source_url = item.get('sourceUrl', '')
+    source_link = f'<p class="source-link"><a href="{esc(source_url)}">阅读来源原文 ↗</a></p>' if source_url.startswith(('https://', 'http://')) else ''
     return f'''<article class="story" id="story-{number}"><div class="story-meta"><span>{number:02d} / {esc(item.get('category', '新闻'))}</span><span>{esc(item.get('source', '编辑部'))}</span></div>
-<h2>{title}</h2><p class="keypoint">{esc(item.get('screenText', ''))}</p><p>{esc(item.get('summary') or item['text'])}</p></article>'''
+<h2>{title}</h2><p class="keypoint">{esc(item.get('screenText', ''))}</p><p>{esc(item.get('summary') or item['text'])}</p>{source_link}</article>'''
 
 
 def load_releases():

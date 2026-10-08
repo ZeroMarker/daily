@@ -10,7 +10,7 @@ on:
       - '.github/workflows/pages.yml'
   workflow_dispatch:
   workflow_run:
-    workflows: [Render daily release]
+    workflows: [Render daily release, Auto publish daily]
     types: [completed]
 
 permissions:

@@ -3,12 +3,12 @@
 # which the Remotion engine imports and staticFile() reads at render time.
 set -euo pipefail
 
-DATE="${RELEASE_DATE:-$(date +%Y_%m_%d)}"
+DATE="$(python3 "$(dirname "$0")/news_config.py")"
 SRC="content/${DATE}"
 
 if [[ ! -f "$SRC/script.json" || ! -f "$SRC/narration.zh.txt" ]]; then
   echo "缺少 content/${DATE} 的源内容：script.json / narration.zh.txt" >&2
-  echo "请先人工撰写当日内容，或设置 RELEASE_DATE 指向已有日期目录。" >&2
+  echo "请先运行 npm run fetch && npm run news，或设置 RELEASE_DATE 指向已有日期目录。" >&2
   exit 1
 fi
 

@@ -4,10 +4,12 @@ import json
 import os
 import subprocess
 import sys
-from datetime import date
+import math
+from validate_content import validate
+from news_config import ROOT, release_date
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATE = os.environ.get("RELEASE_DATE", date.today().strftime("%Y_%m_%d"))
+BASE = str(ROOT)
+DATE = release_date().strftime("%Y_%m_%d")
 VO = os.path.join(BASE, "content", DATE)
 
 
@@ -18,30 +20,30 @@ def load(name):
 
 script = load("script.json")
 durations = load("segment-durations.json")
-items = script["items"]
+with open(os.path.join(VO, "narration.zh.txt"), encoding="utf-8") as handle:
+    items = validate(script, handle.read(), release_date())
 
 errors = []
 if len(items) != len(durations):
     errors.append(f"items {len(items)} != durations {len(durations)}")
 
 for index, (item, dur) in enumerate(zip(items, durations)):
-    if item["id"] != items[index]["id"]:
-        errors.append(f"order mismatch at {index}")
-    if not isinstance(dur, (int, float)) or dur <= 0:
+    if not isinstance(dur, (int, float)) or not math.isfinite(dur) or dur <= 0:
         errors.append(f"item {index} non-positive duration {dur}")
-    if item.get("id") != items[index].get("id"):
-        errors.append(f"id mismatch at {index}")
 
 audio = os.path.join(VO, "narration.zh.mp3")
 if os.path.exists(audio):
     probe = subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
          "-of", "default=noprint_wrappers=1:nokey=1", audio],
-        capture_output=True, text=True,
+        capture_output=True, text=True, check=True,
     )
     actual = float(probe.stdout.strip())
-    if abs(actual - sum(durations)) > 0.15:
+    if not math.isfinite(actual) or abs(actual - sum(durations)) > 0.15:
         errors.append(f"mp3 {actual:.2f}s != sum {sum(durations):.2f}s")
+
+else:
+    errors.append("缺少 narration.zh.mp3")
 
 if errors:
     for error in errors:
