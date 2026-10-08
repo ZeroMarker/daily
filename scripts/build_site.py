@@ -118,7 +118,7 @@ def build():
     shutil.copyfile(ROOT / 'site' / 'style.css', OUTPUT / 'assets' / 'style.css')
     (OUTPUT / '.nojekyll').touch()
     for issue in issues:
-        contents = ''.join(f'<li><a href="#story-{n}">{esc(item["title"])}</a></li>' for n, item in enumerate(issue['news'], 1))
+        contents = ''.join(f'<li><a href="#story-{n}">{esc(item.get("articleTitle") or item["title"])}</a></li>' for n, item in enumerate(issue['news'], 1))
         stories = ''.join(card(item, n) for n, item in enumerate(issue['news'], 1))
         body = f'''{breadcrumbs(issue)}<div class="eyebrow">DAILY EDITION / {esc(issue['date'])}</div><section class="issue-heading"><h1>今日新闻，<br>一页读完。</h1><div><p>{len(issue['news'])} 条精选 · 科技与世界的每日切片</p><a class="button secondary" href="../videos/{issue['folder']}.html">观看当日日报视频 →</a></div></section>
 <div class="reading-layout"><aside><h2>本期目录</h2><ol>{contents}</ol><a href="../archive.html">浏览历史日报 →</a></aside><section class="stories" aria-label="本期新闻">{stories}</section></div>'''
@@ -139,14 +139,14 @@ def build():
         video_body = f'''{breadcrumbs(issue, video=True)}<div class="eyebrow">DAILY VIDEO / {esc(issue['date'])}</div><h1 class="video-heading">把日报，<br>听给你看。</h1>{player}'''
         (OUTPUT / 'videos' / f'{issue["folder"]}.html').write_text(shell(issue['date'] + ' 视频', video_body, '../', issue['folder']), encoding='utf-8')
     lead = latest['news'][0]
-    rows = ''.join(f'''<a class="archive-row" href="{issue_link(issue)}"><time datetime="{esc(issue['date'])}">{esc(issue['date'])}</time><div><h2>{esc(issue['news'][0]['title'])}</h2><p>{len(issue['news'])} 条新闻 · 阅读当日日报</p></div><span aria-hidden="true">↗</span></a>''' for issue in issues)
+    rows = ''.join(f'''<a class="archive-row" href="{issue_link(issue)}"><time datetime="{esc(issue['date'])}">{esc(issue['date'])}</time><div><h2>{esc(issue['news'][0].get('articleTitle') or issue['news'][0]['title'])}</h2><p>{len(issue['news'])} 条新闻 · 阅读当日日报</p></div><span aria-hidden="true">↗</span></a>''' for issue in issues)
     body = f'''<div class="eyebrow">THE DAILY MAGAZINE / 最新一期 · {esc(latest['date'])}</div>
 <section class="cover"><div><div class="cover-label">每天一页，看见变化</div><h1>科技向前。<br>世界更新。</h1><p>从人工智能到日常科技，读懂今天值得关注的重要消息。</p><a class="button" href="{issue_link(latest)}">阅读最新日报 <span>↗</span></a></div>
-<div class="cover-story"><span class="edition">{esc(latest['date'].replace('-', ' / '))}</span><div class="cover-mark" aria-hidden="true">AI<span>DAILY</span></div><span class="eyebrow">本期焦点 / {esc(lead.get('category', '新闻'))}</span><h2>{esc(lead['title'])}</h2><p>{esc(lead.get('screenText', ''))}</p></div></section>
+<div class="cover-story"><span class="edition">{esc(latest['date'].replace('-', ' / '))}</span><div class="cover-mark" aria-hidden="true">AI<span>DAILY</span></div><span class="eyebrow">本期焦点 / {esc(lead.get('category', '新闻'))}</span><h2>{esc(lead.get('articleTitle') or lead['title'])}</h2><p>{esc(lead.get('screenText', ''))}</p></div></section>
 <div class="section-title"><h2>日报目录</h2><span>{len(issues):02d} DAILY EDITIONS</span></div><section aria-label="日报目录">{rows}</section>
 <div class="archive-cta"><p>每一天，都是新的一期。</p><a href="./archive.html">浏览历史日报 →</a></div>'''
     (OUTPUT / 'index.html').write_text(shell('电子杂志', body, folder=latest['folder']), encoding='utf-8')
-    rows = ''.join(f'''<a class="archive-row" href="{issue_link(issue)}"><time datetime="{esc(issue['date'])}">{esc(issue['date'])}</time><div><h2>{esc(issue['news'][0]['title'])}</h2><p>{len(issue['news'])} 条新闻 · {' / '.join(esc(c) for c in dict.fromkeys(item.get('category', '新闻') for item in issue['news']))}</p></div><span aria-hidden="true">↗</span></a>''' for issue in issues)
+    rows = ''.join(f'''<a class="archive-row" href="{issue_link(issue)}"><time datetime="{esc(issue['date'])}">{esc(issue['date'])}</time><div><h2>{esc(issue['news'][0].get('articleTitle') or issue['news'][0]['title'])}</h2><p>{len(issue['news'])} 条新闻 · {' / '.join(esc(c) for c in dict.fromkeys(item.get('category', '新闻') for item in issue['news']))}</p></div><span aria-hidden="true">↗</span></a>''' for issue in issues)
     (OUTPUT / 'archive.html').write_text(shell('历史日报', f'<div class="eyebrow">THE ARCHIVE / {len(issues)} 期</div><h1 class="archive-heading">把每一天，<br>留在这里。</h1><section aria-label="历史日报">{rows}</section>', folder=latest['folder']), encoding='utf-8')
     print(f'Built {len(issues)} magazine issue(s) → {OUTPUT}')
 
