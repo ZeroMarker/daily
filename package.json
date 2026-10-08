@@ -10,7 +10,8 @@
     "voiceover": "python3 scripts/gen_voiceover.py",
     "validate": "python3 scripts/validate_sync.py",
     "render": "bash scripts/render.sh",
-    "render:draft": "bash scripts/sync_content.sh && remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error"
+    "render:draft": "bash scripts/sync_content.sh && remotion render NewsDaily out/preview.mp4 --scale=0.5 --concurrency=4 --log=error",
+    "build:pages": "python3 scripts/build_site.py"
   },
   "dependencies": {
     "@remotion/cli": "4.0.504",

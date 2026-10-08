@@ -89,3 +89,18 @@ RELEASE_DATE=2026_08_31 npm run render:draft    # 半分辨率草稿
 ## 发版
 
 见 [RELEASING.md](./RELEASING.md)：tag `<YYYY_MM_DD>-<semver>` 触发 GitHub Actions，从 `content/<日期>/` 渲染到 `out/<日期>/` 并上传 Release。
+
+## 电子杂志 · GitHub Pages
+
+在线阅读：[AI 新闻日报电子杂志](https://zeromarker.github.io/daily/)。包含杂志首页、每期新闻阅读页、历史归档和视频 Release 入口，支持手机阅读与打印。
+
+杂志直接读取已提交的 `content/<日期>/script.json`，按日期倒序展示；画面标题、关键点、摘要与视频共用内容。没有摘要时使用旁白文本。
+
+```bash
+npm run build:pages
+python3 -m http.server 8080 --directory dist/pages
+```
+
+打开 `http://localhost:8080` 预览。静态产物在 `dist/pages/`，不提交生成文件。
+
+`.github/workflows/pages.yml` 在 `main` 的内容、站点样式或构建脚本更新时自动构建并发布，也可在 Actions 手动运行。仓库 Pages 的发布来源使用 **GitHub Actions**。新增一期只需提交对应日期的 `script.json`；杂志发布不依赖配音或视频渲染。
