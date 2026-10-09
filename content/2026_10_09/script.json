@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-09",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月9日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "真香！做这个邪恶老奶版…",
+      "articleTitle": "真香！做这个邪恶老奶版「GTA 6」，我只花了5元！",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/502049.html",
+      "publishedAt": "2026-10-08T21:28:23+08:00",
+      "category": "AI",
+      "text": "量子位报道，真香！做这个邪恶老奶版「GTA 6」，我只花了5元！。Vidu Q4预览版，了解一下~。",
+      "screenText": "真香！做这个邪恶老奶版「GTA 6」，我只花了5元！",
+      "summary": "Vidu Q4预览版，了解一下~"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "《Artificial…",
+      "articleTitle": "《Artificial》奥尔特曼扮演者加菲尔德：演了这部戏，我开始怀疑 AI",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/010/786.htm",
+      "publishedAt": "2026-10-09T09:14:02+08:00",
+      "category": "科技",
+      "text": "IT之家报道，《Artificial》奥尔特曼扮演者加菲尔德：演了这部戏，我开始怀疑 AI。IT之家 10 月 9 日消息，当地时间 8 日，据《商业内幕》报道，安德鲁 · 加菲尔德在即将上映的电影《Artificial》中饰演 OpenAI CEO 萨姆 · 奥尔特曼…",
+      "screenText": "《Artificial》奥尔特曼扮演者加菲尔德：演了这…",
+      "summary": "IT之家 10 月 9 日消息，当地时间 8 日，据《商业内幕》报道，安德鲁 · 加菲尔德在即将上映的电影《Artificial》中饰演 OpenAI CEO 萨姆 · 奥尔特曼，可这段表演经历并没有让他更加看好 AI。 相反，出演这部电影 让他对 AI 产生了疑虑 。“我有点害怕，也不太信任这项技术。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "早报｜苹果定档10月1…",
+      "articleTitle": "早报｜苹果定档10月13日发布新品/三星手机业务或减产30%/保时捷计划削减9000个岗位",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1683244?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-09T08:51:15+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜苹果定档10月13日发布新品/三星手机业务或减产30%/保时捷计划削减9000个岗位。· 小米澎程上市 30 天锁单超过 7 万台 · Manus 母公司完成超 5 亿美元新一轮融资 · 小鹏 Robotaxi 定名「小鹏悠游」，下单小程序同步上线。",
+      "screenText": "早报｜苹果定档10月13日发布新品/三星手机业务或减产…",
+      "summary": "· 小米澎程上市 30 天锁单超过 7 万台 · Manus 母公司完成超 5 亿美元新一轮融资 · 小鹏 Robotaxi 定名「小鹏悠游」，下单小程序同步上线"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "Manus 成功融资逾…",
+      "articleTitle": "Manus 成功融资逾 5 亿美元",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85554",
+      "publishedAt": "2026-10-08T21:59:39+08:00",
+      "category": "科技",
+      "text": "Solidot报道，Manus 成功融资逾 5 亿美元。经历收购风波的中国 AI 企业 Manus 完成超过 5 亿美元融资，创始人肖弘也已解除边控，让这家一度卷入中美科技博弈、前途未卜的公司迎来“重启”，也彰显了中国资本市场对 AI 的热情。",
+      "screenText": "Manus 成功融资逾 5 亿美元",
+      "summary": "经历收购风波的中国 AI 企业 Manus 完成超过 5 亿美元融资，创始人肖弘也已解除边控，让这家一度卷入中美科技博弈、前途未卜的公司迎来“重启”，也彰显了中国资本市场对 AI 的热情。 Manus 的母公司蝴蝶效应，星期四（10月8日）在公众号宣布融资消息。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "iPhone Duo…",
+      "articleTitle": "iPhone Duo：苹果，终究还是对强迫症下手了",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/115282",
+      "publishedAt": "2026-10-08T17:28:11+08:00",
+      "category": "数码",
+      "text": "少数派报道，iPhone Duo：苹果，终究还是对强迫症下手了。Matrix首页推荐Matrix是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选Matrix最优质的文章，展示来自用户的最真实的体验和观点。文章代表作者个人观点。",
+      "screenText": "iPhone Duo：苹果，终究还是对强迫症下手了",
+      "summary": "Matrix首页推荐Matrix是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选Matrix最优质的文章，展示来自用户的最真实的体验和观点。文章代表作者个人观点"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
