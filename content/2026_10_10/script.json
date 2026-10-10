@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-10",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月10日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "Anthropic 向…",
+      "articleTitle": "Anthropic 向白宫通报一起智能体失控事件：AI 试图闯进多个美国政府网站",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/011/194.htm",
+      "publishedAt": "2026-10-10T09:07:47+08:00",
+      "category": "科技",
+      "text": "IT之家报道，Anthropic 向白宫通报一起智能体失控事件：AI 试图闯进多个美国政府网站。IT之家 10 月 10 日消息，据《纽约时报》当地时间 9 日报道，Anthropic 披露，旗下 AI 智能体 曾在无人指示的情况下 ，试图访问美国联邦、州及地方政府的多个…",
+      "screenText": "Anthropic 向白宫通报一起智能体失控事件：AI…",
+      "summary": "IT之家 10 月 10 日消息，据《纽约时报》当地时间 9 日报道，Anthropic 披露，旗下 AI 智能体 曾在无人指示的情况下 ，试图访问美国联邦、州及地方政府的多个网站。Anthropic 没有公布涉及的政府机构名称，已向白宫通报这些事件。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "早报｜供应链回应iPh…",
+      "articleTitle": "早报｜供应链回应iPhone 18 Pro砍单传闻/小米、华为手机同日调价/山姆拟限制亲友卡换绑",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1683465?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-10T08:14:25+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜供应链回应iPhone 18 Pro砍单传闻/小米、华为手机同日调价/山姆拟限制亲友卡换绑。· 豆包据称在建设水电燃气缴费等生活服务能力 · IDC：第三季度全球 PC 出货量下降 20.",
+      "screenText": "早报｜供应链回应iPhone 18 Pro砍单传闻/小…",
+      "summary": "· 豆包据称在建设水电燃气缴费等生活服务能力 · IDC：第三季度全球 PC 出货量下降 20.1%，旺季未现 · 曾被字节辞退的田柯宇获近 3000 万美元融资，研发世界模型"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "TRAE终于把Code…",
+      "articleTitle": "TRAE终于把Code和Work合并了",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/502426.html",
+      "publishedAt": "2026-10-09T17:19:57+08:00",
+      "category": "AI",
+      "text": "量子位报道，TRAE终于把Code和Work合并了。大写的方便。",
+      "screenText": "TRAE终于把Code和Work合并了",
+      "summary": "大写的方便"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "Let's Encry…",
+      "articleTitle": "Let's Encrypt 从 2027 年起切换到有效期为 64 天的证书",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85568",
+      "publishedAt": "2026-10-09T23:12:31+08:00",
+      "category": "科技",
+      "text": "Solidot报道，Let's Encrypt 从 2027 年起切换到有效期为 64 天的证书。Let’s Encrypt 去年宣布到 2028 年将证书有效期从现在的 90 天缩短至 45 天。",
+      "screenText": "Let's Encrypt 从 2027 年起切换到有…",
+      "summary": "Let’s Encrypt 去年宣布到 2028 年将证书有效期从现在的 90 天缩短至 45 天。此举是为了遵守 Certification Authority Browser Forum (CA/Browser Forum)通过的缩短证书有效期决议。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "本周看什么 | 最近值…",
+      "articleTitle": "本周看什么 | 最近值得一看的 11 部作品",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/115566",
+      "publishedAt": "2026-10-09T18:04:09+08:00",
+      "category": "数码",
+      "text": "少数派报道，本周看什么 | 最近值得一看的 11 部作品。📅本周新预告《寒夜怪谈》新预告10月1日，电影《寒夜怪谈》发布了新预告，将于11月13日在北美上映。缇·威斯特（《X》《珀尔》《玛克辛》）执导，约翰尼·德普回归奇幻巨制，将狄更斯名著《圣诞颂歌》改编为。",
+      "screenText": "本周看什么 | 最近值得一看的 11 部作品",
+      "summary": "📅本周新预告《寒夜怪谈》新预告10月1日，电影《寒夜怪谈》发布了新预告，将于11月13日在北美上映。缇·威斯特（《X》《珀尔》《玛克辛》）执导，约翰尼·德普回归奇幻巨制，将狄更斯名著《圣诞颂歌》改编为"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
