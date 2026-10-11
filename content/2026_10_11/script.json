@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-11",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月11日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "消息称 Netflix…",
+      "articleTitle": "消息称 Netflix 计划全球裁员约 5%，削减约 850 个岗位",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/011/557.htm",
+      "publishedAt": "2026-10-11T09:15:24+08:00",
+      "category": "科技",
+      "text": "IT之家报道，消息称 Netflix 计划全球裁员约 5%，削减约 850 个岗位。IT之家 10 月 11 日消息，据 Puck News 于当地时间 10 月 9 日报道，知名好莱坞内幕记者马修 · 贝洛尼（Matthew Belloni）引述知情人士消息称，Netf…",
+      "screenText": "消息称 Netflix 计划全球裁员约 5%，削减约…",
+      "summary": "IT之家 10 月 11 日消息，据 Puck News 于当地时间 10 月 9 日报道，知名好莱坞内幕记者马修 · 贝洛尼（Matthew Belloni）引述知情人士消息称，Netflix 将进行裁员。 据悉，作为公司架构重组的一部分， 本次调整将波及约 5% 的员工 ，最早可能于下周正式公布。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "早报｜曝苹果iPhon…",
+      "articleTitle": "早报｜曝苹果iPhone Duo加单30%/四部门拟禁全隐藏式车门把手/长鑫首款服务器产品或年底推出",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1683829?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-11T08:53:42+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜曝苹果iPhone Duo加单30%/四部门拟禁全隐藏式车门把手/长鑫首款服务器产品或年底推出。· 苹果第二期中国清洁能源基金扩容至 2.",
+      "screenText": "早报｜曝苹果iPhone Duo加单30%/四部门拟禁…",
+      "summary": "· 苹果第二期中国清洁能源基金扩容至 2.12 亿美元 · Netflix 称约 300 部作品已使用 AI，导演谈降本与创作取舍 · 长鑫披露 4F² 内存架构进展，首款服务器产品预计年底推出"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "特斯拉FSD，在欧洲被…",
+      "articleTitle": "特斯拉FSD，在欧洲被打回原形",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/502467.html",
+      "publishedAt": "2026-10-10T14:59:02+08:00",
+      "category": "AI",
+      "text": "量子位报道，特斯拉FSD，在欧洲被打回原形。马斯克反而发文道谢？",
+      "screenText": "特斯拉FSD，在欧洲被打回原形",
+      "summary": "马斯克反而发文道谢？"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "DDR4 内存条再次回归",
+      "articleTitle": "DDR4 内存条再次回归",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85574",
+      "publishedAt": "2026-10-10T17:05:17+08:00",
+      "category": "科技",
+      "text": "Solidot报道，DDR4 内存条再次回归。由于 DDR5 内存条过于昂贵，上一代的 DDR4 内存条再次回归。技嘉宣布将于 2027 年初上市支持 DDR4 内存的新的 Intel LGA 1700 主板，而今年八月技嘉宣布推出了支持 DDR4 内存的新 AMD AM4 主…",
+      "screenText": "DDR4 内存条再次回归",
+      "summary": "由于 DDR5 内存条过于昂贵，上一代的 DDR4 内存条再次回归。技嘉宣布将于 2027 年初上市支持 DDR4 内存的新的 Intel LGA 1700 主板，而今年八月技嘉宣布推出了支持 DDR4 内存的新 AMD AM4 主板。DDR4 内存于 2014 年上市，很快被新一代的 DDR5 内存取代。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "App+1｜专注星空…",
+      "articleTitle": "App+1｜专注星空：让「少刷手机」这件事更愉悦一点",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/115237",
+      "publishedAt": "2026-10-10T10:19:52+08:00",
+      "category": "数码",
+      "text": "少数派报道，App+1｜专注星空：让「少刷手机」这件事更愉悦一点。把决定使用时长的时机，放到每次打开应用之前。",
+      "screenText": "App+1｜专注星空：让「少刷手机」这件事更愉悦一点",
+      "summary": "把决定使用时长的时机，放到每次打开应用之前。"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
