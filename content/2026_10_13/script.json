@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-13",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月13日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "南亚科技：DRAM 内…",
+      "articleTitle": "南亚科技：DRAM 内存短缺将持续到 2028 年初",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/012/163.htm",
+      "publishedAt": "2026-10-13T09:16:35+08:00",
+      "category": "科技",
+      "text": "IT之家报道，南亚科技：DRAM 内存短缺将持续到 2028 年初。IT之家 10 月 13 日消息，DRAM 制造商南亚科技 (Nanya) 昨日举行了 2026Q3 法人说明会，会上企业高管与金融分析师进行了交流。",
+      "screenText": "南亚科技：DRAM 内存短缺将持续到 2028 年初",
+      "summary": "IT之家 10 月 13 日消息，DRAM 制造商南亚科技 (Nanya) 昨日举行了 2026Q3 法人说明会，会上企业高管与金融分析师进行了交流。 南亚科技表示，AI 正为 DRAM 行业带来结构性变化，当前的紧缺态势将持续到 2028 年初。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "早报｜对话库克：App…",
+      "articleTitle": "早报｜对话库克：Apple Watch要做「个人守护者」/华为折叠屏出货量突破2000万台/DeepSeek拟入局具身智能",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1683909?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-13T08:17:03+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜对话库克：Apple Watch要做「个人守护者」/华为折叠屏出货量突破2000万台/DeepSeek拟入局具身智能。· 博通 CEO：晶圆与内存短缺正在缓解，AI 扩张更受资金约束 · 9 月乘用车零售同比下降 28%，新能源渗透率升至 67% ·…",
+      "screenText": "早报｜对话库克：Apple Watch要做「个人守护者…",
+      "summary": "· 博通 CEO：晶圆与内存短缺正在缓解，AI 扩张更受资金约束 · 9 月乘用车零售同比下降 28%，新能源渗透率升至 67% · 大众 CEO 呼吁加强合作，应对中国车企竞争"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "派早报：一加发布一加…",
+      "articleTitle": "派早报：一加发布一加 16，Google 推出 Fitbit Edge 等",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/116033",
+      "publishedAt": "2026-10-13T08:01:49+08:00",
+      "category": "数码",
+      "text": "少数派报道，派早报：一加发布一加 16，Google 推出 Fitbit Edge 等。少数派的近期动态给电话加上「辅助驾驶」？我们想听听你的意见。我们将从提交的问卷中挑选40份用心回答，每份送出50元面值京东卡。",
+      "screenText": "派早报：一加发布一加 16，Google 推出 Fit…",
+      "summary": "少数派的近期动态给电话加上「辅助驾驶」？我们想听听你的意见。我们将从提交的问卷中挑选40份用心回答，每份送出50元面值京东卡。参与调研能让AI助手通过自然语言指令直接与您的Quote/0摘录墨水屏交互"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "华为AI靠RSI通关2…",
+      "articleTitle": "华为AI靠RSI通关25款游戏！操作次数比人类少56%",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/502654.html",
+      "publishedAt": "2026-10-12T13:48:36+08:00",
+      "category": "AI",
+      "text": "量子位报道，华为AI靠RSI通关25款游戏！操作次数比人类少56%。游戏打到21:0，AI甚至不用再调用大模型了。",
+      "screenText": "华为AI靠RSI通关25款游戏！操作次数比人类少56%",
+      "summary": "游戏打到21:0，AI甚至不用再调用大模型了"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "美国核反应堆开始整合…",
+      "articleTitle": "美国核反应堆开始整合 AI 助手",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85592",
+      "publishedAt": "2026-10-13T00:04:33+08:00",
+      "category": "科技",
+      "text": "Solidot报道，美国核反应堆开始整合 AI 助手。加州公司 Atomic Canyon 与核工业组织合作推出了针对核反应堆运营的 AI 助手 NIVA——代表 Nuclear Industry Virtual Assistant。",
+      "screenText": "美国核反应堆开始整合 AI 助手",
+      "summary": "加州公司 Atomic Canyon 与核工业组织合作推出了针对核反应堆运营的 AI 助手 NIVA——代表 Nuclear Industry Virtual Assistant。该 AI 助手已进行试点，目前向美国全部 94 座核反应堆开放使用。"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
