@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-14",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月14日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "iPhone断网跑35…",
+      "articleTitle": "iPhone断网跑35B多模态！国产开源新模型，只占3G内存",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/503109.html",
+      "publishedAt": "2026-10-14T04:55:15+08:00",
+      "category": "AI",
+      "text": "量子位报道，iPhone断网跑35B多模态！国产开源新模型，只占3G内存。面壁开源MiniCPM-V 4.7。",
+      "screenText": "iPhone断网跑35B多模态！",
+      "summary": "面壁开源MiniCPM-V 4.7"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "CDPR 向玩家保证…",
+      "articleTitle": "CDPR 向玩家保证，《巫师 3：重制版》Switch 2 版补丁即将到来",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/012/658.htm",
+      "publishedAt": "2026-10-14T09:01:10+08:00",
+      "category": "科技",
+      "text": "IT之家报道，CDPR 向玩家保证，《巫师 3：重制版》Switch 2 版补丁即将到来。IT之家 10 月 14 日消息，CDPR 为 PS5 和 PS5 Pro 版《巫师 3：重制版》推出了 5.01b 热修复补丁。",
+      "screenText": "CDPR 向玩家保证，《巫师 3：重制版》Switch…",
+      "summary": "IT之家 10 月 14 日消息，CDPR 为 PS5 和 PS5 Pro 版《巫师 3：重制版》推出了 5.01b 热修复补丁。更新说明只有一项内容：改善游戏稳定性，让玩家获得更加可靠的游戏体验。 补丁发布后，部分等待任天堂 Switch 2 版《巫师 3》更新的玩家表达了担忧。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "早报｜苹果发布十多款「…",
+      "articleTitle": "早报｜苹果发布十多款「果家」新品/Gemini 4来了，写代码更省心/3999元，阶跃智能体手机发布",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1684137?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-14T08:08:24+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜苹果发布十多款「果家」新品/Gemini 4来了，写代码更省心/3999元，阶跃智能体手机发布。· 字节跳动成立模型安全部门，负责人直接向吴永辉汇报 · Visa 获批筹备中国境内银行卡清算机构 · 星尘智能完成 10 亿元融资，估值达 150 亿元。",
+      "screenText": "早报｜苹果发布十多款「果家」新品/Gemini 4来了…",
+      "summary": "· 字节跳动成立模型安全部门，负责人直接向吴永辉汇报 · Visa 获批筹备中国境内银行卡清算机构 · 星尘智能完成 10 亿元融资，估值达 150 亿元"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "蜜蜂的螫针如何泵送毒液",
+      "articleTitle": "蜜蜂的螫针如何泵送毒液",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85603",
+      "publishedAt": "2026-10-13T23:25:58+08:00",
+      "category": "科技",
+      "text": "Solidot报道，蜜蜂的螫针如何泵送毒液。众所周知，工蜂蜇人之后会将螫针留在皮肤上自己飞走，而螫针会自行穿透皮肤组织泵送毒液。发表在 PNAS 期刊上的一项研究利用高速摄像技术揭示了蜜蜂螫针如何泵送毒液的过程。",
+      "screenText": "蜜蜂的螫针如何泵送毒液",
+      "summary": "众所周知，工蜂蜇人之后会将螫针留在皮肤上自己飞走，而螫针会自行穿透皮肤组织泵送毒液。发表在 PNAS 期刊上的一项研究利用高速摄像技术揭示了蜜蜂螫针如何泵送毒液的过程。工蜂留下螫针的现象被称为自切（autotomy），自然界里相当罕见。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "社区速递 161 |…",
+      "articleTitle": "社区速递 161 | 小米手表 S5、EVA 联名香水与换机热议",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/116068",
+      "publishedAt": "2026-10-13T17:00:00+08:00",
+      "category": "数码",
+      "text": "少数派报道，社区速递 161 | 小米手表 S5、EVA 联名香水与换机热议。除了首页时间流和侧栏的精选展位，少数派Matrix社区还有很多优秀内容因条件所限无法得到有效曝光，因此我们决定重启Matrix周报，并在此基础上添加更多社区内容、作者投稿新玩意呈现给大家。",
+      "screenText": "社区速递 161 | 小米手表 S5、EVA 联名香水…",
+      "summary": "除了首页时间流和侧栏的精选展位，少数派Matrix社区还有很多优秀内容因条件所限无法得到有效曝光，因此我们决定重启Matrix周报，并在此基础上添加更多社区内容、作者投稿新玩意呈现给大家。上周社区速递"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
