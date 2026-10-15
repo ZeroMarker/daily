@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-15",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月15日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "索尼强制要求 PS5…",
+      "articleTitle": "索尼强制要求 PS5 升级 14.10 固件才能登录 PSN，破解主机被迫二选一",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/013/176.htm",
+      "publishedAt": "2026-10-15T09:00:30+08:00",
+      "category": "科技",
+      "text": "IT之家报道，索尼强制要求 PS5 升级 14.10 固件才能登录 PSN，破解主机被迫二选一。IT之家 10 月 15 日消息，索尼 PlayStation 主机的盗版与自制程序爱好者如今不得不做出取舍。索尼现在要求用户必须安装最新 14.",
+      "screenText": "索尼强制要求 PS5 升级 14.",
+      "summary": "IT之家 10 月 15 日消息，索尼 PlayStation 主机的盗版与自制程序爱好者如今不得不做出取舍。索尼现在要求用户必须安装最新 14.10 版本固件才能登录 PSN。已经破解、利用漏洞的 PS5 主机，将无法联机游玩已购游戏，也不能使用各类网络功能。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "早报｜iPhone D…",
+      "articleTitle": "早报｜iPhone Duo完成大模型备案，有望12月上线/企业微信与WorkBuddy打通/OPPO与Manus官宣合作",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1684374?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-15T08:13:28+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜iPhone Duo完成大模型备案，有望12月上线/企业微信与WorkBuddy打通/OPPO与Manus官宣合作。· 苹果公布 HomeView 维修费：保修外服务预估 279 美元 · ASML 第三季度营收 116.",
+      "screenText": "早报｜iPhone Duo完成大模型备案，有望12月上…",
+      "summary": "· 苹果公布 HomeView 维修费：保修外服务预估 279 美元 · ASML 第三季度营收 116.62 亿欧元，计划扩产应对 AI 需求 · 9 月消费电子价格普涨，存储设备同比上涨 46.7%"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "抢先盘点2026全球开…",
+      "articleTitle": "抢先盘点2026全球开发者先锋大会暨国际具身智能技能大赛十大亮点！",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/503294.html",
+      "publishedAt": "2026-10-14T18:41:47+08:00",
+      "category": "AI",
+      "text": "量子位报道，抢先盘点2026全球开发者先锋大会暨国际具身智能技能大赛十大亮点！。“具身进实景，劳动最光荣”。",
+      "screenText": "抢先盘点2026全球开发者先锋大会暨国际具身智能技能大…",
+      "summary": "“具身进实景，劳动最光荣”"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "研究估计到 2050…",
+      "articleTitle": "研究估计到 2050 年每年新增痴呆症人数将会翻倍",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85615",
+      "publishedAt": "2026-10-15T00:46:34+08:00",
+      "category": "科技",
+      "text": "Solidot报道，研究估计到 2050 年每年新增痴呆症人数将会翻倍。一项新研究估计，2023 年有 1140 万人患上痴呆症，到 2050 年预计这一数字将增加一倍以上，新增痴呆症人数将达到 2470 万。",
+      "screenText": "研究估计到 2050 年每年新增痴呆症人数将会翻倍",
+      "summary": "一项新研究估计，2023 年有 1140 万人患上痴呆症，到 2050 年预计这一数字将增加一倍以上，新增痴呆症人数将达到 2470 万。研究发现女性的痴呆症发病率高于男性，且低中收入国家的发病率远高于高收入国家。在校正年龄因素后，女性发病为每千人年 10.6 例，男性为 8.6 例。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "认知心理学背后的播客剪…",
+      "articleTitle": "认知心理学背后的播客剪辑技巧",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/114861",
+      "publishedAt": "2026-10-14T17:33:49+08:00",
+      "category": "数码",
+      "text": "少数派报道，认知心理学背后的播客剪辑技巧。为什么剪辑时会时常出现爆音？为什么有些地方剪辑后意思接得上，听起来却觉得别扭？为什么有些地方稍微动一下就会不自然？",
+      "screenText": "认知心理学背后的播客剪辑技巧",
+      "summary": "为什么剪辑时会时常出现爆音？为什么有些地方剪辑后意思接得上，听起来却觉得别扭？为什么有些地方稍微动一下就会不自然？"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
