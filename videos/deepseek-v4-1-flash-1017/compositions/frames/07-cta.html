@@ -1,0 +1,55 @@
+<template>
+<div id="root" data-composition-id="07-cta" data-start="0" data-duration="4.896" data-width="1080" data-height="1920">
+<style>@font-face{font-family:"DS Serif";src:url("../../assets/fonts/NotoSerifSC-Regular.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"DS Serif";src:url("../../assets/fonts/NotoSerifSC-Bold.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"DS Sans";src:url("../../assets/fonts/NotoSansSC-Regular.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"DS Sans";src:url("../../assets/fonts/NotoSansSC-Bold.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"DS Mono";src:url("../../assets/fonts/NotoSansMonoSC-Regular.woff2") format("woff2");font-weight:400}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;color:#1F2BE0;font-family:"DS Sans",sans-serif}
+#root .clip{position:absolute;inset:0}
+#f07-cta-bg{background-color:#F0EBDE;background-image:linear-gradient(rgba(31,43,224,0.10) 1px,transparent 1px),linear-gradient(90deg,rgba(31,43,224,0.10) 1px,transparent 1px);background-size:43.2px 43.2px}
+.f07-cta-hl{position:absolute;left:43px;right:43px;height:2px;background:#1F2BE0}
+.f07-cta-tag{position:absolute;font-family:"DS Mono",monospace;font-size:24px;letter-spacing:.06em}
+.f07-cta-a{position:absolute}
+.f07-cta-serif{font-family:"DS Serif",serif}
+.f07-cta-mono{font-family:"DS Mono",monospace;font-variant-numeric:tabular-nums}
+.f07-cta-note{position:absolute;left:72px;right:72px;font-family:"DS Mono",monospace;font-size:24px;color:#5560E5;letter-spacing:.04em}
+</style>
+<div id="f07-cta-bg" class="clip" data-start="0" data-duration="4.896" data-track-index="0"></div>
+<div id="f07-cta-stage" class="clip" data-start="0" data-duration="4.896" data-track-index="1">
+<div class="f07-cta-hl" style="top:60px"></div><div class="f07-cta-hl" style="top:1540px"></div>
+<div class="f07-cta-tag" style="left:72px;top:84px">DEEPSEEK · 2026.10.17</div>
+<div class="f07-cta-tag" style="right:72px;top:84px">V4.1-FLASH-1017</div>
+<div class="f07-cta-tag" style="right:72px;top:1556px">07 / 07</div>
+<div class="f07-cta-tag" style="left:72px;top:1556px">CHANGE LOG</div>
+
+<div class="f07-cta-a f07-cta-serif" id="f07-cta-h" style="left:72px;top:330px;font-size:150px;line-height:1.05">现在可用</div>
+<div class="f07-cta-a" id="f07-cta-card" style="left:72px;right:72px;top:600px;background:#E6E0CE;border:4px solid #1F2BE0;padding:60px 56px">
+<div class="f07-cta-mono" style="font-size:36px;color:#5560E5">model =</div>
+<div class="f07-cta-mono" style="font-size:96px;margin-top:16px;white-space:nowrap" id="f07-cta-code"></div></div>
+<div class="f07-cta-a" id="f07-cta-n1" style="left:72px;top:1000px;font-size:46px;font-weight:700">推荐搭配 DeepSeek Harness 0.2.1-rc.1+</div>
+<div class="f07-cta-a f07-cta-mono" id="f07-cta-n2" style="left:72px;top:1090px;font-size:40px">V4.1-Flash-1017 · 2026.10.17</div>
+<div class="f07-cta-a" id="f07-cta-qr" style="right:72px;top:1250px;width:180px;height:180px;background:conic-gradient(#1F2BE0 25%,transparent 0 50%,#1F2BE0 0 75%,transparent 0) 0 0/45px 45px"></div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function(){
+var q=function(s){return document.querySelector('[data-composition-id="07-cta"] '+s)};
+var tl=gsap.timeline({paused:true});
+var E="power3.out";
+function up(s,t,d){tl.fromTo(q(s),{opacity:0,y:60},{opacity:1,y:0,duration:d||0.6,ease:E},t)}
+function fade(s,t){tl.fromTo(q(s),{opacity:0},{opacity:1,duration:0.5,ease:E},t)}
+function count(s,from,to,t,d,dec){var o={v:from};var el=q(s);el.textContent=from.toFixed(dec);tl.to(o,{v:to,duration:d,ease:"power2.out",onUpdate:function(){el.textContent=o.v.toFixed(dec)}},t)}
+function type(s,text,t,cps){var el=q(s);var o={n:0};el.textContent="";tl.to(o,{n:text.length,duration:text.length/cps,ease:"none",onUpdate:function(){el.textContent=text.slice(0,Math.round(o.n))}},t)}
+
+up("#f07-cta-h",0.05);up("#f07-cta-card",0.5);
+type("#f07-cta-code",'"deepseek-flash"',0.9,13);
+up("#f07-cta-n1",2.6);fade("#f07-cta-n2",3.1);fade("#f07-cta-qr",3.4);
+
+window.__timelines=window.__timelines||{};
+window.__timelines["07-cta"]=tl;
+})();
+</script>
+</div>
+</template>

@@ -1,0 +1,57 @@
+<template>
+<div id="root" data-composition-id="02-unchanged" data-start="0" data-duration="7.196" data-width="1080" data-height="1920">
+<style>@font-face{font-family:"DS Serif";src:url("../../assets/fonts/NotoSerifSC-Regular.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"DS Serif";src:url("../../assets/fonts/NotoSerifSC-Bold.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"DS Sans";src:url("../../assets/fonts/NotoSansSC-Regular.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"DS Sans";src:url("../../assets/fonts/NotoSansSC-Bold.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"DS Mono";src:url("../../assets/fonts/NotoSansMonoSC-Regular.woff2") format("woff2");font-weight:400}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;color:#1F2BE0;font-family:"DS Sans",sans-serif}
+#root .clip{position:absolute;inset:0}
+#f02-unchanged-bg{background-color:#F0EBDE;background-image:linear-gradient(rgba(31,43,224,0.10) 1px,transparent 1px),linear-gradient(90deg,rgba(31,43,224,0.10) 1px,transparent 1px);background-size:43.2px 43.2px}
+.f02-unchanged-hl{position:absolute;left:43px;right:43px;height:2px;background:#1F2BE0}
+.f02-unchanged-tag{position:absolute;font-family:"DS Mono",monospace;font-size:24px;letter-spacing:.06em}
+.f02-unchanged-a{position:absolute}
+.f02-unchanged-serif{font-family:"DS Serif",serif}
+.f02-unchanged-mono{font-family:"DS Mono",monospace;font-variant-numeric:tabular-nums}
+.f02-unchanged-note{position:absolute;left:72px;right:72px;font-family:"DS Mono",monospace;font-size:24px;color:#5560E5;letter-spacing:.04em}
+.f02-unchanged-card{left:72px;right:72px;height:220px;background:#E6E0CE;border:3px solid #1F2BE0;display:flex;align-items:center;justify-content:space-between;padding:0 56px}
+.f02-unchanged-k{font-size:56px;font-weight:700} .f02-unchanged-v{font-size:84px;font-weight:700}</style>
+<div id="f02-unchanged-bg" class="clip" data-start="0" data-duration="7.196" data-track-index="0"></div>
+<div id="f02-unchanged-stage" class="clip" data-start="0" data-duration="7.196" data-track-index="1">
+<div class="f02-unchanged-hl" style="top:60px"></div><div class="f02-unchanged-hl" style="top:1540px"></div>
+<div class="f02-unchanged-tag" style="left:72px;top:84px">DEEPSEEK · 2026.10.17</div>
+<div class="f02-unchanged-tag" style="right:72px;top:84px">V4.1-FLASH-1017</div>
+<div class="f02-unchanged-tag" style="right:72px;top:1556px">02 / 07</div>
+<div class="f02-unchanged-tag" style="left:72px;top:1556px">CHANGE LOG</div>
+
+<div class="f02-unchanged-a f02-unchanged-serif" id="f02-unchanged-h" style="left:72px;top:250px;font-size:120px;line-height:1.1">无需迁移</div>
+<div class="f02-unchanged-a f02-unchanged-card" id="f02-unchanged-c1" style="top:470px"><div class="f02-unchanged-k">调用方式</div><div class="f02-unchanged-v">不变 ✓</div></div>
+<div class="f02-unchanged-a f02-unchanged-card" id="f02-unchanged-c2" style="top:730px"><div class="f02-unchanged-k">价格</div><div class="f02-unchanged-v">不变 ✓</div></div>
+<div class="f02-unchanged-a f02-unchanged-card" id="f02-unchanged-c3" style="top:990px;background:#1F2BE0;color:#F0EBDE"><div class="f02-unchanged-k">model</div><div class="f02-unchanged-v f02-unchanged-mono" style="font-size:54px" id="f02-unchanged-code"></div></div>
+<div class="f02-unchanged-a" id="f02-unchanged-rule" style="left:72px;right:72px;top:1300px;height:2px;background:#1F2BE0;transform-origin:left"></div>
+<div class="f02-unchanged-a" id="f02-unchanged-sync" style="left:72px;top:1330px;font-size:52px;font-weight:700">官网 · APP 同步更新</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function(){
+var q=function(s){return document.querySelector('[data-composition-id="02-unchanged"] '+s)};
+var tl=gsap.timeline({paused:true});
+var E="power3.out";
+function up(s,t,d){tl.fromTo(q(s),{opacity:0,y:60},{opacity:1,y:0,duration:d||0.6,ease:E},t)}
+function fade(s,t){tl.fromTo(q(s),{opacity:0},{opacity:1,duration:0.5,ease:E},t)}
+function count(s,from,to,t,d,dec){var o={v:from};var el=q(s);el.textContent=from.toFixed(dec);tl.to(o,{v:to,duration:d,ease:"power2.out",onUpdate:function(){el.textContent=o.v.toFixed(dec)}},t)}
+function type(s,text,t,cps){var el=q(s);var o={n:0};el.textContent="";tl.to(o,{n:text.length,duration:text.length/cps,ease:"none",onUpdate:function(){el.textContent=text.slice(0,Math.round(o.n))}},t)}
+
+up("#f02-unchanged-h",0);
+up("#f02-unchanged-c1",0.25);up("#f02-unchanged-c2",1.2);up("#f02-unchanged-c3",2.5);
+type("#f02-unchanged-code",'"deepseek-flash"',2.8,16);
+tl.fromTo(q("#f02-unchanged-rule"),{scaleX:0},{scaleX:1,duration:0.6,ease:E},4.3);
+up("#f02-unchanged-sync",4.5);
+
+window.__timelines=window.__timelines||{};
+window.__timelines["02-unchanged"]=tl;
+})();
+</script>
+</div>
+</template>

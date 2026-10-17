@@ -1,0 +1,233 @@
+<template id="captions-template" data-composition-id="captions" data-width="1080" data-height="1920">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      :root {
+      --paper: #F0EBDE;
+      --paper-2: #E6E0CE;
+      --ink: #1F2BE0;
+      --ink-soft: #5560E5;
+      --grid: rgba(31,43,224,0.10);
+      --ink-faint: rgba(31,43,224,0.18);
+      --cap-ink: #1F2BE0;
+      --cap-canvas: #F0EBDE;
+      --cap-accent: #5560E5;
+      --cap-accent-2: #E6E0CE;
+      --font-display: "Newsreader", system-ui, serif;
+      --font-body: "Hanken Grotesk", system-ui, sans-serif;
+      --cap-band-top: 1600px;
+      --cap-band-height: 320px;
+      }
+    </style>
+
+<style>
+@font-face{font-family:"DS Sans";src:url("../assets/fonts/NotoSansSC-Bold.woff2") format("woff2");font-weight:400 900}
+
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE cream card — graph-paper grid behind the line + top/bottom 1.5px cobalt
+     hairlines (cobalt's frame furniture), square corners, NO drop shadow */
+  .caption-pill {
+    position: relative;
+    max-width: 78%;
+    padding: 20px 44px 24px;
+    background: var(--cap-canvas, #f0ebde);
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cap-ink, #1f2be0) 10%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--cap-ink, #1f2be0) 10%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 16px 16px;
+    border-top: 1.5px solid var(--cap-ink, #1f2be0);
+    border-bottom: 1.5px solid var(--cap-ink, #1f2be0);
+    border-radius: 0;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "DS Sans", sans-serif;
+    font-weight: 400;
+    font-size: clamp(40px, 4.4vw, 58px);
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+  }
+
+  /* upcoming — faint cobalt, no block */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.06em;
+    color: color-mix(in srgb, var(--cap-ink, #1f2be0) 42%, var(--cap-canvas, #f0ebde));
+  }
+  /* current word — THE cobalt flat block (risograph knockout): a solid cobalt fill
+     via box-shadow spread = a hard square block w/o layout shift, no blur; the cream
+     paper reads on top */
+  .caption-word.is-active {
+    color: var(--cap-canvas, #f0ebde);
+    background: var(--cap-ink, #1f2be0);
+    box-shadow: 0 0 0 0.06em var(--cap-ink, #1f2be0);
+  }
+  /* already spoken — solid cobalt ink, block cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #1f2be0);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — Newsreader italic, cobalt's only display inflection */
+  .caption-word.cap-brand {
+    font-style: italic;
+  }
+  /* numerals / data — the body sans voice, slightly recessed */
+  .caption-word.cap-num {
+    font-family: "DS Sans", sans-serif;
+    color: color-mix(in srgb, var(--cap-ink, #1f2be0) 72%, var(--cap-canvas, #f0ebde));
+  }
+  /* emphasis — a cobalt hairline underline (no second hue; emphasis is the ink) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--cap-accent, #5560e5);
+    text-underline-offset: 0.1em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 92%;
+    }
+    .caption-line {
+      font-size: clamp(34px, 5.4vw, 48px);
+    }
+  }
+</style>
+
+<div
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="52.92"
+  data-fps="30"
+  data-width="1080"
+  data-height="1920"
+>
+  <div class="caption-layer" aria-hidden="true">
+    <div id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0.095,"end":1.922,"text":"DeepSeek V4.1 Flash，","words":[{"id":"caption-word-0-0","text":"DeepSeek V4.1 Flash，","start":0.095,"end":1.802}]},{"id":"caption-group-1","frame":1,"start":1.992,"end":2.904,"text":"刚刚升级—","words":[{"id":"caption-word-1-0","text":"刚刚升级—","start":1.992,"end":2.784}]},{"id":"caption-group-2","frame":1,"start":2.974,"end":4.132,"text":"1017 版本，","words":[{"id":"caption-word-2-0","text":"1017 版本，","start":2.974,"end":4.012}]},{"id":"caption-group-3","frame":1,"start":4.235,"end":4.724,"text":"来了。","words":[{"id":"caption-word-3-0","text":"来了。","start":4.235,"end":4.604}]},{"id":"caption-group-4","frame":2,"start":5.207,"end":6.32,"text":"调用方式不变，","words":[{"id":"caption-word-4-0","text":"调用方式不变，","start":5.207,"end":6.2}]},{"id":"caption-group-5","frame":2,"start":6.401,"end":7.202,"text":"价格不变，","words":[{"id":"caption-word-5-0","text":"价格不变，","start":6.401,"end":7.082}]},{"id":"caption-group-6","frame":2,"start":7.372,"end":9.423,"text":"模型名还是 deepseek-flash；","words":[{"id":"caption-word-6-0","text":"模型名还是 deepseek-flash；","start":7.372,"end":9.303}]},{"id":"caption-group-7","frame":2,"start":9.57,"end":11.398,"text":"官网和 APP 已同步更新。","words":[{"id":"caption-word-7-0","text":"官网和 APP 已同步更新。","start":9.57,"end":11.278}]},{"id":"caption-group-8","frame":3,"start":11.903,"end":13.82,"text":"重点在 Agent 和编程：","words":[{"id":"caption-word-8-0","text":"重点在 Agent 和编程：","start":11.903,"end":13.7}]},{"id":"caption-group-9","frame":3,"start":13.934,"end":15.382,"text":"Terminal-Bench 4.0，","words":[{"id":"caption-word-9-0","text":"Terminal-Bench 4.0，","start":13.934,"end":15.262}]},{"id":"caption-group-10","frame":3,"start":15.463,"end":17.904,"text":"从 31.2 涨到 42.3；","words":[{"id":"caption-word-10-0","text":"从 31.2 涨到 42.3；","start":15.463,"end":17.784}]},{"id":"caption-group-11","frame":3,"start":18.052,"end":19.009,"text":"ProgramBench，","words":[{"id":"caption-word-11-0","text":"ProgramBench，","start":18.052,"end":18.889}]},{"id":"caption-group-12","frame":3,"start":19.074,"end":21.448,"text":"从 20.3 涨到 29.1。","words":[{"id":"caption-word-12-0","text":"从 20.3 涨到 29.1。","start":19.074,"end":21.328}]},{"id":"caption-group-13","frame":4,"start":21.935,"end":24.689,"text":"推理、工具和视觉也全线上涨：","words":[{"id":"caption-word-13-0","text":"推理、工具和视觉也全线上涨：","start":21.935,"end":24.569}]},{"id":"caption-group-14","frame":4,"start":24.836,"end":26.418,"text":"HLE 42.6，","words":[{"id":"caption-word-14-0","text":"HLE 42.6，","start":24.836,"end":26.298}]},{"id":"caption-group-15","frame":4,"start":26.577,"end":28.662,"text":"DeepSWE 77.0，","words":[{"id":"caption-word-15-0","text":"DeepSWE 77.0，","start":26.577,"end":28.542}]},{"id":"caption-group-16","frame":4,"start":28.749,"end":30.543,"text":"Automation-Bench 60.5，","words":[{"id":"caption-word-16-0","text":"Automation-Bench 60.5，","start":28.749,"end":30.423}]},{"id":"caption-group-17","frame":4,"start":30.668,"end":32.351,"text":"BabyVision 92.5。","words":[{"id":"caption-word-17-0","text":"BabyVision 92.5。","start":30.668,"end":32.231}]},{"id":"caption-group-18","frame":5,"start":32.855,"end":33.421,"text":"而且，","words":[{"id":"caption-word-18-0","text":"而且，","start":32.855,"end":33.301}]},{"id":"caption-group-19","frame":5,"start":33.614,"end":35.731,"text":"任务耗时和输出长度都降了—","words":[{"id":"caption-word-19-0","text":"任务耗时和输出长度都降了—","start":33.614,"end":35.611}]},{"id":"caption-group-20","frame":5,"start":35.868,"end":36.457,"text":"更快，","words":[{"id":"caption-word-20-0","text":"更快，","start":35.868,"end":36.337}]},{"id":"caption-group-21","frame":5,"start":36.527,"end":37.238,"text":"也更省。","words":[{"id":"caption-word-21-0","text":"也更省。","start":36.527,"end":37.118}]},{"id":"caption-group-22","frame":6,"start":37.727,"end":38.46,"text":"同一天，","words":[{"id":"caption-word-22-0","text":"同一天，","start":37.727,"end":38.34}]},{"id":"caption-group-23","frame":6,"start":38.631,"end":41.463,"text":"DeepSeek 还开放了自研搜索 API：","words":[{"id":"caption-word-23-0","text":"DeepSeek 还开放了自研搜索 API：","start":38.631,"end":41.343}]},{"id":"caption-group-24","frame":6,"start":41.644,"end":43.282,"text":"每天处理数亿次请求，","words":[{"id":"caption-word-24-0","text":"每天处理数亿次请求，","start":41.644,"end":43.162}]},{"id":"caption-group-25","frame":6,"start":43.385,"end":44.755,"text":"索引数千亿网页，","words":[{"id":"caption-word-25-0","text":"索引数千亿网页，","start":43.385,"end":44.635}]},{"id":"caption-group-26","frame":6,"start":44.831,"end":47.629,"text":"过滤 SEO 垃圾和低质 AI 内容。","words":[{"id":"caption-word-26-0","text":"过滤 SEO 垃圾和低质 AI 内容。","start":44.831,"end":47.509}]},{"id":"caption-group-27","frame":7,"start":48.119,"end":48.685,"text":"现在，","words":[{"id":"caption-word-27-0","text":"现在，","start":48.119,"end":48.565}]},{"id":"caption-group-28","frame":7,"start":48.855,"end":52.524,"text":"调用 deepseek-flash 就能体验 1017 新版本。","words":[{"id":"caption-word-28-0","text":"调用 deepseek-flash 就能体验 1017 新版本。","start":48.855,"end":52.404}]}];
+  var DURATION = 52.92;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.1, ease: "power3.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+</template>

@@ -1,0 +1,41 @@
+{
+  "provider": "auto",
+  "speed": "1.3",
+  "lines": [
+    {
+      "id": "01",
+      "text": "DeepSeek V四点一 Flash，刚刚升级——一零一七版本，来了。"
+    },
+    {
+      "id": "02",
+      "text": "调用方式不变，价格不变，模型名照旧；官网和 APP 也已同步更新。"
+    },
+    {
+      "id": "03",
+      "text": "重点在智能体和编程：终端任务基准，从三十一点二，涨到四十二点三；编程基准，从二十点三，涨到二十九点一。"
+    },
+    {
+      "id": "04",
+      "text": "推理、工具和视觉，也全线上涨：人类终极考试，四十二点六；软件工程，七十七；自动化，六十点五；视觉理解，九十二点五。"
+    },
+    {
+      "id": "05",
+      "text": "而且，任务耗时和输出长度都降了——更快，也更省。"
+    },
+    {
+      "id": "06",
+      "text": "同一天，DeepSeek 还开放了自研搜索接口：每天处理数亿次请求，索引数千亿网页，还能过滤垃圾和低质内容。"
+    },
+    {
+      "id": "07",
+      "text": "现在，调用 DeepSeek Flash，就能体验一零一七新版本。"
+    }
+  ],
+  "bgm": {
+    "mode": "retrieve",
+    "query": "confident minimal electronic tech underscore, light pulse",
+    "blob": "DeepSeek V4.1 Flash-1017：同价同接口，Agent 与编程能力全面跃升，更快更省",
+    "arc": "Hook → 不变的 → 编程/Agent 跃升 → 推理/视觉 → 更快更省 → 同日搜索 API → CTA"
+  },
+  "voice": "zf_xiaobei"
+}

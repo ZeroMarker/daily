@@ -1,0 +1,230 @@
+{
+ "bgm": null,
+ "bgm_pending": false,
+ "voices": [
+  {
+   "frame": 1,
+   "path": "assets/voice/01.mp3",
+   "duration_s": 5.112,
+   "words": [
+    {
+     "id": "w0",
+     "text": "DeepSeek V4.1 Flash，",
+     "start": 0.095,
+     "end": 1.802
+    },
+    {
+     "id": "w1",
+     "text": "刚刚升级—",
+     "start": 1.992,
+     "end": 2.784
+    },
+    {
+     "id": "w2",
+     "text": "1017 版本，",
+     "start": 2.974,
+     "end": 4.012
+    },
+    {
+     "id": "w3",
+     "text": "来了。",
+     "start": 4.235,
+     "end": 4.604
+    }
+   ]
+  },
+  {
+   "frame": 2,
+   "path": "assets/voice/02.mp3",
+   "duration_s": 6.696,
+   "words": [
+    {
+     "id": "w0",
+     "text": "调用方式不变，",
+     "start": 0.095,
+     "end": 1.088
+    },
+    {
+     "id": "w1",
+     "text": "价格不变，",
+     "start": 1.289,
+     "end": 1.97
+    },
+    {
+     "id": "w2",
+     "text": "模型名还是 deepseek-flash；",
+     "start": 2.26,
+     "end": 4.191
+    },
+    {
+     "id": "w3",
+     "text": "官网和 APP 已同步更新。",
+     "start": 4.458,
+     "end": 6.166
+    }
+   ]
+  },
+  {
+   "frame": 3,
+   "path": "assets/voice/03.mp3",
+   "duration_s": 10.032,
+   "words": [
+    {
+     "id": "w0",
+     "text": "重点在 Agent 和编程：",
+     "start": 0.095,
+     "end": 1.892
+    },
+    {
+     "id": "w1",
+     "text": "Terminal-Bench 4.0，",
+     "start": 2.126,
+     "end": 3.454
+    },
+    {
+     "id": "w2",
+     "text": "从 31.2 涨到 42.3；",
+     "start": 3.655,
+     "end": 5.976
+    },
+    {
+     "id": "w3",
+     "text": "ProgramBench，",
+     "start": 6.244,
+     "end": 7.081
+    },
+    {
+     "id": "w4",
+     "text": "从 20.3 涨到 29.1。",
+     "start": 7.266,
+     "end": 9.52
+    }
+   ]
+  },
+  {
+   "frame": 4,
+   "path": "assets/voice/04.mp3",
+   "duration_s": 10.92,
+   "words": [
+    {
+     "id": "w0",
+     "text": "推理、工具和视觉也全线上涨：",
+     "start": 0.095,
+     "end": 2.729
+    },
+    {
+     "id": "w1",
+     "text": "HLE 42.6，",
+     "start": 2.996,
+     "end": 4.458
+    },
+    {
+     "id": "w2",
+     "text": "DeepSWE 77.0，",
+     "start": 4.737,
+     "end": 6.702
+    },
+    {
+     "id": "w3",
+     "text": "Automation-Bench 60.5，",
+     "start": 6.909,
+     "end": 8.583
+    },
+    {
+     "id": "w4",
+     "text": "BabyVision 92.5。",
+     "start": 8.828,
+     "end": 10.391
+    }
+   ]
+  },
+  {
+   "frame": 5,
+   "path": "assets/voice/05.mp3",
+   "duration_s": 4.872,
+   "words": [
+    {
+     "id": "w0",
+     "text": "而且，",
+     "start": 0.095,
+     "end": 0.541
+    },
+    {
+     "id": "w1",
+     "text": "任务耗时和输出长度都降了—",
+     "start": 0.854,
+     "end": 2.851
+    },
+    {
+     "id": "w2",
+     "text": "更快，",
+     "start": 3.108,
+     "end": 3.577
+    },
+    {
+     "id": "w3",
+     "text": "也更省。",
+     "start": 3.767,
+     "end": 4.358
+    }
+   ]
+  },
+  {
+   "frame": 6,
+   "path": "assets/voice/06.mp3",
+   "duration_s": 10.392,
+   "words": [
+    {
+     "id": "w0",
+     "text": "同一天，",
+     "start": 0.095,
+     "end": 0.708
+    },
+    {
+     "id": "w1",
+     "text": "DeepSeek 还开放了自研搜索 API：",
+     "start": 0.999,
+     "end": 3.711
+    },
+    {
+     "id": "w2",
+     "text": "每天处理数亿次请求，",
+     "start": 4.012,
+     "end": 5.53
+    },
+    {
+     "id": "w3",
+     "text": "索引数千亿网页，",
+     "start": 5.753,
+     "end": 7.003
+    },
+    {
+     "id": "w4",
+     "text": "过滤 SEO 垃圾和低质 AI 内容。",
+     "start": 7.199,
+     "end": 9.877
+    }
+   ]
+  },
+  {
+   "frame": 7,
+   "path": "assets/voice/07.mp3",
+   "duration_s": 4.896,
+   "words": [
+    {
+     "id": "w0",
+     "text": "现在，",
+     "start": 0.095,
+     "end": 0.541
+    },
+    {
+     "id": "w1",
+     "text": "调用 deepseek-flash 就能体验 1017 新版本。",
+     "start": 0.831,
+     "end": 4.38
+    }
+   ]
+  }
+ ],
+ "sfx": []
+}

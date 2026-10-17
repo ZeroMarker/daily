@@ -1,0 +1,562 @@
+{
+  "tts_provider": "kokoro",
+  "voice_id": "zf_xiaobei",
+  "bgm": null,
+  "bgm_pending": false,
+  "bgm_provider": null,
+  "bgm_pid": null,
+  "bgm_log": null,
+  "bgm_mode": null,
+  "bgm_target_duration_s": null,
+  "bgm_seed_duration_s": null,
+  "bgm_loop_count": null,
+  "voices": [
+    {
+      "id": "01",
+      "path": "assets/voice/01.wav",
+      "duration_s": 5.269,
+      "words": [
+        {
+          "id": "w0",
+          "text": "and",
+          "start": 0.04,
+          "end": 0.2
+        },
+        {
+          "id": "w1",
+          "text": "deep-seek",
+          "start": 0.2,
+          "end": 0.8
+        },
+        {
+          "id": "w2",
+          "text": "vision.",
+          "start": 0.8,
+          "end": 5.15
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "path": "assets/voice/02.wav",
+      "duration_s": 6.421,
+      "words": []
+    },
+    {
+      "id": "03",
+      "path": "assets/voice/03.wav",
+      "duration_s": 10.901,
+      "words": []
+    },
+    {
+      "id": "04",
+      "path": "assets/voice/04.wav",
+      "duration_s": 11.029,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Thank",
+          "start": 0.09,
+          "end": 0.41
+        },
+        {
+          "id": "w1",
+          "text": "you",
+          "start": 0.41,
+          "end": 0.65
+        },
+        {
+          "id": "w2",
+          "text": "for",
+          "start": 0.65,
+          "end": 0.89
+        },
+        {
+          "id": "w3",
+          "text": "watching.",
+          "start": 0.89,
+          "end": 1.78
+        },
+        {
+          "id": "w4",
+          "text": "I",
+          "start": 1.78,
+          "end": 1.86
+        },
+        {
+          "id": "w5",
+          "text": "hope",
+          "start": 1.86,
+          "end": 2.16
+        },
+        {
+          "id": "w6",
+          "text": "you",
+          "start": 2.21,
+          "end": 2.41
+        },
+        {
+          "id": "w7",
+          "text": "enjoyed",
+          "start": 2.49,
+          "end": 2.99
+        },
+        {
+          "id": "w8",
+          "text": "this",
+          "start": 2.99,
+          "end": 3.29
+        },
+        {
+          "id": "w9",
+          "text": "video.",
+          "start": 3.35,
+          "end": 3.89
+        },
+        {
+          "id": "w10",
+          "text": "Please",
+          "start": 4.17,
+          "end": 5.34
+        },
+        {
+          "id": "w11",
+          "text": "like,",
+          "start": 5.34,
+          "end": 6.63
+        },
+        {
+          "id": "w12",
+          "text": "share",
+          "start": 6.63,
+          "end": 7.71
+        },
+        {
+          "id": "w13",
+          "text": "and",
+          "start": 7.71,
+          "end": 8.36
+        },
+        {
+          "id": "w14",
+          "text": "subscribe.",
+          "start": 8.36,
+          "end": 10.91
+        },
+        {
+          "id": "w15",
+          "text": "Thank",
+          "start": 10.91,
+          "end": 11.21
+        },
+        {
+          "id": "w16",
+          "text": "you.",
+          "start": 11.21,
+          "end": 11.51
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "path": "assets/voice/05.wav",
+      "duration_s": 4.544,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Thank",
+          "start": 0.05,
+          "end": 0.9
+        },
+        {
+          "id": "w1",
+          "text": "you",
+          "start": 1.02,
+          "end": 1.63
+        },
+        {
+          "id": "w2",
+          "text": "for",
+          "start": 1.63,
+          "end": 2.24
+        },
+        {
+          "id": "w3",
+          "text": "watching.",
+          "start": 2.24,
+          "end": 4.42
+        },
+        {
+          "id": "w4",
+          "text": "I",
+          "start": 4.42,
+          "end": 4.72
+        },
+        {
+          "id": "w5",
+          "text": "hope",
+          "start": 4.72,
+          "end": 5.02
+        },
+        {
+          "id": "w6",
+          "text": "you",
+          "start": 5.02,
+          "end": 5.32
+        },
+        {
+          "id": "w7",
+          "text": "enjoyed",
+          "start": 5.32,
+          "end": 5.62
+        },
+        {
+          "id": "w8",
+          "text": "this",
+          "start": 5.62,
+          "end": 5.92
+        },
+        {
+          "id": "w9",
+          "text": "video.",
+          "start": 5.92,
+          "end": 6.22
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "path": "assets/voice/06.wav",
+      "duration_s": 9.856,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Honga",
+          "start": 0.09,
+          "end": 0.33
+        },
+        {
+          "id": "w1",
+          "text": "Yitian",
+          "start": 0.33,
+          "end": 0.71
+        },
+        {
+          "id": "w2",
+          "text": "and",
+          "start": 0.76,
+          "end": 0.92
+        },
+        {
+          "id": "w3",
+          "text": "Deep",
+          "start": 0.92,
+          "end": 1.07
+        },
+        {
+          "id": "w4",
+          "text": "Seeker,",
+          "start": 1.19,
+          "end": 1.61
+        },
+        {
+          "id": "w5",
+          "text": "Daikai",
+          "start": 1.84,
+          "end": 2.15
+        },
+        {
+          "id": "w6",
+          "text": "Phang",
+          "start": 2.15,
+          "end": 2.47
+        },
+        {
+          "id": "w7",
+          "text": "ji",
+          "start": 2.52,
+          "end": 2.61
+        },
+        {
+          "id": "w8",
+          "text": "yang",
+          "start": 2.61,
+          "end": 2.83
+        },
+        {
+          "id": "w9",
+          "text": "soo",
+          "start": 2.91,
+          "end": 3.07
+        },
+        {
+          "id": "w10",
+          "text": "soo",
+          "start": 3.07,
+          "end": 3.26
+        },
+        {
+          "id": "w11",
+          "text": "ji",
+          "start": 3.26,
+          "end": 3.38
+        },
+        {
+          "id": "w12",
+          "text": "kom",
+          "start": 3.46,
+          "end": 3.59
+        },
+        {
+          "id": "w13",
+          "text": "e",
+          "start": 3.62,
+          "end": 3.66
+        },
+        {
+          "id": "w14",
+          "text": "tian",
+          "start": 3.66,
+          "end": 3.93
+        },
+        {
+          "id": "w15",
+          "text": "to",
+          "start": 3.93,
+          "end": 4.06
+        },
+        {
+          "id": "w16",
+          "text": "li,",
+          "start": 4.06,
+          "end": 4.48
+        },
+        {
+          "id": "w17",
+          "text": "Sui",
+          "start": 4.56,
+          "end": 4.7
+        },
+        {
+          "id": "w18",
+          "text": "ji",
+          "start": 4.7,
+          "end": 4.84
+        },
+        {
+          "id": "w19",
+          "text": "ching",
+          "start": 4.84,
+          "end": 5.19
+        },
+        {
+          "id": "w20",
+          "text": "chi",
+          "start": 5.24,
+          "end": 5.43
+        },
+        {
+          "id": "w21",
+          "text": "oo",
+          "start": 5.43,
+          "end": 5.55
+        },
+        {
+          "id": "w22",
+          "text": "soo",
+          "start": 5.71,
+          "end": 5.79
+        },
+        {
+          "id": "w23",
+          "text": "yin,",
+          "start": 5.79,
+          "end": 6.09
+        },
+        {
+          "id": "w24",
+          "text": "Sui",
+          "start": 6.32,
+          "end": 6.45
+        },
+        {
+          "id": "w25",
+          "text": "ji",
+          "start": 6.45,
+          "end": 6.59
+        },
+        {
+          "id": "w26",
+          "text": "yi",
+          "start": 6.59,
+          "end": 6.69
+        },
+        {
+          "id": "w27",
+          "text": "wang",
+          "start": 6.76,
+          "end": 7.01
+        },
+        {
+          "id": "w28",
+          "text": "yeo",
+          "start": 7.01,
+          "end": 7.22
+        },
+        {
+          "id": "w29",
+          "text": "gaia",
+          "start": 7.22,
+          "end": 7.5
+        },
+        {
+          "id": "w30",
+          "text": "naan",
+          "start": 7.5,
+          "end": 7.78
+        },
+        {
+          "id": "w31",
+          "text": "gool",
+          "start": 7.78,
+          "end": 8.06
+        },
+        {
+          "id": "w32",
+          "text": "lu",
+          "start": 8.09,
+          "end": 8.2
+        },
+        {
+          "id": "w33",
+          "text": "lu",
+          "start": 8.2,
+          "end": 8.34
+        },
+        {
+          "id": "w34",
+          "text": "chig",
+          "start": 8.34,
+          "end": 8.62
+        },
+        {
+          "id": "w35",
+          "text": "wo",
+          "start": 8.62,
+          "end": 8.75
+        },
+        {
+          "id": "w36",
+          "text": "dizi",
+          "start": 8.75,
+          "end": 9.04
+        },
+        {
+          "id": "w37",
+          "text": "nae",
+          "start": 9.04,
+          "end": 9.25
+        },
+        {
+          "id": "w38",
+          "text": "yonga.",
+          "start": 9.25,
+          "end": 9.76
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "path": "assets/voice/07.wav",
+      "duration_s": 4.8,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Thank",
+          "start": 0.11,
+          "end": 0.69
+        },
+        {
+          "id": "w1",
+          "text": "you",
+          "start": 0.69,
+          "end": 1
+        },
+        {
+          "id": "w2",
+          "text": "very",
+          "start": 1.11,
+          "end": 1.67
+        },
+        {
+          "id": "w3",
+          "text": "much",
+          "start": 1.67,
+          "end": 2.19
+        },
+        {
+          "id": "w4",
+          "text": "for",
+          "start": 2.19,
+          "end": 2.32
+        },
+        {
+          "id": "w5",
+          "text": "watching,",
+          "start": 2.32,
+          "end": 2.36
+        },
+        {
+          "id": "w6",
+          "text": "and",
+          "start": 2.47,
+          "end": 2.62
+        },
+        {
+          "id": "w7",
+          "text": "I'll",
+          "start": 2.62,
+          "end": 2.97
+        },
+        {
+          "id": "w8",
+          "text": "see",
+          "start": 2.97,
+          "end": 3.23
+        },
+        {
+          "id": "w9",
+          "text": "you",
+          "start": 3.23,
+          "end": 3.49
+        },
+        {
+          "id": "w10",
+          "text": "in",
+          "start": 3.49,
+          "end": 3.66
+        },
+        {
+          "id": "w11",
+          "text": "the",
+          "start": 3.66,
+          "end": 3.91
+        },
+        {
+          "id": "w12",
+          "text": "next",
+          "start": 3.91,
+          "end": 4.27
+        },
+        {
+          "id": "w13",
+          "text": "video.",
+          "start": 4.27,
+          "end": 4.78
+        }
+      ]
+    }
+  ],
+  "sfx": [],
+  "total_duration_s": 52.82
+}

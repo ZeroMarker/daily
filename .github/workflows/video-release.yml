@@ -1,0 +1,88 @@
+name: Render HyperFrames video release
+
+# Tag format: hf/<project>/<semver>, e.g. hf/deepseek-v4-1-flash-1017/1.0.0
+# (the "/" keeps it from matching release.yml's '*-*.*.*' daily-tag filter)
+on:
+  push:
+    tags:
+      - 'hf/*/*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video-release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    name: Render ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Parse tag
+        id: release
+        env:
+          TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$TAG" =~ ^hf/([a-z0-9][a-z0-9-]*)/([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+            project="${BASH_REMATCH[1]}"
+            version="${BASH_REMATCH[2]}"
+          else
+            echo "Invalid tag: $TAG (expected hf/<project>/<semver>)" >&2
+            exit 1
+          fi
+          if [[ ! -f "videos/$project/index.html" ]]; then
+            echo "Missing videos/$project/index.html" >&2
+            exit 1
+          fi
+          echo "project=$project" >> "$GITHUB_OUTPUT"
+          echo "asset=$project-$version.mp4" >> "$GITHUB_OUTPUT"
+          echo "release_name=$project $version" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install FFmpeg and Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          npx --yes playwright@1 install-deps chromium
+
+      - name: Check composition
+        working-directory: videos/${{ steps.release.outputs.project }}
+        run: npm run check
+
+      - name: Render video
+        working-directory: videos/${{ steps.release.outputs.project }}
+        run: npm run render -- --quality high --output "renders/${{ steps.release.outputs.asset }}"
+
+      - name: Validate rendered MP4
+        env:
+          VIDEO: videos/${{ steps.release.outputs.project }}/renders/${{ steps.release.outputs.asset }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ -f "$VIDEO" ]] || { echo "Missing $VIDEO" >&2; exit 1; }
+          [[ -n "$(ffprobe -v error -select_streams v -show_entries stream=index -of csv=p=0 "$VIDEO")" ]] || { echo "No video stream" >&2; exit 1; }
+          [[ -n "$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$VIDEO")" ]] || { echo "No audio stream" >&2; exit 1; }
+          echo "OK: $VIDEO"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ steps.release.outputs.release_name }}
+          generate_release_notes: true
+          files: videos/${{ steps.release.outputs.project }}/renders/${{ steps.release.outputs.asset }}
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

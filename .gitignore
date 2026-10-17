@@ -150,3 +150,10 @@ content/*/candidates.json
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# HyperFrames video projects — render output and local caches
+videos/*/renders/
+videos/*/.hyperframes/artifacts/
+videos/*/.hyperframes/preview/
+videos/*/.hyperframes/*lock
+videos/*/.media/
