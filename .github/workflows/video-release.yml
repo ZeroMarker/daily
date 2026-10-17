@@ -76,13 +76,27 @@ jobs:
           [[ -n "$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$VIDEO")" ]] || { echo "No audio stream" >&2; exit 1; }
           echo "OK: $VIDEO"
 
+      - name: Extract poster
+        env:
+          PROJECT_DIR: videos/${{ steps.release.outputs.project }}
+          VIDEO: videos/${{ steps.release.outputs.project }}/renders/${{ steps.release.outputs.asset }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Seconds to grab come from <project>/POSTER_AT (default 1); the bottom
+          # caption band (~16%) is cropped off so no subtitle lands on the poster.
+          at="$(cat "$PROJECT_DIR/POSTER_AT" 2>/dev/null || echo 1)"
+          ffmpeg -y -loglevel error -ss "$at" -i "$VIDEO" -frames:v 1 -vf "crop=iw:ih*0.84:0:0" -q:v 2 "${VIDEO%.mp4}-poster.jpg"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ steps.release.outputs.release_name }}
           generate_release_notes: true
-          files: videos/${{ steps.release.outputs.project }}/renders/${{ steps.release.outputs.asset }}
+          files: |
+            videos/${{ steps.release.outputs.project }}/renders/${{ steps.release.outputs.asset }}
+            videos/${{ steps.release.outputs.project }}/renders/*-poster.jpg
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
