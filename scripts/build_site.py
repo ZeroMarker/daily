@@ -21,11 +21,11 @@ def esc(value):
 def shell(title, body, prefix='./', folder=''):
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title)} · AI 新闻日报</title><meta name="description" content="AI 新闻日报电子杂志：每天阅读科技、人工智能与世界新闻摘要。">
+<title>{esc(title)} · 每日头条</title><meta name="description" content="每日头条电子杂志：每天阅读科技、人工智能与世界新闻摘要。">
 <link rel="stylesheet" href="{prefix}assets/style.css"></head>
-<body><header class="masthead"><a class="brand" href="{prefix}index.html">AI 新闻日报<span>DAILY / 科技 · AI · 世界</span></a>
+<body><header class="masthead"><a class="brand" href="{prefix}index.html">每日头条<span>DAILY / 科技 · AI · 世界</span></a>
 <nav aria-label="主导航"><a href="{prefix}index.html">杂志</a><a href="{prefix}issues/{folder}.html">日报</a><a href="{prefix}videos/{folder}.html">视频</a></nav></header>
-<main>{body}</main><footer><span>AI 新闻日报 · 每天读懂值得关注的变化</span><a href="{REPO}">项目源码 ↗</a><p>自动取材与摘要 · AI 配音与视频制作。原文链接见各条新闻。</p></footer></body></html>'''
+<main>{body}</main><footer><span>每日头条 · 每天读懂值得关注的变化</span><a href="{REPO}">项目源码 ↗</a><p>自动取材与摘要 · AI 配音与视频制作。原文链接见各条新闻。</p></footer></body></html>'''
 
 
 def issue_link(issue, prefix='./'):

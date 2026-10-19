@@ -49,7 +49,7 @@ jobs:
           echo "date=$date" >> "$GITHUB_OUTPUT"
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "asset=news-daily-$date-$version.mp4" >> "$GITHUB_OUTPUT"
-          echo "release_name=AI 新闻日报 $date $version" >> "$GITHUB_OUTPUT"
+          echo "release_name=每日头条 $date $version" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

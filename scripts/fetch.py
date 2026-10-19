@@ -17,7 +17,7 @@ import requests
 VO = str(content_dir())
 os.makedirs(VO, exist_ok=True)
 
-CANDIDATE_LIMIT = int(os.environ.get("CANDIDATES", "40"))
+CANDIDATE_LIMIT = int(os.environ.get("CANDIDATES", "400"))
 
 FEEDS = [
     ("36氪", "科技", "https://36kr.com/feed"),
@@ -28,6 +28,13 @@ FEEDS = [
     ("IT之家", "科技", "https://www.ithome.com/rss/"),
     ("Solidot", "科技", "https://www.solidot.org/index.rss"),
     ("量子位", "AI", "https://www.qbitai.com/feed"),
+    ("cnBeta", "科技", "https://www.cnbeta.com.tw/backend.php"),
+    ("钛媒体", "科技", "https://www.tmtpost.com/rss.xml"),
+    ("InfoQ", "AI", "https://www.infoq.cn/feed"),
+    ("澎湃新闻", "综合", "https://feedx.net/rss/thepaper.xml"),
+    ("FT中文网", "国际", "https://www.ftchinese.com/rss/news"),
+    ("纽约时报中文网", "国际", "https://cn.nytimes.com/rss/"),
+    ("BBC中文", "国际", "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml"),
     ("BBC", "国际", "https://feeds.bbci.co.uk/news/world/rss.xml"),
     ("卫报", "国际", "https://www.theguardian.com/world/rss"),
 ]

@@ -22,7 +22,7 @@ export const NewsDaily: React.FC = () => {
   return (
     <AbsoluteFill style={{background: C.bg}}>
       <Backdrop />
-      <Intro count={newsItems.length} date={dateLabel} />
+      <Intro headlines={ITEMS[0].headlines ?? newsItems.map((item) => item.title)} date={dateLabel} />
       {newsItems.map((item) => (
         <NewsCard key={item.id} item={item} />
       ))}
@@ -41,7 +41,7 @@ export const NewsDaily: React.FC = () => {
           letterSpacing: 2,
         }}
       >
-        AI 新闻日报 · {DATE}
+        每日头条 · {DATE}
       </div>
     </AbsoluteFill>
   );

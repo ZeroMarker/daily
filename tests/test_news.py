@@ -105,8 +105,28 @@ class NewsTests(unittest.TestCase):
     def test_promotion_removed_and_title_limits(self):
         self.assertEqual(clean_summary('新品发布。 #欢迎关注公众号'), '新品发布。')
         data = manifest(date(2026,10,8), [candidate('这是一个超过十二个字的科技新闻完整标题')])
-        self.assertLessEqual(len(data['items'][1]['title']), 12)
+        self.assertLessEqual(len(data['items'][1]['title']), 20)
+        self.assertTrue(data['items'][0]['text'].startswith('每日头条。今天是北京时间10月8日'))
         self.assertNotIn('欢迎关注', data['items'][1]['text'])
+
+    def test_pagerank_prefers_story_echoed_by_other_outlets(self):
+        rows = [candidate('英伟达发布新一代芯片架构', source='甲', url='https://a.com/1'),
+                candidate('英伟达发布新一代芯片架构 性能翻倍', source='乙', url='https://b.com/1'),
+                candidate('英伟达新一代芯片架构正式发布', source='丙', url='https://c.com/1'),
+                candidate('某地举办小型展览活动', source='丁', stamp=CUTOFF - 10),
+                candidate('研究人员发现深海新物种', source='戊', stamp=CUTOFF - 5)]
+        chosen = select(rows, CUTOFF, count=3, minimum=1)
+        self.assertIn('英伟达', chosen[0]['title'])
+        self.assertEqual(len(chosen[0]['outlets']), 3)
+        self.assertEqual(sum('英伟达' in x['title'] for x in chosen), 1)
+
+    def test_marketing_digest_and_hype_removed(self):
+        rows = [candidate('新款耳机限时优惠到手价199元'), candidate('派早报：三季度手机出货量'),
+                candidate('微信两周年背后，你不知道的故事'), candidate('突发！公司发布新模型，性价比斩杀一切')]
+        chosen = select(rows, CUTOFF, count=1, minimum=1)
+        self.assertEqual(len(chosen), 1)
+        data = manifest(date(2026, 10, 8), chosen)
+        self.assertEqual(data['items'][1]['articleTitle'], '公司发布新模型')
 
 
 if __name__ == '__main__':

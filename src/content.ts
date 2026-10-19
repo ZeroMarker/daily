@@ -18,6 +18,10 @@ export interface NewsItem {
   sourceUrl?: string;
   articleTitle?: string;
   publishedAt?: string;
+  /** 开场总览：所有头条短标题（intro 才有） */
+  headlines?: string[];
+  /** 报道同一事件的媒体 */
+  outlets?: string[];
   /** 来源分类（科技/财经/国际…） */
   category?: string;
 }

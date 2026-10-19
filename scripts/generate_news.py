@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Select fresh diverse stories and derive a source-backed daily script, no API key."""
 import json
+import math
 import os
 import re
 from collections import Counter
@@ -34,10 +35,101 @@ def similar(left, right):
     return SequenceMatcher(None, clean(left), clean(right)).ratio() >= 0.78
 
 
+MARKETING = re.compile(
+    r'优惠|折扣|限时|秒杀|领券|优惠券|低至|到手价|促销|直降|特价|首发价|券后|抽奖|福利|赞助|广告|推广|'
+    r'好物|种草|值得买|开箱|限免|团购|包邮|官方旗舰店|京东|天猫|拼多多|双(11|十一|12)|618|黑五|'
+    r'招聘|报名|直播预告|课程|训练营|峰会|大会议程|白皮书下载|扫码|添加微信|点击|立即(购买|抢购|预约)|'
+    r'¥\s*\d|\d+\s*元起|元/月|亿元补贴|\bsponsored\b|\bdeal(s)?\b|\bsale\b', re.I)
+DIGEST = re.compile(r'早报|晚报|午报|日报|周报|周刊|一周|盘点|汇总|速览|快讯合集|8点1氪|今日要闻|\d+\s*条|Newsletter|Briefing', re.I)
+HYPE_PREFIX = re.compile(r'^(?:[【\[［][^】\]］]{1,12}[】\]］]|(?:突发|重磅|独家|刚刚|震惊|快讯|最新|官宣)[！!｜|:：\s]+)+')
+# Features, opinion and clickbait read like stories, not today's events.
+FEATURE = re.compile(r'背后|你不知道|的故事|线索|揭秘|谜团|太甚|一文|看懂|深度|专访|对话|观察|评论|随笔|为什么|为何|如何|怎么|[？?]|吗$', re.I)
+HYPE = re.compile(r'斩杀|吊打|炸裂|封神|杀疯|史上最|颠覆|震撼|王炸|逆天|太强了|一切$')
+DATELINE = re.compile(r'^[^，,。]{0,20}?\d{1,2}\s*月\s*\d{1,2}\s*日(?:消息|电|讯)?[，,：:\s]*')
+
+
+def clean_title(title):
+    title = HYPE_PREFIX.sub('', ' '.join(title.split())).strip(' ！!｜|')
+    # Drop hype clauses ("超级性价比斩杀一切") but keep the factual clause.
+    parts = [part for part in re.split(r'(?<=[，,！!])', title) if not HYPE.search(part)]
+    return ''.join(parts).strip(' ，,！!') or title
+
+
+def brief(headline, limit=20):
+    """Screen headline: the leading clause, never cut inside a number like 4.5%."""
+    lead = re.split(r'[：:｜|，,]', headline)[0].strip()
+    if len(lead) < 6:
+        lead = headline
+    out = ''
+    for word in lead.split():
+        if len(out) + len(word) + 1 > limit:
+            break
+        out = f'{out} {word}'.strip()
+    if len(out) >= 6:
+        return out
+    return lead if len(lead) <= limit else lead[:limit - 1] + '…'
+
+
+def is_marketing(item):
+    title = item.get('title', '')
+    return bool(MARKETING.search(title) or DIGEST.search(title) or FEATURE.search(title)
+                or len(MARKETING.findall(item.get('summary', '')[:300])) >= 2)
+
+
+def features(item):
+    text = (clean_title(item['title']) + ' ') * 2 + clean_summary(item.get('summary', ''))[:200]
+    text = text.lower()
+    bag = Counter()
+    for run in re.findall(r'[\u4e00-\u9fff]+', text):
+        bag.update(run[i:i + 2] for i in range(len(run) - 1))
+    bag.update(word for word in re.findall(r'[a-z][a-z0-9.+-]{1,}|\d{2,}', text))
+    return bag
+
+
+def similarity_graph(items):
+    bags = [features(item) for item in items]
+    df = Counter(term for bag in bags for term in bag)
+    total = len(items)
+    vectors = []
+    for bag in bags:
+        # Very common grams ("发布", "公司") carry no event identity.
+        vec = {term: count * math.log((1 + total) / (1 + df[term])) for term, count in bag.items() if df[term] <= max(3, total * 0.2)}
+        norm = math.sqrt(sum(v * v for v in vec.values())) or 1
+        vectors.append({term: v / norm for term, v in vec.items()})
+    sims = [[0.0] * total for _ in range(total)]
+    for i in range(total):
+        for j in range(i + 1, total):
+            left, right = vectors[i], vectors[j]
+            if len(left) > len(right):
+                left, right = right, left
+            sims[i][j] = sims[j][i] = sum(v * right.get(term, 0) for term, v in left.items())
+    return sims
+
+
+def pagerank(sims, items, prior, damping=0.85, threshold=0.12, rounds=60):
+    """Weighted PageRank: a story is important when stories from *other* outlets echo it."""
+    n = len(items)
+    weights = [[0.0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if i != j and sims[i][j] >= threshold:
+                weights[i][j] = sims[i][j] * (1.0 if items[i]['source'] != items[j]['source'] else 0.25)
+    out = [sum(row) for row in weights]
+    total_prior = sum(prior) or 1
+    teleport = [p / total_prior for p in prior]
+    rank = teleport[:]
+    for _ in range(rounds):
+        dangling = sum(rank[i] for i in range(n) if not out[i])
+        rank = [(1 - damping) * teleport[j] + damping * (
+                    dangling * teleport[j] + sum(rank[i] * weights[i][j] / out[i] for i in range(n) if out[i] and weights[i][j]))
+                for j in range(n)]
+    return rank
+
+
 def select(candidates, cutoff, hours=48, count=5, minimum=3, language='zh'):
     if hours <= 0 or count < minimum or minimum < 1:
         raise ValueError('NEWS_MAX_AGE_HOURS > 0 and NEWS_COUNT >= NEWS_MIN_COUNT >= 1 required')
-    ranked = []
+    pool, seen = [], set()
     for item in candidates:
         stamp = item.get('published', 0)
         if not isinstance(stamp, (int, float)) or not cutoff - hours * 3600 <= stamp <= cutoff:
@@ -46,72 +138,102 @@ def select(candidates, cutoff, hours=48, count=5, minimum=3, language='zh'):
             continue
         if language == 'zh' and not re.search(r'[\u4e00-\u9fff]', item['title']):
             continue
-        score = 4 * (1 - (cutoff - stamp) / (hours * 3600))
-        score += 3 if re.search(r'[\u4e00-\u9fff]', item['title']) else 0
-        score += 3 if item.get('category') == 'AI' else 2 if item.get('category') in ('科技', '数码') else 0
-        ranked.append((score, stamp, item))
-    ranked.sort(key=lambda row: (row[0], row[1], row[2]['link']), reverse=True)
-    unique = []
-    seen = set()
-    seen_titles = []
-    for _, _, item in ranked:
         key = url_key(item['link'])
-        duplicate = key in seen or any(similar(item['title'], title) for title in seen_titles)
+        if key in seen or is_marketing(item):
+            continue
         seen.add(key)
-        seen_titles.append(item['title'])
-        if not duplicate:
-            unique.append(item)
+        pool.append(item)
+    if not pool:
+        raise ValueError(f'仅 0 条新鲜且不重复的新闻，少于最低 {minimum} 条；停止发布。')
+    prior = [1 + 1.5 * (1 - (cutoff - item['published']) / (hours * 3600))
+             + (0.5 if item.get('category') == 'AI' else 0) for item in pool]
+    sims = similarity_graph(pool)
+    rank = pagerank(sims, pool, prior)
+    order = sorted(range(len(pool)), key=lambda i: (rank[i], pool[i]['published'], pool[i]['link']), reverse=True)
+    # Collapse each event into one cluster; coverage breadth across outlets lifts the event.
+    assigned, clusters = set(), []
+    for i in order:
+        if i in assigned:
+            continue
+        members = [j for j in order if j not in assigned and (j == i or sims[i][j] >= 0.3
+                   or similar(clean_title(pool[i]['title']), clean_title(pool[j]['title'])))]
+        assigned.update(members)
+        outlets = {pool[j]['source'] for j in members}
+        score = sum(rank[j] for j in members) * (1 + 0.6 * (len(outlets) - 1))
+        lead = max(members, key=lambda j: (len(clean_summary(pool[j].get('summary', ''))) >= 40, rank[j]))
+        clusters.append((score, pool[i]['published'], dict(pool[lead], outlets=sorted(outlets))))
+    clusters.sort(key=lambda row: (row[0], row[1], row[2]['link']), reverse=True)
     chosen, sources = [], Counter()
-    # First diversify sources, then fill remaining slots in ranked order.
-    for limit in (1, count):
-        for item in unique:
+    for limit in (1, 2, count):
+        for _, _, item in clusters:
             if item in chosen or sources[item['source']] >= limit:
                 continue
             chosen.append(item)
             sources[item['source']] += 1
             if len(chosen) == count:
-                return chosen
+                break
+        if len(chosen) == count:
+            break
     if len(chosen) < minimum:
         raise ValueError(f'仅 {len(chosen)} 条新鲜且不重复的新闻，少于最低 {minimum} 条；停止发布。')
-    return chosen
+    # Keep ranking order (not diversification-pass order) for the broadcast.
+    rank_of = {id(row[2]): index for index, row in enumerate(clusters)}
+    return sorted(chosen, key=lambda item: rank_of[id(item)])
 
 
 def clean_summary(text):
-    text = re.split(r'#?欢迎关注|查看全文|阅读全文|Continue reading|Read more', text, maxsplit=1, flags=re.I)[0]
+    text = re.split(r'#?欢迎关注|查看全文|阅读全文|点击查看|Continue reading|Read more', text, maxsplit=1, flags=re.I)[0]
+    text = DATELINE.sub('', text.strip())
     return text.strip().rstrip('.… ').strip()
 
 
+def lead_sentences(text, limit):
+    """Whole sentences only: narration never stops mid-sentence."""
+    out = ''
+    for sentence in re.findall(r'[^。！？!?]+[。！？!?]?', text):
+        sentence = sentence.strip()
+        if not sentence or len(out) + len(sentence) > limit:
+            break
+        out += sentence if sentence[-1] in '。！？!?' else sentence + '。'
+    if not out and text:
+        clause = text[:limit]
+        cut = max(clause.rfind(mark) for mark in '，,；;')
+        out = clause[:cut] + '。' if cut >= limit // 3 else ''
+    return out
+
+
 def manifest(day, chosen):
-    items = [dict(id='intro', kind='intro', title='AI 新闻日报',
-                  text=f'今天是{day.month}月{day.day}日，这里是 AI 新闻日报。接下来，带你了解{len(chosen)}条值得关注的消息。',
-                  screenText=f'今日 {len(chosen)} 条热点')]
-    for index, candidate in enumerate(chosen, 1):
-        headline = ' '.join(candidate['title'].split())
+    weekday = '一二三四五六日'[day.weekday()]
+    headlines = [clean_title(candidate['title']) for candidate in chosen]
+    shorts = [brief(headline) for headline in headlines]
+    ordinals = '一二三四五六七八九十'
+    items = [dict(id='intro', kind='intro', title='每日头条',
+                  text=f'每日头条。今天是北京时间{day.month}月{day.day}日，星期{weekday}。',
+                  screenText=f'{len(chosen)} 条头条', headlines=shorts)]
+    for index, (candidate, headline) in enumerate(zip(chosen, headlines), 1):
         summary = clean_summary(candidate.get('summary', ''))
-        if not summary or similar(headline, summary):
-            summary = headline
-        # The headline carries the actual event; some RSS descriptions are slogans.
-        description = headline if similar(headline, summary) else headline + '。' + summary
-        narration = short(description, 130)
-        if not narration.endswith(('。', '！', '？', '.', '!', '?', '…')):
-            narration += '。'
-        items.append(dict(id=f'news-{index}', kind='news', title=short(headline, 12),
-                          articleTitle=headline, source=candidate['source'],
+        if not summary or similar(headline, summary) or headline in summary[:len(headline) + 4]:
+            summary = summary if summary and not similar(headline, summary) else ''
+        narration = headline + '。' + lead_sentences(summary, 120 - len(headline))
+        outlets = candidate.get('outlets') or [candidate['source']]
+        items.append(dict(id=f'news-{index}', kind='news', title=shorts[index - 1],
+                          articleTitle=headline, source=candidate['source'], outlets=outlets,
                           sourceUrl=candidate['link'], publishedAt=datetime.fromtimestamp(candidate['published'], TIMEZONE).isoformat(),
                           category=candidate.get('category', '新闻'),
-                          text=f'{candidate["source"]}报道，{narration}',
-                          screenText=short(headline, 28), summary=short(summary, 160)))
+                          text=f'第{ordinals[index - 1] if index <= 10 else index}条，{narration.rstrip()}',
+                          screenText=f'{len(outlets)} 家媒体报道' if len(outlets) > 1 else candidate['source'],
+                          summary=short(summary or headline, 150)))
     items.append(dict(id='outro', kind='outro', title='明天见',
-                      text='以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。',
-                      screenText='关注 · 每天与你 AI 读新闻'))
-    return dict(date=day.isoformat(), generation=dict(mode='rss-extractive', timezone=str(TIMEZONE)), items=items)
+                      text='以上是今天的每日头条，原文链接见文字版。明天见。',
+                      screenText='每日头条 · 明天见'))
+    return dict(date=day.isoformat(), generation=dict(mode='rss-pagerank-extractive', timezone=str(TIMEZONE)), items=items)
 
 
 def main():
     day = release_date()
     now = datetime.now(TIMEZONE)
     if day > now.date():
-        raise ValueError('不能生成未来日期的新闻日报')
+        raise ValueError('不能生成未来日期的每日头条')
     cutoff = min(now, datetime.combine(day + timedelta(days=1), time.min, TIMEZONE)).timestamp()
     directory = content_dir()
     candidates = json.loads((directory / 'candidates.json').read_text(encoding='utf-8'))

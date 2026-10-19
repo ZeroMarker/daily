@@ -47,64 +47,45 @@ const ProgressBar: React.FC<{id: string}> = ({id}) => {
   );
 };
 
-export const Intro: React.FC<{count: number; date: string}> = ({count, date}) => {
+export const Intro: React.FC<{headlines: string[]; date: string}> = ({headlines, date}) => {
   const id = 'intro';
-  const e1 = useEntrance(id, 0.1, 0.8);
-  const e2 = useEntrance(id, 0.6, 0.8);
+  const e1 = useEntrance(id, 0.05, 0.6);
+  const progress = useSceneProgress(id);
   return (
     <SceneShell id={id}>
-      <AbsoluteFill
-        style={{
-          padding: '160px 84px',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          gap: 30,
-        }}
-      >
-        <div
-          style={{
-            ...font,
-            opacity: e1.opacity,
-            transform: `translateY(${e1.y}px)`,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 18,
-            color: C.accent,
-            fontSize: 30,
-            fontWeight: 800,
-            letterSpacing: 8,
-          }}
-        >
-          <span style={{width: 14, height: 14, borderRadius: '50%', background: C.accent}} /> AI 新闻日报
+      <AbsoluteFill style={{padding: '150px 80px 140px', flexDirection: 'column', gap: 44}}>
+        <div style={{opacity: e1.opacity, transform: `translateY(${e1.y}px)`}}>
+          <div style={{...font, color: C.accent, fontSize: 34, fontWeight: 900, letterSpacing: 10}}>每日头条</div>
+          <div style={{...font, color: C.text, fontSize: 96, fontWeight: 900, letterSpacing: -3, lineHeight: 1.1}}>
+            {date}
+          </div>
+          <div style={{...font, color: C.muted, fontSize: 30, fontWeight: 600, marginTop: 8}}>北京时间 · 今日 {headlines.length} 条</div>
         </div>
-        <div
-          style={{
-            ...font,
-            opacity: e2.opacity,
-            transform: `translateY(${e2.y}px)`,
-            color: C.text,
-            fontSize: 140,
-            fontWeight: 900,
-            letterSpacing: -4,
-            lineHeight: 1,
-          }}
-        >
-          {date}
+        <div style={{display: 'flex', flexDirection: 'column', gap: 22, flex: 1, justifyContent: 'center'}}>
+          {headlines.map((headline, index) => {
+            const delay = 0.15 + (index / Math.max(1, headlines.length)) * 0.55;
+            const shown = Math.max(0, Math.min(1, (progress - delay) / 0.12));
+            return (
+              <div
+                key={headline}
+                style={{
+                  opacity: shown,
+                  transform: `translateX(${(1 - shown) * 40}px)`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 24,
+                  background: C.panel,
+                  border: `1px solid ${C.line}`,
+                  borderRadius: 24,
+                  padding: '26px 30px',
+                }}
+              >
+                <div style={{...font, color: C.accent, fontSize: 44, fontWeight: 900, minWidth: 40}}>{index + 1}</div>
+                <div style={{...font, color: C.text, fontSize: 38, fontWeight: 700, lineHeight: 1.3}}>{headline}</div>
+              </div>
+            );
+          })}
         </div>
-        <div style={{...font, opacity: e2.opacity, color: C.muted, fontSize: 34, fontWeight: 600}}>
-          今日 {count} 条热点 · 每天 8 点更新
-        </div>
-        <div
-          style={{
-            opacity: e2.opacity,
-            width: '100%',
-            maxWidth: 760,
-            height: 2,
-            background: `linear-gradient(90deg, transparent, ${C.accent}, transparent)`,
-          }}
-        />
       </AbsoluteFill>
     </SceneShell>
   );
@@ -116,7 +97,8 @@ export const NewsCard: React.FC<{item: NewsItem}> = ({item}) => {
   const title = useEntrance(id, 0.3, 0.75);
   const summary = useEntrance(id, 0.6, 0.7);
   const highlight = useEntrance(id, 0.9, 0.7);
-  const titleSize = item.title.length > 12 ? 54 : 66;
+  const heading = item.articleTitle ?? item.title;
+  const titleSize = heading.length > 24 ? 52 : heading.length > 12 ? 60 : 68;
   return (
     <SceneShell id={id}>
       <AbsoluteFill style={{padding: '90px 82px 110px', flexDirection: 'column'}}>
@@ -136,7 +118,7 @@ export const NewsCard: React.FC<{item: NewsItem}> = ({item}) => {
               fontSize: 26,
             }}
           >
-            热
+            {item.id.replace('news-', '')}
           </div>
           <div>
             <div style={{...font, color: C.accent, fontWeight: 900, fontSize: 30, letterSpacing: 1}}>
@@ -161,7 +143,7 @@ export const NewsCard: React.FC<{item: NewsItem}> = ({item}) => {
               letterSpacing: -2,
             }}
           >
-            {item.title}
+            {heading}
           </div>
 
           <div
@@ -196,10 +178,10 @@ export const NewsCard: React.FC<{item: NewsItem}> = ({item}) => {
             }}
           >
             <div style={{...font, color: C.accent, fontSize: 24, fontWeight: 900, letterSpacing: 2, whiteSpace: 'nowrap'}}>
-              本期看点
+              报道来源
             </div>
             <div style={{...font, color: C.text, fontSize: 34, fontWeight: 700, lineHeight: 1.3}}>
-              {item.screenText}
+              {(item.outlets ?? [item.source]).join(' · ')}
             </div>
           </div>
         </div>
@@ -239,10 +221,10 @@ export const Outro: React.FC = () => {
           明天见
         </div>
         <div style={{...font, opacity: e.opacity, color: C.accent, fontSize: 38, fontWeight: 800, letterSpacing: 2}}>
-          关注 · 每天与你 AI 读新闻
+          每日头条 · 原文链接见文字版
         </div>
         <div style={{...font, opacity: e.opacity, color: C.muted, fontSize: 24, fontWeight: 500}}>
-          自动取材与摘要 · AI 配音
+          多源交叉印证 · 自动摘要 · AI 配音
         </div>
       </AbsoluteFill>
     </SceneShell>
