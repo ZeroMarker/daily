@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from fetch import parse_published, parse_feed
-from generate_news import select, manifest, main, clean_summary
+from generate_news import select, manifest, main, clean_summary, lead_sentences, speakable
 from validate_content import validate
 import publish_content
 
@@ -127,6 +127,24 @@ class NewsTests(unittest.TestCase):
         self.assertEqual(len(chosen), 1)
         data = manifest(date(2026, 10, 8), chosen)
         self.assertEqual(data['items'][1]['articleTitle'], '公司发布新模型')
+
+    def test_summary_budget_dedup_and_speech(self):
+        long_first = '某公司副总裁在年度全球峰会上详细阐述了公司在即将到来的新一代计算时代中所具备的独特技术优势与长期产品路线规划安排，并表示将持续加大投入力度以保持在行业中的领先地位和竞争优势。'
+        self.assertTrue(lead_sentences(long_first, 60))
+        self.assertEqual(lead_sentences('中国经济第三季度增速有所回升。出口强劲。', headline='中国第三季度经济增长回升至4.5%'), '出口强劲。')
+        self.assertEqual(speakable('来自 3,021 名开发者的 18,765 个提交 (SiPh) 时代'), '来自 3021 名开发者的 约1.9万 个提交时代')
+        self.assertEqual(speakable('增长回升至4.5% AI热潮带动出口 内需疲软'), '增长回升至4.5%，AI热潮带动出口，内需疲软')
+
+    def test_cluster_borrows_summary_and_drops_title_only(self):
+        rows = [candidate('英伟达发布新一代芯片架构', source='甲', url='https://a.com/1'),
+                candidate('英伟达新一代芯片架构正式发布', source='乙', url='https://b.com/1'),
+                candidate('某机构发布模型评测结果', source='丙', url='https://c.com/1')]
+        rows[0]['summary'] = '点击查看原文>'
+        rows[1]['summary'] = '新架构面向数据中心，训练性能提升一倍，明年起向云厂商供货。'
+        rows[2]['summary'] = '点击查看原文>'
+        chosen = select(rows, CUTOFF, count=2, minimum=1)
+        self.assertEqual(len(chosen), 1)
+        self.assertIn('数据中心', chosen[0]['summary'])
 
 
 if __name__ == '__main__':

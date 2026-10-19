@@ -45,6 +45,8 @@ HYPE_PREFIX = re.compile(r'^(?:[【\[［][^】\]］]{1,12}[】\]］]|(?:突发|�
 # Features, opinion and clickbait read like stories, not today's events.
 FEATURE = re.compile(r'背后|你不知道|的故事|线索|揭秘|谜团|太甚|一文|看懂|深度|专访|对话|观察|评论|随笔|为什么|为何|如何|怎么|[？?]|吗$', re.I)
 HYPE = re.compile(r'斩杀|吊打|炸裂|封神|杀疯|史上最|颠覆|震撼|王炸|逆天|太强了|一切$')
+MIN_SUMMARY = 15
+SUMMARY_BUDGET = 100
 DATELINE = re.compile(r'^[^，,。]{0,20}?\d{1,2}\s*月\s*\d{1,2}\s*日(?:消息|电|讯)?[，,：:\s]*')
 
 
@@ -160,8 +162,11 @@ def select(candidates, cutoff, hours=48, count=5, minimum=3, language='zh'):
         assigned.update(members)
         outlets = {pool[j]['source'] for j in members}
         score = sum(rank[j] for j in members) * (1 + 0.6 * (len(outlets) - 1))
-        lead = max(members, key=lambda j: (len(clean_summary(pool[j].get('summary', ''))) >= 40, rank[j]))
-        clusters.append((score, pool[i]['published'], dict(pool[lead], outlets=sorted(outlets))))
+        # Link the top-ranked report, but borrow the most informative summary in the cluster.
+        best = max((clean_summary(pool[j].get('summary', '')) for j in members), key=len)
+        if len(best) < MIN_SUMMARY:
+            continue  # Title-only items (e.g. "点击查看原文") cannot be narrated or cross-checked.
+        clusters.append((score, pool[i]['published'], dict(pool[i], summary=best, outlets=sorted(outlets))))
     clusters.sort(key=lambda row: (row[0], row[1], row[2]['link']), reverse=True)
     chosen, sources = [], Counter()
     for limit in (1, 2, count):
@@ -187,19 +192,43 @@ def clean_summary(text):
     return text.strip().rstrip('.… ').strip()
 
 
-def lead_sentences(text, limit):
-    """Whole sentences only: narration never stops mid-sentence."""
+def overlaps(sentence, headline, ratio=0.5):
+    grams = lambda text: {text[i:i + 2] for i in range(len(text) - 1)}
+    left, right = grams(re.sub(r'\W', '', sentence)), grams(re.sub(r'\W', '', headline))
+    # Share of the headline's lead clause that the sentence merely restates.
+    return bool(right) and len(left & right) / len(right) >= ratio
+
+
+def lead_sentences(text, limit=SUMMARY_BUDGET, headline=''):
+    """Whole sentences (or a whole leading clause) that add to the headline."""
+    sentences = [x.strip() for x in re.findall(r'[^。！？!?]+[。！？!?]?', text) if x.strip()]
+    sentences = [x for x in sentences if not (headline and overlaps(x, brief(headline), 0.4))]
     out = ''
-    for sentence in re.findall(r'[^。！？!?]+[。！？!?]?', text):
-        sentence = sentence.strip()
-        if not sentence or len(out) + len(sentence) > limit:
+    for sentence in sentences:
+        if len(out) + len(sentence) > limit:
             break
         out += sentence if sentence[-1] in '。！？!?' else sentence + '。'
-    if not out and text:
-        clause = text[:limit]
-        cut = max(clause.rfind(mark) for mark in '，,；;')
-        out = clause[:cut] + '。' if cut >= limit // 3 else ''
+    if not out and sentences:
+        first = sentences[0]
+        cuts = [i for i, ch in enumerate(first) if ch in '，,；;' and 12 <= i <= limit]
+        out = first[:cuts[-1]] + '。' if cuts else ''
     return out
+
+
+def speakable(text):
+    """Make TTS-friendly: drop ASCII-only asides, round big numbers."""
+    text = re.sub(r'\s*[（(][\x20-\x7e]+[）)]\s*', '', text)
+    # Headlines often use spaces as clause breaks; TTS needs a pause there.
+    text = re.sub(r'(?<=[\u4e00-\u9fff])\s+(?=[\u4e00-\u9fff])|(?<=%)\s+', '，', text)
+
+    def number(match):
+        value = float(match.group().replace(',', ''))
+        if value < 1e4:
+            return str(int(value))
+        if value >= 1e8:
+            return f'约{value / 1e8:.3g}亿'
+        return f'约{value / 1e4:.2g}万'
+    return re.sub(r'(?<![\d.])\d{1,3}(?:,\d{3})+(?![\d.])|(?<![\d.,])\d{5,}(?![\d.,])', number, text)
 
 
 def manifest(day, chosen):
@@ -212,9 +241,9 @@ def manifest(day, chosen):
                   screenText=f'{len(chosen)} 条头条', headlines=shorts)]
     for index, (candidate, headline) in enumerate(zip(chosen, headlines), 1):
         summary = clean_summary(candidate.get('summary', ''))
-        if not summary or similar(headline, summary) or headline in summary[:len(headline) + 4]:
-            summary = summary if summary and not similar(headline, summary) else ''
-        narration = headline + '。' + lead_sentences(summary, 120 - len(headline))
+        if similar(headline, summary):
+            summary = ''
+        narration = speakable(headline + '。' + lead_sentences(summary, headline=headline))
         outlets = candidate.get('outlets') or [candidate['source']]
         items.append(dict(id=f'news-{index}', kind='news', title=shorts[index - 1],
                           articleTitle=headline, source=candidate['source'], outlets=outlets,
