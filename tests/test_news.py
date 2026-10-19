@@ -146,6 +146,17 @@ class NewsTests(unittest.TestCase):
         self.assertEqual(len(chosen), 1)
         self.assertIn('数据中心', chosen[0]['summary'])
 
+    def test_traditional_and_invisible_chars_cleaned(self):
+        response = unittest.mock.Mock(text='<rss><channel><item><title>BBC暫停\u200b公務員借調計劃</title><link>https://example.com/a</link><pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate><description>編輯決定</description></item></channel></rss>')
+        with patch('fetch.requests.get', return_value=response):
+            entry = parse_feed('https://example.com/feed', 'BBC中文', '国际')[0]
+        self.assertEqual((entry['title'], entry['summary']), ('BBC暂停公务员借调计划', '编辑决定'))
+
+    def test_credible_outlet_leads_shared_event(self):
+        rows = [candidate('中国三季度经济增速回升', source='cnBeta', url='https://a.com/1', stamp=CUTOFF - 10),
+                candidate('中国三季度经济增速回升 出口强劲', source='纽约时报中文网', url='https://b.com/1', stamp=CUTOFF - 3000)]
+        self.assertEqual(select(rows, CUTOFF, count=1, minimum=1)[0]['source'], '纽约时报中文网')
+
 
 if __name__ == '__main__':
     unittest.main()

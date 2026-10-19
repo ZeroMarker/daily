@@ -13,6 +13,9 @@ from html import unescape
 from news_config import content_dir
 
 import requests
+from opencc import OpenCC
+
+T2S = OpenCC('t2s')
 
 VO = str(content_dir())
 os.makedirs(VO, exist_ok=True)
@@ -41,6 +44,8 @@ FEEDS = [
 
 FETCH_TIMEOUT = 12
 TAG_RE = re.compile(r"<[^>]+>")
+# Zero-width/format characters some feeds embed as invisible watermarks.
+INVISIBLE_RE = re.compile(r"[\u200b-\u200f\u202a-\u202e\u2060-\u2064\ufeff]")
 
 
 def local_name(tag):
@@ -49,7 +54,7 @@ def local_name(tag):
 
 def strip_html(text):
     text = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", "", text or "", flags=re.I | re.S)
-    return " ".join(unescape(TAG_RE.sub(" ", text)).split())
+    return " ".join(INVISIBLE_RE.sub("", unescape(TAG_RE.sub(" ", text))).split())
 
 
 def text_of(element, names):
@@ -106,9 +111,10 @@ def parse_feed(url, source, category):
         if not title or not link:
             continue
         entries.append({
-            "title": title,
+            # Some Chinese feeds (e.g. BBC中文) publish Traditional characters.
+            "title": T2S.convert(title),
             "link": link,
-            "summary": summary[:1000],
+            "summary": T2S.convert(summary[:1000]),
             "published": published,
             "source": source,
             "category": category,

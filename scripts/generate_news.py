@@ -9,7 +9,7 @@ from datetime import datetime, time, timedelta
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from news_config import TIMEZONE, content_dir, release_date
+from news_config import TIMEZONE, content_dir, release_date, source_weight
 
 
 def short(text, limit):
@@ -43,7 +43,7 @@ MARKETING = re.compile(
 DIGEST = re.compile(r'早报|晚报|午报|日报|周报|周刊|一周|盘点|汇总|速览|快讯合集|8点1氪|今日要闻|\d+\s*条|Newsletter|Briefing', re.I)
 HYPE_PREFIX = re.compile(r'^(?:[【\[［][^】\]］]{1,12}[】\]］]|(?:突发|重磅|独家|刚刚|震惊|快讯|最新|官宣)[！!｜|:：\s]+)+')
 # Features, opinion and clickbait read like stories, not today's events.
-FEATURE = re.compile(r'背后|你不知道|的故事|线索|揭秘|谜团|太甚|一文|看懂|深度|专访|对话|观察|评论|随笔|为什么|为何|如何|怎么|[？?]|吗$', re.I)
+FEATURE = re.compile(r'背后|你不知道|的故事|故事|小记|手记|回顾|不为人知|线索|揭秘|谜团|太甚|一文|看懂|深度|专访|对话|观察|评论|随笔|为什么|为何|如何|怎么|[？?]|吗$', re.I)
 HYPE = re.compile(r'斩杀|吊打|炸裂|封神|杀疯|史上最|颠覆|震撼|王炸|逆天|太强了|一切$')
 MIN_SUMMARY = 15
 SUMMARY_BUDGET = 100
@@ -51,6 +51,7 @@ DATELINE = re.compile(r'^[^，,。]{0,20}?\d{1,2}\s*月\s*\d{1,2}\s*日(?:消息
 
 
 def clean_title(title):
+    title = re.sub(r'[\u200b-\u200f\u202a-\u202e\u2060-\u2064\ufeff]', '', title)
     title = HYPE_PREFIX.sub('', ' '.join(title.split())).strip(' ！!｜|')
     # Drop hype clauses ("超级性价比斩杀一切") but keep the factual clause.
     parts = [part for part in re.split(r'(?<=[，,！!])', title) if not HYPE.search(part)]
@@ -147,8 +148,9 @@ def select(candidates, cutoff, hours=48, count=5, minimum=3, language='zh'):
         pool.append(item)
     if not pool:
         raise ValueError(f'仅 0 条新鲜且不重复的新闻，少于最低 {minimum} 条；停止发布。')
-    prior = [1 + 1.5 * (1 - (cutoff - item['published']) / (hours * 3600))
-             + (0.5 if item.get('category') == 'AI' else 0) for item in pool]
+    # Credible outlets get more base rank, which they pass on to the stories they corroborate.
+    prior = [source_weight(item['source']) * (1 + 1.5 * (1 - (cutoff - item['published']) / (hours * 3600))
+             + (0.5 if item.get('category') == 'AI' else 0)) for item in pool]
     sims = similarity_graph(pool)
     rank = pagerank(sims, pool, prior)
     order = sorted(range(len(pool)), key=lambda i: (rank[i], pool[i]['published'], pool[i]['link']), reverse=True)
@@ -161,12 +163,13 @@ def select(candidates, cutoff, hours=48, count=5, minimum=3, language='zh'):
                    or similar(clean_title(pool[i]['title']), clean_title(pool[j]['title'])))]
         assigned.update(members)
         outlets = {pool[j]['source'] for j in members}
-        score = sum(rank[j] for j in members) * (1 + 0.6 * (len(outlets) - 1))
-        # Link the top-ranked report, but borrow the most informative summary in the cluster.
+        score = sum(rank[j] for j in members) * (1 + 0.6 * (sum(map(source_weight, outlets)) - source_weight(pool[i]['source'])))
+        # Link the most credible outlet's report, but borrow the most informative summary in the cluster.
         best = max((clean_summary(pool[j].get('summary', '')) for j in members), key=len)
         if len(best) < MIN_SUMMARY:
             continue  # Title-only items (e.g. "点击查看原文") cannot be narrated or cross-checked.
-        clusters.append((score, pool[i]['published'], dict(pool[i], summary=best, outlets=sorted(outlets))))
+        lead = max(members, key=lambda j: (source_weight(pool[j]['source']), rank[j]))
+        clusters.append((score, pool[i]['published'], dict(pool[lead], summary=best, outlets=sorted(outlets))))
     clusters.sort(key=lambda row: (row[0], row[1], row[2]['link']), reverse=True)
     chosen, sources = [], Counter()
     for limit in (1, 2, count):
