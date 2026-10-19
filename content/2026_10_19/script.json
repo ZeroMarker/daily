@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-19",
+  "generation": {
+    "mode": "rss-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "AI 新闻日报",
+      "text": "今天是10月19日，这里是 AI 新闻日报。接下来，带你了解5条值得关注的消息。",
+      "screenText": "今日 5 条热点"
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "中信证券：看好国产大模…",
+      "articleTitle": "中信证券：看好国产大模型持续崛起",
+      "source": "IT之家",
+      "sourceUrl": "https://www.ithome.com/1/014/646.htm",
+      "publishedAt": "2026-10-19T09:06:09+08:00",
+      "category": "科技",
+      "text": "IT之家报道，中信证券：看好国产大模型持续崛起。IT之家 10 月 19 日消息，中信证券研究公众号发布报告， 认为 Harness 有望成为 DeepSeek 从模型供给走向平台生态的关键一环 ，将开源与工程优势转化为用户基础、生态影响力和商业化能力。",
+      "screenText": "中信证券：看好国产大模型持续崛起",
+      "summary": "IT之家 10 月 19 日消息，中信证券研究公众号发布报告， 认为 Harness 有望成为 DeepSeek 从模型供给走向平台生态的关键一环 ，将开源与工程优势转化为用户基础、生态影响力和商业化能力。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "早报｜曝苹果机械臂版H…",
+      "articleTitle": "早报｜曝苹果机械臂版HomeView正在开发/蔚来三季度销量首次超BBA/英伟达否认RTX 5090停产",
+      "source": "爱范儿",
+      "sourceUrl": "https://www.ifanr.com/1684815?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-19T08:00:42+08:00",
+      "category": "科技",
+      "text": "爱范儿报道，早报｜曝苹果机械臂版HomeView正在开发/蔚来三季度销量首次超BBA/英伟达否认RTX 5090停产。· 曝三星拟采用台积电 3nm 工艺，为英伟达定制 HBM · 智界拟取得独立造车资质，内部人士确认独立上市计划 · Tibo 回应 Codex 用户许…",
+      "screenText": "早报｜曝苹果机械臂版HomeView正在开发/蔚来三季…",
+      "summary": "· 曝三星拟采用台积电 3nm 工艺，为英伟达定制 HBM · 智界拟取得独立造车资质，内部人士确认独立上市计划 · Tibo 回应 Codex 用户许愿：五项建议中有两项正在做"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "派早报：三季度全球手机…",
+      "articleTitle": "派早报：三季度全球手机出货量继续两位数下降",
+      "source": "少数派",
+      "sourceUrl": "https://sspai.com/post/116641",
+      "publishedAt": "2026-10-19T07:13:24+08:00",
+      "category": "数码",
+      "text": "少数派报道，派早报：三季度全球手机出货量继续两位数下降。三季度全球手机出货量继续两位数下降 Roadster 发布会留下诸多疑问 闰时将取代闰秒 微软声称 Windows 11 响应提速 20%，为 8GB 优化 E Ink 发布 Kaleido 4 全国铁路列车车次编…",
+      "screenText": "派早报：三季度全球手机出货量继续两位数下降",
+      "summary": "三季度全球手机出货量继续两位数下降 Roadster 发布会留下诸多疑问 闰时将取代闰秒 微软声称 Windows 11 响应提速 20%，为 8GB 优化 E Ink 发布 Kaleido 4 全国铁路列车车次编排更新 看看就行的简讯 少数派的近期动态 你可能错过的好文章"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "指纹显示秦始皇兵马俑的…",
+      "articleTitle": "指纹显示秦始皇兵马俑的制作者有男有女有儿童",
+      "source": "Solidot",
+      "sourceUrl": "https://www.solidot.org/story?sid=85643",
+      "publishedAt": "2026-10-18T23:14:58+08:00",
+      "category": "科技",
+      "text": "Solidot报道，指纹显示秦始皇兵马俑的制作者有男有女有儿童。考古学家长期以来认为秦始皇兵马俑全是由成年男性工匠制作的。但俑上的指纹显示，男性、女性甚至儿童都参与了这项宏大工程。",
+      "screenText": "指纹显示秦始皇兵马俑的制作者有男有女有儿童",
+      "summary": "考古学家长期以来认为秦始皇兵马俑全是由成年男性工匠制作的。但俑上的指纹显示，男性、女性甚至儿童都参与了这项宏大工程。秦始皇帝陵博物院的考古学家从同一发掘坑内的 36 尊兵马俑上提取出 91 枚指纹，其中 12 枚指纹被认为是个别人留下的重复指纹而剔除。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "突发！DeepSeek…",
+      "articleTitle": "突发！DeepSeek新模型发布，超级性价比斩杀一切",
+      "source": "量子位",
+      "sourceUrl": "https://www.qbitai.com/2026/10/504067.html",
+      "publishedAt": "2026-10-17T20:21:09+08:00",
+      "category": "AI",
+      "text": "量子位报道，突发！DeepSeek新模型发布，超级性价比斩杀一切。新版本V4.1-Flash-1017，还开放了自研搜索API。",
+      "screenText": "突发！DeepSeek新模型发布，超级性价比斩杀一切",
+      "summary": "新版本V4.1-Flash-1017，还开放了自研搜索API"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "title": "明天见",
+      "text": "以上就是本期新闻日报。新闻原文链接见文字日报，关注我们，每天一起了解新的变化。",
+      "screenText": "关注 · 每天与你 AI 读新闻"
+    }
+  ]
+}
