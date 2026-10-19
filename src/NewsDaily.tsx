@@ -3,7 +3,7 @@ import {AbsoluteFill, Audio, interpolate, staticFile, useCurrentFrame, useVideoC
 import {notoSansSC} from './fonts';
 import {DATE, ITEMS} from './content';
 import {AUDIO_END} from './timing';
-import {Backdrop, C, Intro, NewsCard, Outro} from './scenes';
+import {Backdrop, C, Intro, NewsCard} from './scenes';
 
 const font: React.CSSProperties = {
   fontFamily: `${notoSansSC.fontFamily}, 'Noto Sans SC', sans-serif`,
@@ -26,7 +26,6 @@ export const NewsDaily: React.FC = () => {
       {newsItems.map((item) => (
         <NewsCard key={item.id} item={item} />
       ))}
-      <Outro />
       <Audio src={staticFile('voiceover/narration.zh.mp3')} />
       <AbsoluteFill style={{background: '#050609', opacity: fade}} />
       <div

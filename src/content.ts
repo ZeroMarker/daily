@@ -1,6 +1,6 @@
 import data from '../public/voiceover/script.json';
 
-export type ItemKind = 'intro' | 'news' | 'outro';
+export type ItemKind = 'intro' | 'news';
 
 export interface NewsItem {
   id: string;

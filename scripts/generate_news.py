@@ -223,9 +223,6 @@ def manifest(day, chosen):
                           text=f'第{ordinals[index - 1] if index <= 10 else index}条，{narration.rstrip()}',
                           screenText=f'{len(outlets)} 家媒体报道' if len(outlets) > 1 else candidate['source'],
                           summary=short(summary or headline, 150)))
-    items.append(dict(id='outro', kind='outro', title='明天见',
-                      text='以上是今天的每日头条，原文链接见文字版。明天见。',
-                      screenText='每日头条 · 明天见'))
     return dict(date=day.isoformat(), generation=dict(mode='rss-pagerank-extractive', timezone=str(TIMEZONE)), items=items)
 
 

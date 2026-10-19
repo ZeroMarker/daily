@@ -59,7 +59,7 @@ class NewsTests(unittest.TestCase):
         day = date(2026, 10, 8)
         data = manifest(day, [candidate('一条新闻')])
         narration = '\n\n'.join(x['text'] for x in data['items'])
-        self.assertEqual(len(validate(data, narration, day)), 3)
+        self.assertEqual(len(validate(data, narration, day)), 2)
         with self.assertRaises(ValueError):
             validate(data, '\n\n'.join(reversed(narration.split('\n\n'))), day)
         data['items'][1]['id'] = 'intro'

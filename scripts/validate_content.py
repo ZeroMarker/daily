@@ -9,8 +9,8 @@ def validate(script, narration, day):
     items = script.get('items', [])
     if script.get('date') != day.isoformat():
         errors.append('script.date 与目标日期不一致')
-    if len(items) < 3 or items[0].get('kind') != 'intro' or items[-1].get('kind') != 'outro':
-        errors.append('内容必须包含开场、新闻和结尾')
+    if len(items) < 2 or items[0].get('kind') != 'intro' or any(item.get('kind') != 'news' for item in items[1:]):
+        errors.append('内容必须是开场加新闻，不含结尾')
     ids = [item.get('id') for item in items]
     if any(not id for id in ids) or len(set(ids)) != len(ids):
         errors.append('场景 id 必须非空且唯一')
