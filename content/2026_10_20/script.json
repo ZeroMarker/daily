@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-20",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月20日，星期二。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "中国第三季度经济增速微升",
+        "四个谷歌 Gemini 4 Argon",
+        "美国四分之一冰川消失",
+        "中期选举前景打压美国军工股",
+        "HORI电子陶笛开放预购 支持《塞尔达"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "中国第三季度经济增速微升",
+      "articleTitle": "中国第三季度经济增速微升：出口繁荣，消费停滞",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "cnBeta",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/business/20261019/china-economy-gdp/?utm_source=RSS",
+      "publishedAt": "2026-10-19T12:05:33+08:00",
+      "category": "国际",
+      "text": "第一条，中国第三季度经济增速微升：出口繁荣，消费停滞。人工智能数据中心建设带动芯片、计算设备及相关电子产品需求增长，为中国制造业出口提供了新的动力，帮助这个全球第二大经济体缓解国内消费疲软和房地产市场持续低迷带来的压力。",
+      "screenText": "2 家媒体报道",
+      "summary": "在全球人工智能产业持续扩张的背景下，中国经济第三季度增速有所回升。人工智能数据中心建设带动芯片、计算设备及相关电子产品需求增长，为中国制造业出口提供了新的动力，帮助这个全球第二大经济体缓解国内消费疲软和房地产市场持续低迷带来的压力。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "四个谷歌 Gemini 4 Argon",
+      "articleTitle": "四个谷歌 Gemini 4 Argon 智能体成功击败末影龙通关《我的世界》，耗时 27 小时",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/015/048.htm",
+      "publishedAt": "2026-10-19T23:03:29+08:00",
+      "category": "科技",
+      "text": "第二条，四个谷歌 Gemini 4 Argon 智能体成功击败末影龙通关《我的世界》，耗时 27 小时。但研究人员没有为他们制定任何策略，只是说了最终目标，所有行为都由智能体自行规划。研究人员可通过仪表板观察他们，下达暂停 / 终止测试指令，但没有权利介入。",
+      "screenText": "2 家媒体报道",
+      "summary": "谷歌研究人员近日发布论文称，他们使用四个 Gemini 4 Argon 智能体成功通关《我的世界》，仅用 27 小时就成功击败末影龙。 谷歌将 4 个 Gemini 4 放入随机生成的世界中，他们可以通过游戏内的聊天框互相协调。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "美国四分之一冰川消失",
+      "articleTitle": "美国四分之一冰川消失，冰量缩小 35%",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85646",
+      "publishedAt": "2026-10-19T15:45:43+08:00",
+      "category": "科技",
+      "text": "第三条，美国四分之一冰川消失，冰量缩小 35%。冰川是天然的固体水库，是下游淡水和水资源的重要来源。全球暖化导致冰川快速萎缩，削弱了下游生态系统应对干旱的能力。",
+      "screenText": "2 家媒体报道",
+      "summary": "冰川是天然的固体水库，是下游淡水和水资源的重要来源。全球暖化导致冰川快速萎缩，削弱了下游生态系统应对干旱的能力。根据发表在 PNAS 期刊上的一项研究，对美国逾 1000 座冰川的全面评估发现，自 1950 年代中期以来，四分之一的冰川消失，冰川面积缩小了 35%——195.29 平方公里、55."
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "中期选举前景打压美国军工股",
+      "articleTitle": "中期选举前景打压美国军工股",
+      "source": "FT中文网",
+      "outlets": [
+        "FT中文网"
+      ],
+      "sourceUrl": "https://www.ftchinese.com/story/001111143",
+      "publishedAt": "2026-10-20T00:00:00+08:00",
+      "category": "国际",
+      "text": "第四条，中期选举前景打压美国军工股。",
+      "screenText": "FT中文网",
+      "summary": "随着投资者押注民主党将在中期选举中拿下国会两院控制权，进而阻挠特朗普增加5000亿美元军费支出的计划，美国军工股走势低迷。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "HORI电子陶笛开放预购 支持《塞尔达",
+      "articleTitle": "HORI电子陶笛开放预购 支持《塞尔达：时之笛 重制版》联动",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/game/1582942.htm",
+      "publishedAt": "2026-10-19T23:00:14+08:00",
+      "category": "科技",
+      "text": "第五条，HORI电子陶笛开放预购，支持《塞尔达：时之笛，重制版》联动。该产品已在HORI官方商城和亚马逊开启预购。",
+      "screenText": "cnBeta",
+      "summary": "HORI面向Nintendo Switch 2游戏《塞尔达：时之笛 重制版》推出的“电子时之笛”现已开放预购，定于11月5日发售，含税价格为7980日元。该产品已在HORI官方商城和亚马逊开启预购。"
+    }
+  ]
+}
