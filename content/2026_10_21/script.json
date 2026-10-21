@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-21",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月21日，星期三。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "地表最强科技联姻",
+        "四分之一数据中心位于水资源受限的区域",
+        "大众在华“联姻与离婚”策略曝光",
+        "国模Agent第一！MiniMax爆改…",
+        "泽连斯基称特朗普正试图迫使乌克兰在战争…"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "地表最强科技联姻",
+      "articleTitle": "地表最强科技联姻：马斯克称特斯拉与 SpaceX 合并“有很多好处”",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/015/625.htm",
+      "publishedAt": "2026-10-21T07:08:36+08:00",
+      "category": "科技",
+      "text": "第一条，地表最强科技联姻：马斯克称特斯拉与 SpaceX 合并“有很多好处”。）发布博文，报道称在 2026 财年第三财季（2026 年 7 月～2026 年 9 月）财报电话会上， 全球首富埃隆 · 马斯克表示 SpaceX 与特斯拉均已成立由独立董事组成的特别委员会。",
+      "screenText": "2 家媒体报道",
+      "summary": "）发布博文，报道称在 2026 财年第三财季（2026 年 7 月～2026 年 9 月）财报电话会上， 全球首富埃隆 · 马斯克表示 SpaceX 与特斯拉均已成立由独立董事组成的特别委员会，研究两家公司潜在合并的可能性。 若交易最终落地，有望成为有史以来规模最大的企业合并。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "四分之一数据中心位于水资源受限的区域",
+      "articleTitle": "四分之一数据中心位于水资源受限的区域",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85663",
+      "publishedAt": "2026-10-20T17:02:49+08:00",
+      "category": "科技",
+      "text": "第二条，四分之一数据中心位于水资源受限的区域。全球各地分布着数以千计的数据中心，这些设施在冷却服务器和防止过热过程中消耗了大量水资源。它们所使用的水资源与周边社区以及农业和制造业等共享。",
+      "screenText": "2 家媒体报道",
+      "summary": "根据发表在《Environmental Science & Technology》期刊上的一项研究，全世界四分之一数据中心位于每年至少一个月用水需求超过供应的地区。全球各地分布着数以千计的数据中心，这些设施在冷却服务器和防止过热过程中消耗了大量水资源。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "大众在华“联姻与离婚”策略曝光",
+      "articleTitle": "大众在华“联姻与离婚”策略曝光：曾想联手比亚迪 对比亚迪成本优势惊讶",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1583034.htm",
+      "publishedAt": "2026-10-20T15:53:38+08:00",
+      "category": "科技",
+      "text": "第三条，大众在华“联姻与离婚”策略曝光：曾想联手比亚迪，对比亚迪成本优势惊讶。据路透社报道，知情人士称，大众汽车曾考虑在中国市场与比亚迪合作，并对比亚迪的成本优势感到惊讶。",
+      "screenText": "cnBeta",
+      "summary": "据路透社报道，知情人士称，大众汽车曾考虑在中国市场与比亚迪合作，并对比亚迪的成本优势感到惊讶。在中国电动汽车市场加速发展，自身销量不达标的情况下，大众开始探索与中国本土企业开展各种合作，希望借此获得自身所欠缺的速度和专业技术。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "国模Agent第一！MiniMax爆改…",
+      "articleTitle": "国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价",
+      "source": "量子位",
+      "outlets": [
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/10/504517.html",
+      "publishedAt": "2026-10-20T21:29:54+08:00",
+      "category": "AI",
+      "text": "第四条，国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价。兔皮底下，竟然是MiniMax！",
+      "screenText": "量子位",
+      "summary": "兔皮底下，竟然是MiniMax！"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "泽连斯基称特朗普正试图迫使乌克兰在战争…",
+      "articleTitle": "泽连斯基称特朗普正试图迫使乌克兰在战争中投降",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/world/20261020/trump-zelensky-putin-ukraine-war/?utm_source=RSS",
+      "publishedAt": "2026-10-20T11:28:31+08:00",
+      "category": "国际",
+      "text": "第五条，泽连斯基称特朗普正试图迫使乌克兰在战争中投降。泽连斯基表示，美国已采取一些措施来削弱乌克兰的战斗能力。此前特朗普宣布将购买俄罗斯石油，乌克兰还抱怨美国限制其访问卫星互联网网络，并在情报共享方面存在疏漏。",
+      "screenText": "纽约时报中文网",
+      "summary": "泽连斯基表示，美国已采取一些措施来削弱乌克兰的战斗能力。此前特朗普宣布将购买俄罗斯石油，乌克兰还抱怨美国限制其访问卫星互联网网络，并在情报共享方面存在疏漏。 Efrem Lukatsky/Associated Press 周一，乌克兰基辅市遭俄罗斯袭击后造成的破坏。"
+    }
+  ]
+}
