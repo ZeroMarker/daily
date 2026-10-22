@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-22",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月22日，星期四。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "Meta 2026",
+        "iPhone Duo屏下前摄性能引关注",
+        "首Token延迟降低32.4%！是石科…",
+        "泽连斯基称特朗普正试图迫使乌克兰在战争…",
+        "星巴克的沙发不养闲人"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "Meta 2026",
+      "articleTitle": "Meta 2026 财年第三财季归母净利润 98.6 亿美元，同比增长 264%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/016/163.htm",
+      "publishedAt": "2026-10-22T04:09:17+08:00",
+      "category": "科技",
+      "text": "第一条，Meta 2026 财年第三财季归母净利润 98.6 亿美元，同比增长 264%。公司主营业务与财报亮点 IBM是全球领先的信息技术和咨询公司，主营业务涵盖软件、咨询、基础设施。",
+      "screenText": "IT之家",
+      "summary": "IBM今日发布 2026 财年（2026 年 1 月～2026 年 12 月）半年报（2026 年 1 月～2026 年 9 月）及第三财季（2026 年 7 月～2026 年 9 月）报告： 2026 财年半年报 营业总收入 ：501.82 亿美元 （IT之家注：现汇率约合 3357."
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "iPhone Duo屏下前摄性能引关注",
+      "articleTitle": "iPhone Duo屏下前摄性能引关注 苹果刻意保留关键参数",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1583260.htm",
+      "publishedAt": "2026-10-22T03:00:11+08:00",
+      "category": "科技",
+      "text": "第二条，iPhone Duo屏下前摄性能引关注，苹果刻意保留关键参数。这是苹果首次在量产设备中采用屏下摄像头技术，但与设备上的其他摄像头相比，苹果披露的信息明显更为有限。",
+      "screenText": "cnBeta",
+      "summary": "随着苹果首款折叠屏手机 iPhone Duo 即将正式上市，隐藏在其 7.6 英寸内屏下方的 FaceTime 前置摄像头成为外界关注的焦点。这是苹果首次在量产设备中采用屏下摄像头技术，但与设备上的其他摄像头相比，苹果披露的信息明显更为有限。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "首Token延迟降低32.4%！是石科…",
+      "articleTitle": "首Token延迟降低32.4%！是石科技集群调度大招，国产推理再提效",
+      "source": "量子位",
+      "outlets": [
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/10/504421.html",
+      "publishedAt": "2026-10-20T16:01:25+08:00",
+      "category": "AI",
+      "text": "第三条，首Token延迟降低32.4%！是石科技集群调度大招，国产推理再提效。最新发布TokenFleet调度框架。",
+      "screenText": "量子位",
+      "summary": "最新发布TokenFleet调度框架"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "泽连斯基称特朗普正试图迫使乌克兰在战争…",
+      "articleTitle": "泽连斯基称特朗普正试图迫使乌克兰在战争中投降",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/world/20261020/trump-zelensky-putin-ukraine-war/?utm_source=RSS",
+      "publishedAt": "2026-10-20T11:28:31+08:00",
+      "category": "国际",
+      "text": "第四条，泽连斯基称特朗普正试图迫使乌克兰在战争中投降。泽连斯基表示，美国已采取一些措施来削弱乌克兰的战斗能力。此前特朗普宣布将购买俄罗斯石油，乌克兰还抱怨美国限制其访问卫星互联网网络，并在情报共享方面存在疏漏。",
+      "screenText": "纽约时报中文网",
+      "summary": "泽连斯基表示，美国已采取一些措施来削弱乌克兰的战斗能力。此前特朗普宣布将购买俄罗斯石油，乌克兰还抱怨美国限制其访问卫星互联网网络，并在情报共享方面存在疏漏。 Efrem Lukatsky/Associated Press 周一，乌克兰基辅市遭俄罗斯袭击后造成的破坏。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "星巴克的沙发不养闲人",
+      "articleTitle": "星巴克的沙发不养闲人",
+      "source": "钛媒体",
+      "outlets": [
+        "钛媒体"
+      ],
+      "sourceUrl": "https://www.tmtpost.com/8176482.html",
+      "publishedAt": "2026-10-21T17:49:41+08:00",
+      "category": "科技",
+      "text": "第五条，星巴克的沙发不养闲人。装了八年大方的星巴克，终于“坐不住”了。",
+      "screenText": "钛媒体",
+      "summary": "装了八年大方的星巴克，终于“坐不住”了。"
+    }
+  ]
+}
