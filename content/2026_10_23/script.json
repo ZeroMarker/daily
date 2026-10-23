@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-23",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月23日，星期五。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "充分调动 iPhone Duo 体验",
+        "OpenAI揪出PHP致命漏洞",
+        "默茨警告：德国正成为俄罗斯“密集”间谍…",
+        "暗影人物：与乌克兰合作的俄罗斯人",
+        "亚马逊云科技Ozgur Tohumcu"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "充分调动 iPhone Duo 体验",
+      "articleTitle": "充分调动 iPhone Duo 体验：苹果给适配 App 发“身份证”，《绝区零》等首批支持",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/016/768.htm",
+      "publishedAt": "2026-10-23T07:37:42+08:00",
+      "category": "科技",
+      "text": "第一条，充分调动 iPhone Duo 体验：苹果给适配 App 发“身份证”，《绝区零》等首批支持。在苹果展示的适配案例中，Netflix 可在内屏完整播放影视内容，并在外屏提供短视频信息流；亚马逊 Prime Video 支持半折叠状态下将视频与演职员信息分屏显示。",
+      "screenText": "2 家媒体报道",
+      "summary": "）发布博文，宣布将会在 App Store 应用商店内， 引入全新的 Made for iPhone Duo 标志，用于标识已适配苹果首款折叠 iPhone Duo 的应用和游戏。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "OpenAI揪出PHP致命漏洞",
+      "articleTitle": "OpenAI揪出PHP致命漏洞 全球70%网站深夜爆雷",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1583320.htm",
+      "publishedAt": "2026-10-22T13:27:24+08:00",
+      "category": "科技",
+      "text": "第二条，OpenAI揪出PHP致命漏洞，全球70%网站深夜爆雷。连账号密码都不用，黑客就可能让网站服务器听命于自己！",
+      "screenText": "cnBeta",
+      "summary": "连账号密码都不用，黑客就可能让网站服务器听命于自己！昨日OpenAI公开了一起惊心动魄的幕后行动：GPT-5.6 Sol从全球70%网站都在用的PHP语言里， 挖出了两个致命漏洞。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "默茨警告：德国正成为俄罗斯“密集”间谍…",
+      "articleTitle": "默茨警告：德国正成为俄罗斯“密集”间谍活动的目标",
+      "source": "FT中文网",
+      "outlets": [
+        "FT中文网"
+      ],
+      "sourceUrl": "https://www.ftchinese.com/story/001111175",
+      "publishedAt": "2026-10-23T00:00:00+08:00",
+      "category": "国际",
+      "text": "第三条，默茨警告：德国正成为俄罗斯“密集”间谍活动的目标。此前，一名乌克兰男子因涉嫌向克里姆林宫传递有关军事敏感信息而被德方逮捕。",
+      "screenText": "FT中文网",
+      "summary": "此前，一名乌克兰男子因涉嫌向克里姆林宫传递有关军事敏感信息而被德方逮捕。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "暗影人物：与乌克兰合作的俄罗斯人",
+      "articleTitle": "暗影人物：与乌克兰合作的俄罗斯人",
+      "source": "BBC中文",
+      "outlets": [
+        "BBC中文"
+      ],
+      "sourceUrl": "https://www.bbc.com/zhongwen/watch/c6eq32qzr0x8o/trad?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-10-22T17:31:01+08:00",
+      "category": "国际",
+      "text": "第四条，暗影人物：与乌克兰合作的俄罗斯人。从线人和秘密网络，到破坏行动及暗杀的指控，俄罗斯与乌克兰之间的战争，正越来越多地在远离战场的地方展开。这场暗影战争的许多细节难以核实。不过，《BBC之眼》罕有地接触到一些俄罗斯人。",
+      "screenText": "BBC中文",
+      "summary": "从线人和秘密网络，到破坏行动及暗杀的指控，俄罗斯与乌克兰之间的战争，正越来越多地在远离战场的地方展开。 这场暗影战争的许多细节难以核实。不过，《BBC之眼》罕有地接触到一些俄罗斯人。他们声称，自己正通过在俄罗斯境内执行行动，以协助乌克兰。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "亚马逊云科技Ozgur Tohumcu",
+      "articleTitle": "亚马逊云科技Ozgur Tohumcu：决定物理AI规模化落地速度的，往往不是技术本身",
+      "source": "钛媒体",
+      "outlets": [
+        "钛媒体"
+      ],
+      "sourceUrl": "https://www.tmtpost.com/8177096.html",
+      "publishedAt": "2026-10-22T20:06:46+08:00",
+      "category": "科技",
+      "text": "第五条，亚马逊云科技Ozgur Tohumcu：决定物理AI规模化落地速度的，往往不是技术本身。大量企业的AI项目停留在概念验证阶段，没有真正走向量产与工业化落地。",
+      "screenText": "钛媒体",
+      "summary": "大量企业的AI项目停留在概念验证阶段，没有真正走向量产与工业化落地。"
+    }
+  ]
+}
