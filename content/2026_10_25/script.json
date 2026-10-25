@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-25",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月25日，星期日。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "耐克就微信客服账号“异常消息”致歉",
+        "西藏那曲发生7.0级地震",
+        "月之暗面发布Kimi K3.1 Pro",
+        "为让数据中心有充足电力 Google",
+        "百度世界2026前瞻"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "耐克就微信客服账号“异常消息”致歉",
+      "articleTitle": "耐克就微信客服账号“异常消息”致歉，警方已介入调查",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/017/446.htm",
+      "publishedAt": "2026-10-24T18:19:11+08:00",
+      "category": "科技",
+      "text": "第一条，耐克就微信客服账号“异常消息”致歉，警方已介入调查。当日下午，企业微信安全团队发布公告，对事件原因作出说明。公告称，经排查，少量企业微信账号向客户发送疑似色情引流信息，确认为某第三方外挂软件服务被攻破，导致使用该外挂服务的账号受到影响。",
+      "screenText": "2 家媒体报道",
+      "summary": "多名网友今日在社交平台反映，带有安克创新、耐克、盒马、CATLINK 等品牌认证标识的企业微信客服账号在今日凌晨向客户发送了多种疑似色情引流信息，引发关注。 当日下午，企业微信安全团队发布公告，对事件原因作出说明。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "西藏那曲发生7.0级地震",
+      "articleTitle": "西藏那曲发生7.0级地震，十余人死亡",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "BBC中文",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/china/20261023/earthquake-tibet-china/?utm_source=RSS",
+      "publishedAt": "2026-10-23T12:40:30+08:00",
+      "category": "国际",
+      "text": "第二条，西藏那曲发生7.0级地震，十余人死亡。地震发生在晚间10点半左右，随后发生多次余震。据官媒报道，地震造成至少16人死亡，54人受伤，300多栋房屋被毁。该地区海拔较高，气候寒冷，或对救援造成影响。该地区海拔较高，预计未来几天将有降雪。",
+      "screenText": "2 家媒体报道",
+      "summary": "地震发生在晚间10点半左右，随后发生多次余震。据官媒报道，地震造成至少16人死亡，54人受伤，300多栋房屋被毁。该地区海拔较高，气候寒冷，或对救援造成影响。 Xinhua, via Associated Press 周五，救援人员在西藏那曲市一个受地震影响的村庄展开救援。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "月之暗面发布Kimi K3.1 Pro",
+      "articleTitle": "月之暗面发布Kimi K3.1 Pro：3万亿参数、100万上下文",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1583658.htm",
+      "publishedAt": "2026-10-24T14:15:44+08:00",
+      "category": "科技",
+      "text": "第三条，月之暗面发布Kimi K3.1 Pro：3万亿参数、100万上下文。这是公司迄今能力最强的3万亿级参数模型，支持100万上下文。",
+      "screenText": "cnBeta",
+      "summary": "月之暗面Kimi今日凌晨正式推出Kimi K3.1系列首个模型——K3.1 Pro。 这是公司迄今能力最强的3万亿级参数模型，支持100万上下文。高速版Kimi K3.1 Pro Highspeed同步推出，同等智能下输出速度约为2至3倍。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "为让数据中心有充足电力 Google",
+      "articleTitle": "为让数据中心有充足电力 Google 将付钱给其他人少用电",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85701",
+      "publishedAt": "2026-10-24T21:50:21+08:00",
+      "category": "科技",
+      "text": "第四条，为让数据中心有充足电力 Google 将付钱给其他人少用电。Google 正资助美国规模最大的虚拟电厂项目。该项目通过向家庭和企业提供经济激励，鼓励他们在电力需求高峰期间减少用电量，从而为数据中心提供更多的电网容量。",
+      "screenText": "Solidot",
+      "summary": "Google 正资助美国规模最大的虚拟电厂项目。该项目通过向家庭和企业提供经济激励，鼓励他们在电力需求高峰期间减少用电量，从而为数据中心提供更多的电网容量。该项目有望在中大西洋地区的 PJM 电网提供 1070 MW 的电力容量——相当于一座大型核反应堆的输出电力。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "百度世界2026前瞻",
+      "articleTitle": "百度世界2026前瞻：10+重磅分论坛，全面解码AI时代的智能组织进化路径",
+      "source": "量子位",
+      "outlets": [
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/10/504901.html",
+      "publishedAt": "2026-10-23T15:35:51+08:00",
+      "category": "AI",
+      "text": "第五条，百度世界2026前瞻：10+重磅分论坛，全面解码AI时代的智能组织进化路径。",
+      "screenText": "量子位",
+      "summary": "百度官方公众号发文披露了百度世界2026分论坛的更多议程信息。"
+    }
+  ]
+}
