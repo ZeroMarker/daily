@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-27",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月27日，星期二。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "苹果发布 iPhone Duo 专属",
+        "中期选举集会",
+        "在 Google",
+        "苹果发布搭载OLED屏幕和A20",
+        "Meta拟发股筹集950亿美元AI投资…"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "苹果发布 iPhone Duo 专属",
+      "articleTitle": "苹果发布 iPhone Duo 专属 iOS 27.2 更新：支持 Apple Pencil，及面部补光",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/018/186.htm",
+      "publishedAt": "2026-10-27T02:44:02+08:00",
+      "category": "科技",
+      "text": "第一条，苹果发布 iPhone Duo 专属 iOS 27.2 更新：支持 Apple Pencil，及面部补光。需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。",
+      "screenText": "2 家媒体报道",
+      "summary": "苹果今日向 iPhone 和 iPad 用户推送了 iOS / iPadOS 27.2 更新（内部版本号：24B91020），本次更新距离上次发布正式版间隔 28 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "中期选举集会",
+      "articleTitle": "中期选举集会，奥巴马特朗普针锋相对",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "BBC中文",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/usa/20261026/obama-trump-competing-rallies-midterms/?utm_source=RSS",
+      "publishedAt": "2026-10-26T01:26:41+08:00",
+      "category": "国际",
+      "text": "第二条，中期选举集会，奥巴马特朗普针锋相对。奥巴马在演讲中抨击特朗普政府，称伊朗战争是一场“不必要的战争”，将物价上涨归咎于战争与关税。特朗普和奥巴马还对美国面临的最紧迫问题提出了不同看法。",
+      "screenText": "2 家媒体报道",
+      "summary": "奥巴马在演讲中抨击特朗普政府，称伊朗战争是一场“不必要的战争”，将物价上涨归咎于战争与关税。特朗普和奥巴马还对美国面临的最紧迫问题提出了不同看法。 Haiyun Jiang/The New York Times; Victor J. Blue for The New York Times"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "在 Google",
+      "articleTitle": "在 Google 砍伐了上千英亩树后野狼来到芬兰的村庄",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85706",
+      "publishedAt": "2026-10-26T00:16:11+08:00",
+      "category": "科技",
+      "text": "第三条，在 Google 砍伐了上千英亩树后野狼来到芬兰的村庄。当地居民表示，由于森林里的野生动物全都离开了，狼进村了。芬兰不是唯一一个为建造数据中心而生态系统遭到破坏的地方。美国西弗吉尼亚州的栗子树林以及印第安纳州的一处湿地都面临为数据中心让路。",
+      "screenText": "2 家媒体报道",
+      "summary": "为建造数据中心，Google 在芬兰农村砍伐了 25 万棵树木，清理了多达 1300 英亩的森林，它甚至还铲除了表层土壤。芬兰监管机构以未完成必要环评为由下令工程暂时停工，Google 芬兰高管已为此道歉。Google 砍伐森林的一个后果是由于猎物减少，狼群进入了附近的村庄寻找食物。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "苹果发布搭载OLED屏幕和A20",
+      "articleTitle": "苹果发布搭载OLED屏幕和A20 Pro芯片的iPad mini 8 起售价699美元",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1583936.htm",
+      "publishedAt": "2026-10-26T22:03:10+08:00",
+      "category": "科技",
+      "text": "第四条，苹果发布搭载OLED屏幕和A20 Pro芯片的iPad mini 8 起售价699美元。这款产品在iPhone Duo上市仅数日后亮相，被外界视为苹果在小型可携设备市场中的又一次布局。",
+      "screenText": "cnBeta",
+      "summary": "苹果发布搭载OLED屏幕和A20 Pro芯片的iPad mini 8，起售价699美元，10月28日开启预购，预计11月6日发货。这款产品在iPhone Duo上市仅数日后亮相，被外界视为苹果在小型可携设备市场中的又一次布局。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "Meta拟发股筹集950亿美元AI投资…",
+      "articleTitle": "Meta拟发股筹集950亿美元AI投资资金",
+      "source": "FT中文网",
+      "outlets": [
+        "FT中文网"
+      ],
+      "sourceUrl": "https://www.ftchinese.com/story/001111205",
+      "publishedAt": "2026-10-27T00:00:00+08:00",
+      "category": "国际",
+      "text": "第五条，Meta拟发股筹集950亿美元AI投资资金。这是大型科技公司借助股市为其AI雄心提供资金的最新事例。芯片制造商英伟达、AMD和博通将作为基石投资者支持这笔交易。",
+      "screenText": "FT中文网",
+      "summary": "这是大型科技公司借助股市为其AI雄心提供资金的最新事例。芯片制造商英伟达、AMD和博通将作为基石投资者支持这笔交易。"
+    }
+  ]
+}
