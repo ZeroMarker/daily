@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-28",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月28日，星期三。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "Visa 2026 财年归母净利润",
+        "2025 年太阳能发电量超越核能",
+        "“机器人健身房”",
+        "苹果发布14英寸M6 MacBook",
+        "巴西总统卢拉"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "Visa 2026 财年归母净利润",
+      "articleTitle": "Visa 2026 财年归母净利润 235.04 亿美元，同比增长 17%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/018/704.htm",
+      "publishedAt": "2026-10-28T04:09:15+08:00",
+      "category": "科技",
+      "text": "第一条，Visa 2026 财年归母净利润 235.04 亿美元，同比增长 17%。公司主营业务与整体业绩亮点 Visa 是全球数字支付领域龙头企业，为消费者、商户、金融机构及政府机构提供覆盖 200 多个国家和地区的交易清算网络，核心收入来自服务费、数据处理费、跨境交易费等板块。",
+      "screenText": "IT之家",
+      "summary": "Visa 今日发布 2026 财年（2025 年 10 月 1 日～2026 年 9 月 30 日）及第四财季（2026 年 7 月 1 日～2026 年 9 月 30 日）报告： 2026 财年 营业总收入 ：459.03 亿美元 （IT之家注：现汇率约合 3068."
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "2025 年太阳能发电量超越核能",
+      "articleTitle": "2025 年太阳能发电量超越核能",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85725",
+      "publishedAt": "2026-10-27T22:37:59+08:00",
+      "category": "科技",
+      "text": "第二条，2025 年太阳能发电量超越核能。太阳能的发展速度超出了预期。牛津大学能源与气候政策教授 Jan Rosenow 称太阳能如今已成为能源转型的引擎。太阳能技术已发展成熟约 15 年，在 2020 年成为历史上最便宜的电力来源。",
+      "screenText": "2 家媒体报道",
+      "summary": "太阳能的发展速度超出了预期。十年前太阳能的发电量仅占全球总发电量的 1%，2026 年它的份额预计将达到 10%。根据能源智库 Ember 的数据，2025 年全球太阳能发电量略微超过了核能发电量。截至 2026 年 9 月的年度太阳能发电量则已超过核能 13%。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "“机器人健身房”",
+      "articleTitle": "“机器人健身房”：欧洲在机器人领域追赶中国",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/business/20261028/neura-robotics-germany-china-ai/?utm_source=RSS",
+      "publishedAt": "2026-10-28T08:37:35+08:00",
+      "category": "国际",
+      "text": "第三条，“机器人健身房”：欧洲在机器人领域追赶中国。Roderick Aichinger for The New York Times。",
+      "screenText": "纽约时报中文网",
+      "summary": "纽鼐机器人是致力于将人工智能应用于机器人领域的欧洲领先企业之一，对于欧洲能否缩小与中国的差距至关重要。在“机器人健身房”中，机器人接受训练，变得更像人类。 Roderick Aichinger for The New York Times"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "苹果发布14英寸M6 MacBook",
+      "articleTitle": "苹果发布14英寸M6 MacBook Pro CPU升级12核 图形性能最高提升30%",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584048.htm",
+      "publishedAt": "2026-10-27T22:11:21+08:00",
+      "category": "科技",
+      "text": "第四条，苹果发布14英寸M6 MacBook Pro CPU升级12核，图形性能最高提升30%。与上一代搭载M5芯片的机型相比，新款产品主要升级了处理器、图形性能、人工智能运算能力和无线连接规格，但机身设计及其他主要配置基本保持不变。",
+      "screenText": "cnBeta",
+      "summary": "正式发布搭载M6芯片的新款14英寸MacBook Pro。这是苹果新一代自研处理器首次进入MacBook Pro产品线。与上一代搭载M5芯片的机型相比，新款产品主要升级了处理器、图形性能、人工智能运算能力和无线连接规格，但机身设计及其他主要配置基本保持不变。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "巴西总统卢拉",
+      "articleTitle": "巴西总统卢拉：北京在美国后院的「老朋友」第四次赢得大选",
+      "source": "BBC中文",
+      "outlets": [
+        "BBC中文"
+      ],
+      "sourceUrl": "https://www.bbc.com/zhongwen/articles/cwj34v4lvvlgo/trad?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-10-26T18:13:36+08:00",
+      "category": "国际",
+      "text": "第五条，巴西总统卢拉：北京在美国后院的「老朋友」第四次赢得大选。",
+      "screenText": "BBC中文",
+      "summary": "卢拉总统意外获胜，但他将面对一个充满敌意的国会和一个两极分化的国家。"
+    }
+  ]
+}
