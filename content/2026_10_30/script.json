@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-30",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月30日，星期五。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "香港特首就宏福苑大火致歉",
+        "Reddit 2026",
+        "黄仁勋被认为是中国间谍行动的目标",
+        "取消四缸插混",
+        "乌鸦视觉决策速度两倍于人类"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "香港特首就宏福苑大火致歉",
+      "articleTitle": "香港特首就宏福苑大火致歉",
+      "source": "FT中文网",
+      "outlets": [
+        "BBC中文",
+        "FT中文网"
+      ],
+      "sourceUrl": "https://www.ftchinese.com/story/001111231",
+      "publishedAt": "2026-10-29T00:00:00+08:00",
+      "category": "国际",
+      "text": "第一条，香港特首就宏福苑大火致歉。这场造成168人死亡的大火发生将近一年后，香港特首李家超首次率领官员鞠躬道歉。",
+      "screenText": "2 家媒体报道",
+      "summary": "这场造成168人死亡的大火发生将近一年后，香港特首李家超首次率领官员鞠躬道歉。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "Reddit 2026",
+      "articleTitle": "Reddit 2026 财年前三季度报归母净利润 7.4 亿美元，同比增长 166.7%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/019/858.htm",
+      "publishedAt": "2026-10-30T08:50:16+08:00",
+      "category": "科技",
+      "text": "第二条，Reddit 2026 财年前三季度报归母净利润 7.4 亿美元，同比增长 166.7%。",
+      "screenText": "IT之家",
+      "summary": "Reddit今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度报（2026 年 1 月～2026 年 9 月）及第三财季（2026 年 7 月～2026 年 9 月）报告： 2026 财年前三季度报 营业总收入 ：23.63 亿美元 （IT之家注：现汇率约合 157."
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "黄仁勋被认为是中国间谍行动的目标",
+      "articleTitle": "黄仁勋被认为是中国间谍行动的目标",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "cnBeta",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/usa/20261030/nvidia-china-jensen-huang-trump/?utm_source=RSS",
+      "publishedAt": "2026-10-30T08:42:58+08:00",
+      "category": "国际",
+      "text": "第三条，黄仁勋被认为是中国间谍行动的目标。美国情报机构发现，一名与黄仁勋建立了密切联系的中国籍高管是一名向北京传递信息的情报人员。特朗普约一年前听取了相关情报，但他选择不采取任何行动。",
+      "screenText": "2 家媒体报道",
+      "summary": "美国情报机构发现，一名与黄仁勋建立了密切联系的中国籍高管是一名向北京传递信息的情报人员。特朗普约一年前听取了相关情报，但他选择不采取任何行动。 Manuel Orbegozo for The New York Times 英伟达首席执行官黄仁勋对白宫的技术政策颇具影响力，并与特朗普总统建立了密切关…"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "取消四缸插混",
+      "articleTitle": "取消四缸插混，3.0T 六缸回归！全新 AMG GLC 53 售 59.9 万元",
+      "source": "爱范儿",
+      "outlets": [
+        "IT之家",
+        "爱范儿"
+      ],
+      "sourceUrl": "https://www.ifanr.com/1686672?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-29T22:04:12+08:00",
+      "category": "科技",
+      "text": "第四条，取消四缸插混，3.0T 六缸回归！全新 AMG GLC 53 售 59.9 万元。梅赛德斯 AMG GLC 53 4MATIC+ 在浙江国际赛车场正式上市，官方指导价 59.90 万元，仅此一款配置。",
+      "screenText": "2 家媒体报道",
+      "summary": "梅赛德斯 AMG GLC 53 4MATIC+ 在浙江国际赛车场正式上市，官方指导价 59.90 万元，仅此一款配置。 其核心变化是用 3.0T 直列六缸 +48V 轻混系统接替了 GLC 43 上的 2.0T 四缸动力，六缸重回 GLC 性能序列。 新车搭载了 M256 Evo 3."
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "乌鸦视觉决策速度两倍于人类",
+      "articleTitle": "乌鸦视觉决策速度两倍于人类",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85745",
+      "publishedAt": "2026-10-29T18:31:38+08:00",
+      "category": "科技",
+      "text": "第五条，乌鸦视觉决策速度两倍于人类。实验中，两只小嘴乌鸦平均只需 235 毫秒即可识别屏幕上点阵的运动方向并作出选择，同时保持较高准确率。",
+      "screenText": "2 家媒体报道",
+      "summary": "德国蒂宾根大学开展的一项新研究显示，在进行视觉选择任务时，乌鸦的决策速度约为人类和猴子等灵长类动物的两倍。实验中，两只小嘴乌鸦平均只需 235 毫秒即可识别屏幕上点阵的运动方向并作出选择，同时保持较高准确率。"
+    }
+  ]
+}
