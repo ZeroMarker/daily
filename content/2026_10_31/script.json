@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-31",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间10月31日，星期六。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "英特尔股价暴跌 29%",
+        "阿里巴巴：苹果 Apple",
+        "特朗普帮助博索纳罗逃离巴西前往美国",
+        "刚刚，ChatGPT Pro",
+        "Apple Intelligence"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "英特尔股价暴跌 29%",
+      "articleTitle": "英特尔股价暴跌 29%",
+      "source": "Solidot",
+      "outlets": [
+        "IT之家",
+        "Solidot"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85757",
+      "publishedAt": "2026-10-30T22:34:52+08:00",
+      "category": "科技",
+      "text": "第一条，英特尔股价暴跌 29%。路透社报道称，此次暴跌主要源于英特尔发布低于市场预期的第四季度业绩指引，同时警告个人电脑市场疲软、内存价格上涨等问题可能持续至 2027 年上半年。",
+      "screenText": "2 家媒体报道",
+      "summary": "开盘后，英特尔股价大幅下挫，盘中跌幅一度超过 30%，公司市值蒸发超过 1,370 亿美元 （IT之家注：现汇率约合 9,147.3 亿元人民币） ，超过 2024 年最大单日跌幅（约 26%），如果能达到 31% 将超越 1974 年 7 月 5 日创下的终极历史纪录。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "阿里巴巴：苹果 Apple",
+      "articleTitle": "阿里巴巴：苹果 Apple 智能国行用户可以自主选择是否开通千问集成功能",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/020/395.htm",
+      "publishedAt": "2026-10-31T07:09:21+08:00",
+      "category": "科技",
+      "text": "第二条，阿里巴巴：苹果 Apple 智能国行用户可以自主选择是否开通千问集成功能。其他平台的支持将在获得必要审批后推出。根据苹果公布的信息，中国用户可直接在 Siri、写作工具和视觉智能中调用千问，覆盖文本与图像理解相关能力。",
+      "screenText": "IT之家",
+      "summary": "苹果今日宣布首批 Apple 智能功能即将在中国推出，并与阿里巴巴达成合作，在部分体验中接入千问。这是 Apple 智能自 2024 年发布以来，国行版本首次获得实质性落地进展。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "特朗普帮助博索纳罗逃离巴西前往美国",
+      "articleTitle": "特朗普帮助博索纳罗逃离巴西前往美国",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/world/20261030/flavio-bolsonaro-trump-brazil-us/?utm_source=RSS",
+      "publishedAt": "2026-10-30T10:21:20+08:00",
+      "category": "国际",
+      "text": "第三条，特朗普帮助博索纳罗逃离巴西前往美国。博索纳罗目前以特朗普下令授予的临时身份滞留佛罗里达，并有望获得永久居留权。",
+      "screenText": "纽约时报中文网",
+      "summary": "博索纳罗目前以特朗普下令授予的临时身份滞留佛罗里达，并有望获得永久居留权。白宫对博索纳罗的援助可能加剧美国与巴西的紧张关系，巴西总统卢拉指责特朗普干涉内政。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "刚刚，ChatGPT Pro",
+      "articleTitle": "刚刚，ChatGPT Pro 额度官宣翻倍，但免费重置可能要没了",
+      "source": "爱范儿",
+      "outlets": [
+        "cnBeta",
+        "爱范儿"
+      ],
+      "sourceUrl": "https://www.ifanr.com/1686830?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-30T08:29:45+08:00",
+      "category": "科技",
+      "text": "第四条，刚刚，ChatGPT Pro 额度官宣翻倍，但免费重置可能要没了。被用户吐槽了一个月，OpenAI 终于决定不再折腾大家的使用额度了。更让老用户高兴的是，OpenAI 还决定撤销此前备受争议的 Pro 200 额度下调计划。",
+      "screenText": "2 家媒体报道",
+      "summary": "被用户吐槽了一个月，OpenAI 终于决定不再折腾大家的使用额度了。就在刚刚，OpenAI 产品负责人 Tibo 突然宣布，将大幅提高 ChatGPT Pro 系列及 Business Premium 用户的使用额度，部分套餐直接翻倍，即日起生效。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "Apple Intelligence",
+      "articleTitle": "Apple Intelligence 即将登陆中国：实时翻译、千问整合等首批功能11月开启测试",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584500.htm",
+      "publishedAt": "2026-10-31T07:35:07+08:00",
+      "category": "科技",
+      "text": "第五条，Apple Intelligence 即将登陆中国：实时翻译、千问整合等首批功能11月开启测试。首批功能计划于11月4日随最新 iOS 开发者测试版本开放体验，并在12月伴随 iOS 27.3 正式版向中国用户推出，其他平台的相关支持将在完成必要审批后陆续上线。",
+      "screenText": "cnBeta",
+      "summary": "宣布，面向中国用户的首批 Apple Intelligence 功能即将上线。作为深度融入 iPhone 日常体验的人工智能系统，Apple Intelligence 将通过生成式模型能力帮助用户完成写作、沟通、创作和信息处理等任务。"
+    }
+  ]
+}
