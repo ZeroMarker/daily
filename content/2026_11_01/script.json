@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-01",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月1日，星期日。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "号称全球首创",
+        "刚刚，Claude宣布取消5小时限制！…",
+        "币安多达 30 亿美元数字货币被盗",
+        "和华为“分手”后",
+        "DeepSeek 重磅发布全新"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "号称全球首创",
+      "articleTitle": "号称全球首创：香港公司 Arrowmax 推出 AI 电动螺丝刀 S1，能用摄像头识别螺丝类型",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/020/593.htm",
+      "publishedAt": "2026-10-31T19:57:32+08:00",
+      "category": "科技",
+      "text": "第一条，号称全球首创：香港公司 Arrowmax 推出 AI 电动螺丝刀 S1，能用摄像头识别螺丝类型。产品起售价 80 美元 （IT之家注：现汇率约合 533.6 元人民币） ，预计 2027 年 4 月开始发货。",
+      "screenText": "2 家媒体报道",
+      "summary": "据外媒 TechSpot 今天（31 日）晚间报道，香港工具品牌 Arrowmax 在 Kickstarter 推出了一款 号称全球首创 的 AI 电动螺丝刀 S1，众筹项目启动后不到 24 小时便达成目标。产品起售价 80 美元 （IT之家注：现汇率约合 533."
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "刚刚，Claude宣布取消5小时限制！…",
+      "articleTitle": "刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」",
+      "source": "量子位",
+      "outlets": [
+        "cnBeta",
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/10/506855.html",
+      "publishedAt": "2026-10-31T13:05:29+08:00",
+      "category": "AI",
+      "text": "第二条，刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」。原来的Max 5x和Max 20x正式改名，分别变成Max和Ultra。价格倒是没变，依旧是每月100美元和200美元。",
+      "screenText": "2 家媒体报道",
+      "summary": "Claude200美元的订阅用户，终于可以和烦人的5小时限制说再见了！！就在刚刚，Anthropic突然宣布调整Claude订阅计划。原来的Max 5x和Max 20x正式改名，分别变成Max和Ultra。价格倒是没变，依旧是每月100美元和200美元。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "币安多达 30 亿美元数字货币被盗",
+      "articleTitle": "币安多达 30 亿美元数字货币被盗",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85749",
+      "publishedAt": "2026-10-30T14:21:52+08:00",
+      "category": "科技",
+      "text": "第三条，币安多达 30 亿美元数字货币被盗。在被盗的 55 亿美元的加密货币中，Tether 冻结了被盗的 17.68 亿美元 USDT 中的至少 15.67 亿美元，Circle 冻结了被盗的 8.23 亿美元中的 8 亿美元。",
+      "screenText": "Solidot",
+      "summary": "黑客从全球最大加密货币交易所币安的多个热钱包里转移了价值约 55 亿美元的加密货币资产，部分加密货币已被稳定币发行方冻结，但黑客手中仍然掌握着多达 30 亿美元的加密货币。在被盗的 55 亿美元的加密货币中，Tether 冻结了被盗的 17.68 亿美元 USDT 中的至少 15."
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "和华为“分手”后",
+      "articleTitle": "和华为“分手”后，赛力斯又亏了",
+      "source": "钛媒体",
+      "outlets": [
+        "cnBeta",
+        "钛媒体"
+      ],
+      "sourceUrl": "https://www.tmtpost.com/8188460.html",
+      "publishedAt": "2026-10-31T20:02:08+08:00",
+      "category": "科技",
+      "text": "第四条，和华为“分手”后，赛力斯又亏了。赛力斯与华为宣布调整问界合作分工后，首份财报来了。",
+      "screenText": "2 家媒体报道",
+      "summary": "赛力斯与华为宣布调整问界合作分工后，首份财报来了。10月30日晚，赛力斯公布的财报显示，第三季度营业收入280.8亿元，同比下降41.7%；归母净利润14.2亿元，较第二季度约24.71亿元的亏损明显改善。但扣除非经常性损益后，公司仍亏损13.7亿元。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "DeepSeek 重磅发布全新",
+      "articleTitle": "DeepSeek 重磅发布全新 Agent 架构：AI 开始指挥 AI 干活",
+      "source": "爱范儿",
+      "outlets": [
+        "爱范儿"
+      ],
+      "sourceUrl": "https://www.ifanr.com/1687026?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "publishedAt": "2026-10-31T21:59:57+08:00",
+      "category": "科技",
+      "text": "第五条，DeepSeek 重磅发布全新 Agent 架构：AI 开始指挥 AI 干活。AI Agent 的下一个瓶颈，可能是人类自己。",
+      "screenText": "爱范儿",
+      "summary": "AI Agent 的下一个瓶颈，可能是人类自己"
+    }
+  ]
+}
