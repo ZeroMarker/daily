@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-02",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月2日，星期一。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "吉利汽车 10 月总销量为 31.02",
+        "刚刚，DeepSeek重磅开源：Age…",
+        "NASA 征询拯救哈勃望远镜的方案",
+        "和华为“分手”后",
+        "本月玩什么｜影之刃零、战争机器：事变日等"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "吉利汽车 10 月总销量为 31.02",
+      "articleTitle": "吉利汽车 10 月总销量为 31.02 万辆，同比增长约 1%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/020/815.htm",
+      "publishedAt": "2026-11-01T19:28:52+08:00",
+      "category": "科技",
+      "text": "第一条，吉利汽车 10 月总销量为 31.02 万辆，同比增长约 1%。北汽新能源今日公布了最新销量数据，10 月销量 约3.3万 辆，同比增长 6.42%，环比增长 34.98%。1-10 月销量 约20万 辆，同比增长 37.90%。",
+      "screenText": "IT之家",
+      "summary": "北汽新能源今日公布了最新销量数据，10 月销量 32502 辆，同比增长 6.42%，环比增长 34.98%。1-10 月销量 195878 辆，同比增长 37.90%。 IT之家从官方海报获悉，极狐汽车 2026 年 10 月销量 26325 台， 同比增长 12.56% ；"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "刚刚，DeepSeek重磅开源：Age…",
+      "articleTitle": "刚刚，DeepSeek重磅开源：Agent底座架构",
+      "source": "量子位",
+      "outlets": [
+        "爱范儿",
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/10/506904.html",
+      "publishedAt": "2026-10-31T21:49:44+08:00",
+      "category": "AI",
+      "text": "第二条，刚刚，DeepSeek重磅开源：Agent底座架构。AI Agent 的下一个瓶颈，可能是人类自己。",
+      "screenText": "2 家媒体报道",
+      "summary": "AI Agent 的下一个瓶颈，可能是人类自己"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "NASA 征询拯救哈勃望远镜的方案",
+      "articleTitle": "NASA 征询拯救哈勃望远镜的方案",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85765",
+      "publishedAt": "2026-11-01T19:32:53+08:00",
+      "category": "科技",
+      "text": "第三条，NASA 征询拯救哈勃望远镜的方案。哈勃望远镜在轨运行 36 年之后仍然极具价值，但它的轨道高度已经大幅下降，如果不采取行动它将于 2030 年代中期前重返大气层。方案递交截至日期 11 月 30 日。",
+      "screenText": "2 家媒体报道",
+      "summary": "哈勃望远镜在轨运行 36 年之后仍然极具价值，但它的轨道高度已经大幅下降，如果不采取行动它将于 2030 年代中期前重返大气层。NASA 本周公布了一份 Request For Information(RFI)，向商业公司征询提升哈勃的轨道、进行维护或对其进行受控重返大气层的方案。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "和华为“分手”后",
+      "articleTitle": "和华为“分手”后，赛力斯又亏了",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584528.htm",
+      "publishedAt": "2026-10-31T15:52:09+08:00",
+      "category": "科技",
+      "text": "第四条，和华为“分手”后，赛力斯又亏了。赛力斯与华为宣布调整问界合作分工后，首份财报来了。",
+      "screenText": "cnBeta",
+      "summary": "赛力斯与华为宣布调整问界合作分工后，首份财报来了。10月30日晚，赛力斯公布的财报显示，第三季度营业收入280.8亿元，同比下降41.7%；归母净利润14.2亿元，较第二季度约24.71亿元的亏损明显改善。但扣除非经常性损益后，公司仍亏损13.7亿元。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "本月玩什么｜影之刃零、战争机器：事变日等",
+      "articleTitle": "本月玩什么｜影之刃零、战争机器：事变日等",
+      "source": "少数派",
+      "outlets": [
+        "少数派"
+      ],
+      "sourceUrl": "https://sspai.com/post/117960",
+      "publishedAt": "2026-10-31T13:29:19+08:00",
+      "category": "数码",
+      "text": "第五条，本月玩什么｜影之刃零、战争机器：事变日等。欢迎你在评论区分享 10 月新作的游玩体验。",
+      "screenText": "少数派",
+      "summary": "欢迎你在评论区分享 10 月新作的游玩体验。"
+    }
+  ]
+}
