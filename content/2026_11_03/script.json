@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-03",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月3日，星期二。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "安森美 2026 财年第三季度归母净利润",
+        "币安恢复提现后净流出 36.4",
+        "币安63亿美元黑客攻击事件始末",
+        "苹果新CEO上任后首份财报",
+        "GPT-6.2"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "安森美 2026 财年第三季度归母净利润",
+      "articleTitle": "安森美 2026 财年第三季度归母净利润 3.14 亿美元，同比增长 23.1%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/021/282.htm",
+      "publishedAt": "2026-11-03T05:20:28+08:00",
+      "category": "科技",
+      "text": "第一条，安森美 2026 财年第三季度归母净利润 3.14 亿美元，同比增长 23.1%。公司基本面与本季业绩亮点 Lumentum是全球光电子与光子技术领军企业，产品覆盖高性能激光器、光模块、光交换子系统。",
+      "screenText": "IT之家",
+      "summary": "Lumentum 今日发布 2027 财年（2026 年 6 月 28 日～2027 年 7 月 1 日）第一财季（2026 年 6 月 28 日～2026 年 9 月 26 日）报告： 营业总收入 ：12.63 亿美元 （IT之家注：现汇率约合 84.1 亿元人民币） ，同比增长 136."
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "币安恢复提现后净流出 36.4",
+      "articleTitle": "币安恢复提现后净流出 36.4 亿美元资产",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85768",
+      "publishedAt": "2026-11-02T13:47:03+08:00",
+      "category": "科技",
+      "text": "第二条，币安恢复提现后净流出 36.4 亿美元资产。在因黑客攻击短暂暂停提现之后，币安于周日恢复了提现功能。",
+      "screenText": "2 家媒体报道",
+      "summary": "在因黑客攻击短暂暂停提现之后，币安于周日恢复了提现功能。11 月 1 日上午 6 点 - 下午 3:30 UTC 之间，币安处理了 46.65 亿美元的提现和 10.1 亿美元的充值，净流出 36.4 亿美元。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "币安63亿美元黑客攻击事件始末",
+      "articleTitle": "币安63亿美元黑客攻击事件始末",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "cnBeta",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/technology/20261102/binance-hack-crypto-north-korea/?utm_source=RSS",
+      "publishedAt": "2026-11-02T11:45:11+08:00",
+      "category": "国际",
+      "text": "第三条，币安63亿美元黑客攻击事件始末。币安被迫暂停充值和提现，承诺承担所有损失；其创始人赵长鹏在X上“直播”了事件进展。币安遭受攻击的影响波及整个加密货币行业，执法机构也介入调查。",
+      "screenText": "2 家媒体报道",
+      "summary": "币安被迫暂停充值和提现，承诺承担所有损失；其创始人赵长鹏在X上“直播”了事件进展。币安遭受攻击的影响波及整个加密货币行业，执法机构也介入调查。 SeongJoon Cho/Bloomberg 全球最大加密货币交易所币安表示，这起被业内称为史上最大规模加密货币黑客攻击的事件涉及约63亿美元资金。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "苹果新CEO上任后首份财报",
+      "articleTitle": "苹果新CEO上任后首份财报：净利润增长12% 中国区收入不及预期",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584764.htm",
+      "publishedAt": "2026-11-03T06:46:19+08:00",
+      "category": "科技",
+      "text": "第四条，苹果新CEO上任后首份财报：净利润增长12%，中国区收入不及预期。苹果公司今天发布了截至9月26日的2026财年第四季度及全年财报。",
+      "screenText": "cnBeta",
+      "summary": "苹果公司(NASDAQ:AAPL)今天发布了截至9月26日的2026财年第四季度及全年财报。财报显示，苹果第四财季总营收为1144.77亿美元，较上年同期的1024.66亿美元增长12%；净利润为307.11亿美元，较上年同期的274.66亿美元增长12%。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "GPT-6.2",
+      "articleTitle": "GPT-6.2 Astra开启灰测！Claude Mythos 5.5同日曝光",
+      "source": "量子位",
+      "outlets": [
+        "量子位"
+      ],
+      "sourceUrl": "https://www.qbitai.com/2026/11/507082.html",
+      "publishedAt": "2026-11-02T12:28:53+08:00",
+      "category": "AI",
+      "text": "第五条，GPT-6.2 Astra开启灰测！Claude Mythos 5.5同日曝光。HuggingFace疑似泄露权重已被下5000次。",
+      "screenText": "量子位",
+      "summary": "HuggingFace疑似泄露权重已被下5000次"
+    }
+  ]
+}
