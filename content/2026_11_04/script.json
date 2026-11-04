@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-04",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月4日，星期三。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "iOS 27.3 首个开发者预览版推送",
+        "币安63亿美元黑客攻击事件始末",
+        "Google 将对拒绝 AI",
+        "苹果向第三方应用全面开放Siri AI",
+        "Q3净利同比增长72.44%"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "iOS 27.3 首个开发者预览版推送",
+      "articleTitle": "iOS 27.3 首个开发者预览版推送，国行 iPhone 苹果 Apple 智能将至",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/021/859.htm",
+      "publishedAt": "2026-11-04T02:14:39+08:00",
+      "category": "科技",
+      "text": "第一条，iOS 27.3 首个开发者预览版推送，国行 iPhone 苹果 Apple 智能将至。据IT之家此前报道，苹果智能及相关阿里千问大模型获得批准。其他平台的支持将在获得必要审批后推出。",
+      "screenText": "2 家媒体报道",
+      "summary": "苹果今日凌晨面向 iPhone 推送了 iOS 27.3 系统首个测试版本。 据IT之家此前报道，苹果智能（Apple Intelligence）及相关阿里千问大模型获得批准。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "币安63亿美元黑客攻击事件始末",
+      "articleTitle": "币安63亿美元黑客攻击事件始末",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "IT之家",
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/technology/20261102/binance-hack-crypto-north-korea/?utm_source=RSS",
+      "publishedAt": "2026-11-02T11:45:11+08:00",
+      "category": "国际",
+      "text": "第二条，币安63亿美元黑客攻击事件始末。币安发布《初步调查结果与响应更新》，披露一起针对其钱包系统的多阶段、高度复杂攻击。",
+      "screenText": "2 家媒体报道",
+      "summary": "币安（Binance）发布《初步调查结果与响应更新》，披露一起针对其钱包系统的多阶段、高度复杂攻击。公告称，攻击者利用假招聘、被篡改的开发工具、受感染终端及内部 AI 工具，逐步渗透至热钱包签名与授权体系。 IT之家此前报道，全球最大加密货币交易所币安表示遭到攻击，造成 63."
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "Google 将对拒绝 AI",
+      "articleTitle": "Google 将对拒绝 AI 的美国学校关闭搜索",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85787",
+      "publishedAt": "2026-11-04T00:33:42+08:00",
+      "category": "科技",
+      "text": "第三条，Google 将对拒绝 AI 的美国学校关闭搜索。此举旨在回应教育工作者和家长的诉求，他们希望在孩子与 AI 互动上有更多的掌控权。",
+      "screenText": "2 家媒体报道",
+      "summary": "Google 宣布美国 K-12 学校学生使用的软件将默认关闭所有 AI 功能，除非学校管理人员自己选择启用。此举旨在回应教育工作者和家长的诉求，他们希望在孩子与 AI 互动上有更多的掌控权。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "苹果向第三方应用全面开放Siri AI",
+      "articleTitle": "苹果向第三方应用全面开放Siri AI 开发者可打造跨应用智能代理",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584928.htm",
+      "publishedAt": "2026-11-04T06:10:12+08:00",
+      "category": "科技",
+      "text": "第四条，苹果向第三方应用全面开放Siri AI 开发者可打造跨应用智能代理。苹果宣布进一步扩展Siri AI能力边界。",
+      "screenText": "cnBeta",
+      "summary": "苹果宣布进一步扩展Siri AI能力边界。随着iOS 27.3开发者预览版发布，公司正式向第三方开发者开放Siri AI集成接口，允许各类应用接入新一代智能助手能力，使其能够理解自然语言指令、结合用户个人上下文，并利用屏幕内容感知功能执行更加复杂的任务。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "Q3净利同比增长72.44%",
+      "articleTitle": "Q3净利同比增长72.44%，舍得酒业修复进行时",
+      "source": "钛媒体",
+      "outlets": [
+        "钛媒体"
+      ],
+      "sourceUrl": "https://www.tmtpost.com/8191823.html",
+      "publishedAt": "2026-11-03T16:51:14+08:00",
+      "category": "科技",
+      "text": "第五条，Q3净利同比增长72.44%，舍得酒业修复进行时。从毛利率、管理费用、现金流、合同负债和经销商数量等更具前瞻性的指标看，该公司经营底盘的“硬度”正在提高。",
+      "screenText": "钛媒体",
+      "summary": "从毛利率、管理费用、现金流、合同负债和经销商数量等更具前瞻性的指标看，该公司经营底盘的“硬度”正在提高。"
+    }
+  ]
+}
