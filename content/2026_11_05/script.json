@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-05",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月5日，星期四。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "Arm 2027 财年第二财季营收",
+        "共和党在美国中期选举中惨败的五大原因",
+        "美国中期选举",
+        "AMD 营收预计将首次超过英特尔",
+        "中期选举民主党大胜共和党"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "Arm 2027 财年第二财季营收",
+      "articleTitle": "Arm 2027 财年第二财季营收 14.4 亿美元同比增长 27% 创 Q2 历史新高，GAAP 净利润 1.30 亿美元同比下降 45%",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/022/475.htm",
+      "publishedAt": "2026-11-05T06:43:14+08:00",
+      "category": "科技",
+      "text": "第一条，Arm 2027 财年第二财季营收 14.4 亿美元同比增长 27%，创 Q2 历史新高，GAAP 净利润 1.30 亿美元同比下降 45%。其中，数据中心版税收入同比增长一倍。Arm 表示，授权业务增长反映出客户对其 IP 技术的投资增加，也预示着未来版税收入有望进一步增长。盈利指标出现明显分化。",
+      "screenText": "IT之家",
+      "summary": "Arm Holdings 今日发布了 2027 财年第二财季（截至 2026 年 9 月 30 日）业绩。 报告期内，Arm 营收 14.43 亿美元 （IT之家注：现汇率约合 96.45 亿元人民币） ，同比增长 27%，创下第二财季营收纪录，也是连续第五个季度同比增速超过 20%；"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "共和党在美国中期选举中惨败的五大原因",
+      "articleTitle": "共和党在美国中期选举中惨败的五大原因",
+      "source": "BBC中文",
+      "outlets": [
+        "BBC中文"
+      ],
+      "sourceUrl": "https://www.bbc.com/zhongwen/articles/cxyvrz6qrm2lo/trad?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-05T04:20:47+08:00",
+      "category": "国际",
+      "text": "第二条，共和党在美国中期选举中惨败的五大原因。从选民的不满情绪，到总统本人支持度低迷，本文分析为何传统共和党票仓的美国选民转而支持民主党。",
+      "screenText": "BBC中文",
+      "summary": "从选民的不满情绪，到总统本人支持度低迷，本文分析为何传统共和党票仓的美国选民转而支持民主党。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "美国中期选举",
+      "articleTitle": "美国中期选举：民主党赢得两院控制权，选民否决特朗普",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/usa/20261104/midterms-2026-election-day-trump/?utm_source=RSS",
+      "publishedAt": "2026-11-04T04:57:34+08:00",
+      "category": "国际",
+      "text": "第三条，美国中期选举：民主党赢得两院控制权，选民否决特朗普。民主党翻转了多个参议院席位，在得克萨斯、堪萨斯、南卡罗来纳等保守派堡垒州获胜，重夺参议院控制权。选民对特朗普的不满重塑了华盛顿的权力平衡。注：截至北京时间11月4日16时。",
+      "screenText": "纽约时报中文网",
+      "summary": "民主党翻转了多个参议院席位，在得克萨斯、堪萨斯、南卡罗来纳等保守派堡垒州获胜，重夺参议院控制权。选民对特朗普的不满重塑了华盛顿的权力平衡。 注：截至北京时间11月4日16时。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "AMD 营收预计将首次超过英特尔",
+      "articleTitle": "AMD 营收预计将首次超过英特尔",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85799",
+      "publishedAt": "2026-11-05T01:20:06+08:00",
+      "category": "科技",
+      "text": "第四条，AMD 营收预计将首次超过英特尔。AMD 周二公布了 2026 财年第三季度财报，营收同比增长 45%，达到 134 亿美元。其中数据中心业务贡献了 85 亿美元营收同比增长 97%。",
+      "screenText": "Solidot",
+      "summary": "AMD 周二公布了 2026 财年第三季度财报，营收同比增长 45% 达到 134 亿美元。其中数据中心业务贡献了 85 亿美元营收同比增长 97%。客户端与游戏业务部门的营收下滑了 8% 降至 37 亿美元。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "中期选举民主党大胜共和党",
+      "articleTitle": "中期选举民主党大胜共和党 科技亿万富豪遭遇惨败之夜",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1584990.htm",
+      "publishedAt": "2026-11-04T16:50:11+08:00",
+      "category": "科技",
+      "text": "第五条，中期选举民主党大胜共和党，科技亿万富豪遭遇惨败之夜。周二晚间，民主党掌控国会两院，这是选民对唐纳德・特朗普总统及其经济政绩的一次严厉否定；选民对物价飞涨、政府腐败以及人工智能数据中心建设潮表达了强烈不满。",
+      "screenText": "cnBeta",
+      "summary": "周二晚间，民主党掌控国会两院，这是选民对唐纳德・特朗普总统及其经济政绩的一次严厉否定；选民对物价飞涨、政府腐败以及人工智能数据中心建设潮表达了强烈不满。此次选举也让围绕数据中心与人工智能基础设施的政治博弈进一步激化。"
+    }
+  ]
+}
