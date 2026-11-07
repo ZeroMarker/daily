@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-07",
+  "generation": {
+    "mode": "rss-pagerank-extractive",
+    "timezone": "Asia/Shanghai"
+  },
+  "items": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "title": "每日头条",
+      "text": "每日头条。今天是北京时间11月7日，星期六。",
+      "screenText": "5 条头条",
+      "headlines": [
+        "特斯拉将停产 Cybertruck",
+        "苹果：超 10 万款应用已适配",
+        "Meta警告美国中期选举结果或拖慢数据…",
+        "黄之锋涉「勾结外国势力」被重判10年",
+        "共和党惨败之夜"
+      ]
+    },
+    {
+      "id": "news-1",
+      "kind": "news",
+      "title": "特斯拉将停产 Cybertruck",
+      "articleTitle": "特斯拉将停产 Cybertruck",
+      "source": "Solidot",
+      "outlets": [
+        "Solidot",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.solidot.org/story?sid=85819",
+      "publishedAt": "2026-11-06T23:34:56+08:00",
+      "category": "科技",
+      "text": "第一条，特斯拉将停产 Cybertruck。生产电动皮卡的工厂很可能转为生产电动出租车 Cybercabs。如今马斯克的粉丝将只剩下几个月的时间购买这款奇特的电动皮卡。",
+      "screenText": "2 家媒体报道",
+      "summary": "特斯拉 CEO 马斯克（Elon Musk）宣布将于 2027 年年中停产电动皮卡 Cybertruck。生产电动皮卡的工厂很可能转为生产电动出租车 Cybercabs。"
+    },
+    {
+      "id": "news-2",
+      "kind": "news",
+      "title": "苹果：超 10 万款应用已适配",
+      "articleTitle": "苹果：超 10 万款应用已适配 iPhone Duo 折叠屏手机",
+      "source": "IT之家",
+      "outlets": [
+        "IT之家",
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.ithome.com/1/023/616.htm",
+      "publishedAt": "2026-11-07T07:48:34+08:00",
+      "category": "科技",
+      "text": "第二条，苹果：超 10 万款应用已适配 iPhone Duo 折叠屏手机。据 CNET 今日报道，随着苹果 iPhone Duo 折叠机型面向普通消费者发售，不少新机用户发现：部分常用 App 并未针对内屏做好适配。",
+      "screenText": "2 家媒体报道",
+      "summary": "据 CNET 今日报道，随着苹果 iPhone Duo 折叠机型面向普通消费者发售，不少新机用户发现：部分常用 App 并未针对内屏做好适配。对于一款采用全新硬件设计的手机来说，这类情况十分常见，众多安卓折叠屏设备也经历过相同阶段，App 完成适配往往需要一定周期，苹果证实现状正在改善。"
+    },
+    {
+      "id": "news-3",
+      "kind": "news",
+      "title": "Meta警告美国中期选举结果或拖慢数据…",
+      "articleTitle": "Meta警告美国中期选举结果或拖慢数据中心建设步伐 AI扩张面临更大阻力",
+      "source": "cnBeta",
+      "outlets": [
+        "cnBeta"
+      ],
+      "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1585296.htm",
+      "publishedAt": "2026-11-06T20:52:01+08:00",
+      "category": "科技",
+      "text": "第三条，Meta警告美国中期选举结果或拖慢数据中心建设步伐 AI扩张面临更大阻力。随着民主党在本届选举中取得显著胜利，围绕数据中心及人工智能基础设施发展的争议正在升温，Meta担心这股政治与社会层面的反对声音可能影响其未来投资计划。",
+      "screenText": "cnBeta",
+      "summary": "Meta高管日前表示，2026年美国中期选举结果可能使科技企业未来建设数据中心变得更加困难。随着民主党在本届选举中取得显著胜利，围绕数据中心及人工智能基础设施发展的争议正在升温，Meta担心这股政治与社会层面的反对声音可能影响其未来投资计划。"
+    },
+    {
+      "id": "news-4",
+      "kind": "news",
+      "title": "黄之锋涉「勾结外国势力」被重判10年",
+      "articleTitle": "黄之锋涉「勾结外国势力」被重判10年 出狱或已40岁",
+      "source": "BBC中文",
+      "outlets": [
+        "BBC中文"
+      ],
+      "sourceUrl": "https://www.bbc.com/zhongwen/watch/cjly00z2g03qo/trad?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-06T10:29:11+08:00",
+      "category": "国际",
+      "text": "第四条，黄之锋涉「勾结外国势力」被重判10年，出狱或已40岁。香港民主派活动人士黄之锋原有望于数月内获释，但最新的10年判刑使他要继续服刑到2036年，出狱时或已年届40岁。法律学者分析，案件反映《香港国安法》或可被「反复动用」，令特定政治犯持续留在狱中。",
+      "screenText": "BBC中文",
+      "summary": "香港民主派活动人士黄之锋原有望于数月内获释，但最新的10年判刑使他要继续服刑到2036年，出狱时或已年届40岁。法律学者分析，案件反映《香港国安法》或可被「反复动用」，令特定政治犯持续留在狱中。"
+    },
+    {
+      "id": "news-5",
+      "kind": "news",
+      "title": "共和党惨败之夜",
+      "articleTitle": "共和党惨败之夜：美国中期选举结果八大要点",
+      "source": "纽约时报中文网",
+      "outlets": [
+        "纽约时报中文网"
+      ],
+      "sourceUrl": "https://cn.nytimes.com/usa/20261105/election-takeaways-democrats-win/?utm_source=RSS",
+      "publishedAt": "2026-11-05T10:48:18+08:00",
+      "category": "国际",
+      "text": "第五条，共和党惨败之夜：美国中期选举结果八大要点。民主党在中期选举中取得压倒性胜利，不仅重夺两院控制权，还在一些深红选区取得突破。马斯克的巨额资金未能扭转局势。公众明确授权对总统权力进行制衡。",
+      "screenText": "纽约时报中文网",
+      "summary": "民主党在中期选举中取得压倒性胜利，不仅重夺两院控制权，还在一些深红选区取得突破。马斯克的巨额资金未能扭转局势。公众明确授权对总统权力进行制衡。 Haiyun Jiang/The New York Times 周二在奥斯汀举行的詹姆斯·塔拉里科的开票派对。"
+    }
+  ]
+}
